@@ -58,21 +58,21 @@ function pointsForValue(egp) { return Math.round((egp / 1000000) * 2000); }
 // ---------------------------------------------------------------------------
 const STR = {
   en: {
-    home: "Home", deals: "Deals", commissions: "Commissions", rewards: "Rewards", profile: "Profile", addDeal: "Add Deal",
+    home: "Home", deals: "Deals", commissions: "Calculate", rewards: "Rewards", profile: "Profile", addDeal: "Add Deal",
     goodMorning: "GOOD MORNING", viewRewards: "View rewards", ptsTo: "pts to",
     topDevs: "Top Commission Developers", topProjects: "Top Commission Projects", swipe: "SWIPE →",
     recentActivity: "Recent Activity", latest4: "LATEST 4", statDeals: "DEALS", statRank: "RANK", statPipeline: "PIPELINE",
 
     dealsTitle: "Deals", newBtn: "New", baseLayer: "Base Layer · Action",
     pipelineTitle: "How the pipeline works",
-    pipelineBody: "Brokers add Reservations and move them to Contracted. Only the developer and the RED Book team confirm a contract, from the backend — brokers can't self-confirm. You can also register straight to Contracted if there's no reservation step.",
+    pipelineBody: "Brokers add Reservations and move them to Contracted. Only the developer and the KW RED Book team confirm a contract, from the backend — brokers can't self-confirm. You can also register straight to Contracted if there's no reservation step.",
     moveToContracted: "Move to Contracted",
-    awaitingConfirmation: "Awaiting Developer & RED Book Confirmation",
+    awaitingConfirmation: "Awaiting Developer & KW RED Book Confirmation",
     simulateConfirm: "Prototype demo: simulate backend confirmation",
-    confirmedBy: "Confirmed by Developer & RED Book",
+    confirmedBy: "Confirmed by Developer & KW RED Book",
     reservationLogged: "Reservation Logged", dealRegisteredContracted: "Deal Registered as Contracted",
     reservationDesc: "is saved as a reservation. Move it to Contracted once paperwork is signed.",
-    contractedDesc: "was registered directly at Contracted — no reservation step needed. It now awaits confirmation from the developer and RED Book.",
+    contractedDesc: "was registered directly at Contracted — no reservation step needed. It now awaits confirmation from the developer and KW RED Book.",
     backToDeals: "Back to Deals", estWinPoints: "ESTIMATED WIN POINTS",
     illustrativeNote: "Illustrative only — final formula pending Section 7.2 sign-off",
 
@@ -91,15 +91,15 @@ const STR = {
     saveReservation: "Save Reservation", registerContracted: "Register as Contracted",
 
     stageReservation: "Reservation", stageContracted: "Contracted", stageConfirmed: "Confirmed",
-    actorBroker: "Broker", actorDevAndRedBook: "Developer + RED Book",
+    actorBroker: "Broker", actorDevAndRedBook: "Developer + KW RED Book",
 
-    commissionsTitle: "Commissions", middleLayer: "Middle Layer · Performance",
-    calc: "Calculator", byProject: "By Project", byDeveloper: "By Developer", developersTab: "Developers",
+    commissionsTitle: "Calculate Commissions", middleLayer: "Middle Layer · Performance",
+    calc: "Commission Calculator", byProject: "Earnings by Project", byDeveloper: "Earnings by Developer", developersTab: "Developers",
     developerAutofill: "Developer (auto-fills rate)", commissionRate: "Commission Rate (%)", brokerageSplit: "Brokerage Split (%)",
     grossCommission: "Gross Commission", brokerageShare: "Brokerage Share", consultantShare: "Consultant Share",
     taxRate: "Tax Rate (%)", taxOnCommission: "Tax on Commission", netRevenueAfterTax: "Net Revenue After Tax",
     calcDisclaimer: "Illustrative calculator. Live rates should sync from each developer's signed commission agreement.",
-    noDealsYet: "No deals registered yet.", activeProjects: "active projects",
+    noDealsYet: "No deals registered yet. Add your first reservation or contracted deal.", activeProjects: "active projects",
 
     winPointsTitle: "WIN Points", topLayer: "Top Layer · Value", yourBalance: "YOUR BALANCE",
     redeemRewards: "Redeem Rewards", redeem: "Redeem", requested: "Requested", yourBadges: "Your Badges",
@@ -107,15 +107,29 @@ const STR = {
 
     companyTitle: "Highline Realty", companyLabel: "Company", ownerLabel: "OWNER", marketRankLabel: "MARKET RANK",
     registeredDeals6mo: "Registered Deals — 6 Months", menu: "Menu",
-    manageConsultants: "Manage Consultants", devCommissionTracker: "Developer Commission Tracker",
-    clubEvents: "RED Book Club Events", logout: "Log Out",
+    manageConsultants: "Manage Consultants", devCommissionTracker: "Developer & Project Commissions",
+    clubEvents: "KW RED Book Club Events", logout: "Log Out",
     dealAction: "Deal", backToProfile: "Back to Profile", activeConsultants: "Active Consultants", totalPipeline: "Total Pipeline",
     avgConversion: "Avg. Conversion", revenueTracked: "Revenue Tracked", nextEvent: "Next Event", bookSeat: "Book Seat",
     languageTitle: "Language", languageDesc: "Switch the app between English and Arabic.", english: "English", arabic: "العربية",
+    howItWorks: "How It Works", approvalEngine: "Approval Engine", rewardsSystem: "Rewards System", getMoney: "Get Your Money",
+    ownerDetails: "Owner Details", companyDetails: "Company Details", addConsultant: "Add Consultant", helpFaq: "Help / FAQ",
+    notificationsCenter: "Notifications Center", bankTransferPayout: "Bank Transfer Payout", requestPayout: "Request Payout",
+    eligibleCommission: "Eligible Commission", pendingCommission: "Pending Commission", paidCommission: "Paid Commission",
+    noEligibleCommission: "No eligible commission yet. Deals must reach Commission Eligible before payout can be requested.",
+    payoutRequestsEmpty: "No payout requests yet. Eligible commission requests will appear here.",
+    consultantsEmpty: "No consultants added yet. Add your first consultant so deals can be assigned and performance can be tracked.",
+    notificationsEmpty: "No notifications yet. Important deal, approval, reward, and payout updates will appear here.",
+    rewardsEmpty: "No rewards requested yet.", developerProjectEmpty: "No developer or project commission record found.",
+    commissionRefNote: "Use this reference to understand active developer agreements, project commission rates, and agreement status before registering or calculating a deal.",
+    ownerCanClose: "Can close deals directly", ownerDealNote: "The company owner can register and close deals personally, or assign deals to consultants.",
+    addConsultantDesc: "Add consultants so every deal can be assigned to the right sales person, performance can be tracked, commissions can be reviewed, and WIN points can be calculated fairly.",
+    repeatBuyerWarning: "Repeat buyer detected. This client already has another registered deal. You can continue because KW RED Book supports multiple-unit purchases.",
+    active: "Active", updated: "Updated", agreementPending: "Agreement Pending", completed: "Completed", current: "Current", upcoming: "Upcoming",
 
-    prototypeLabel: "Product Prototype · v6", walkthroughTitle: "RED Book — App Walkthrough", viewing: "Currently viewing:",
+    prototypeLabel: "Product Prototype · v6", walkthroughTitle: "KW RED Book — App Walkthrough", viewing: "Currently viewing:",
 
-    regStepOf: "STEP {n} OF 4", regTitle: "Register Your Company", regIntro: "Verify your brokerage to join the closed RED Book network.",
+    regStepOf: "STEP {n} OF 4", regTitle: "Register Your Company", regIntro: "Verify your brokerage to join the closed KW RED Book network.",
     companyName: "Company Name", companyNamePlaceholder: "e.g. Highline Realty",
     crNumber: "Commercial Registration Number", crNumberPlaceholder: "CR-XXXXXX",
     taxId: "Tax ID Number", taxIdPlaceholder: "9-digit Tax ID",
@@ -128,26 +142,26 @@ const STR = {
     otpStepTitle: "Enter Verification Code", otpStepDesc: "Enter the 4-digit code sent to",
     verifyBtn: "Verify & Continue", resendCode: "Resend code",
     pendingTitle: "Submitted for Review",
-    pendingDesc: "Your Commercial Registration and Tax ID are being verified by the RED Book team. This usually takes 1–2 business days. You'll get a notification once your company is approved.",
-    demoSkip: "Prototype demo: skip onboarding", demoApprove: "Prototype demo: simulate RED Book approval",
-    enterAppBtn: "Enter RED Book", regDocNote: "Upload a clear photo or scan — multiple pages are fine.",
+    pendingDesc: "Your Commercial Registration and Tax ID are being verified by the KW RED Book team. This usually takes 1–2 business days. You'll get a notification once your company is approved.",
+    demoSkip: "Prototype demo: skip onboarding", demoApprove: "Prototype demo: simulate KW RED Book approval",
+    enterAppBtn: "Enter KW RED Book", regDocNote: "Upload a clear photo or scan — multiple pages are fine.",
   },
   ar: {
-    home: "الرئيسية", deals: "الصفقات", commissions: "العمولات", rewards: "النقاط", profile: "الملف", addDeal: "إضافة صفقة",
+    home: "الرئيسية", deals: "الصفقات", commissions: "احسب", rewards: "النقاط", profile: "الملف", addDeal: "إضافة صفقة",
     goodMorning: "صباح الخير", viewRewards: "عرض المكافآت", ptsTo: "نقطة حتى",
     topDevs: "أعلى المطورين عمولة", topProjects: "أعلى المشاريع عمولة", swipe: "اسحب ←",
     recentActivity: "أحدث النشاطات", latest4: "آخر 4", statDeals: "الصفقات", statRank: "الترتيب", statPipeline: "القيمة الإجمالية",
 
     dealsTitle: "الصفقات", newBtn: "جديد", baseLayer: "طبقة الأساس · إجراء",
     pipelineTitle: "كيف تعمل المراحل",
-    pipelineBody: "يقوم السمسار بإضافة الحجز ونقله إلى مرحلة التعاقد. لا يتم التأكيد النهائي إلا من قِبل المطوّر وفريق RED Book من الخلفية — لا يمكن للسمسار التأكيد بنفسه. يمكن أيضًا تسجيل الصفقة مباشرة في مرحلة التعاقد دون الحاجة لخطوة الحجز.",
+    pipelineBody: "يقوم السمسار بإضافة الحجز ونقله إلى مرحلة التعاقد. لا يتم التأكيد النهائي إلا من قِبل المطوّر وفريق KW RED Book من الخلفية — لا يمكن للسمسار التأكيد بنفسه. يمكن أيضًا تسجيل الصفقة مباشرة في مرحلة التعاقد دون الحاجة لخطوة الحجز.",
     moveToContracted: "نقل إلى التعاقد",
-    awaitingConfirmation: "بانتظار تأكيد المطوّر وفريق RED Book",
+    awaitingConfirmation: "بانتظار تأكيد المطوّر وفريق KW RED Book",
     simulateConfirm: "عرض تجريبي: محاكاة التأكيد من الخلفية",
-    confirmedBy: "تم التأكيد من المطوّر وفريق RED Book",
+    confirmedBy: "تم التأكيد من المطوّر وفريق KW RED Book",
     reservationLogged: "تم تسجيل الحجز", dealRegisteredContracted: "تم تسجيل الصفقة كمتعاقد عليها",
     reservationDesc: "تم حفظها كحجز. انقلها إلى التعاقد بعد توقيع الأوراق.",
-    contractedDesc: "تم تسجيلها مباشرة في مرحلة التعاقد — دون الحاجة لخطوة الحجز. وهي الآن بانتظار تأكيد المطوّر وفريق RED Book.",
+    contractedDesc: "تم تسجيلها مباشرة في مرحلة التعاقد — دون الحاجة لخطوة الحجز. وهي الآن بانتظار تأكيد المطوّر وفريق KW RED Book.",
     backToDeals: "العودة إلى الصفقات", estWinPoints: "نقاط WIN المتوقعة",
     illustrativeNote: "للتوضيح فقط — الصيغة النهائية بانتظار الاعتماد",
 
@@ -166,15 +180,15 @@ const STR = {
     saveReservation: "حفظ الحجز", registerContracted: "تسجيل كمتعاقد عليه",
 
     stageReservation: "حجز", stageContracted: "تعاقد", stageConfirmed: "تأكيد",
-    actorBroker: "السمسار", actorDevAndRedBook: "المطوّر + RED Book",
+    actorBroker: "السمسار", actorDevAndRedBook: "المطوّر + KW RED Book",
 
-    commissionsTitle: "العمولات", middleLayer: "طبقة الأداء · متوسطة",
-    calc: "الحاسبة", byProject: "حسب المشروع", byDeveloper: "حسب المطوّر", developersTab: "المطورون",
+    commissionsTitle: "حساب العمولات", middleLayer: "طبقة الأداء · متوسطة",
+    calc: "حاسبة العمولة", byProject: "الأرباح حسب المشروع", byDeveloper: "الأرباح حسب المطوّر", developersTab: "المطورون",
     developerAutofill: "المطوّر (يملأ النسبة تلقائيًا)", commissionRate: "نسبة العمولة (%)", brokerageSplit: "نسبة الوسيط (%)",
     grossCommission: "إجمالي العمولة", brokerageShare: "حصة الوسيط", consultantShare: "حصة المستشار",
     taxRate: "نسبة الضريبة (%)", taxOnCommission: "ضريبة العمولة", netRevenueAfterTax: "صافي الإيراد بعد الضريبة",
     calcDisclaimer: "حاسبة توضيحية فقط. يجب مزامنة الأسعار الفعلية من اتفاقية العمولة الموقعة مع كل مطوّر.",
-    noDealsYet: "لا توجد صفقات مسجلة بعد.", activeProjects: "مشاريع نشطة",
+    noDealsYet: "لا توجد صفقات مسجلة بعد. أضف أول حجز أو صفقة متعاقد عليها.", activeProjects: "مشاريع نشطة",
 
     winPointsTitle: "نقاط WIN", topLayer: "طبقة القيمة · عليا", yourBalance: "رصيدك",
     redeemRewards: "استبدال المكافآت", redeem: "استبدال", requested: "تم الطلب", yourBadges: "أوسمتك",
@@ -182,15 +196,29 @@ const STR = {
 
     companyTitle: "Highline Realty", companyLabel: "الشركة", ownerLabel: "المالك", marketRankLabel: "الترتيب في السوق",
     registeredDeals6mo: "الصفقات المسجلة — 6 أشهر", menu: "القائمة",
-    manageConsultants: "إدارة المستشارين", devCommissionTracker: "متابعة عمولات المطورين",
-    clubEvents: "فعاليات نادي RED Book", logout: "تسجيل الخروج",
+    manageConsultants: "إدارة المستشارين", devCommissionTracker: "عمولات المطورين والمشاريع",
+    clubEvents: "فعاليات نادي KW RED Book", logout: "تسجيل الخروج",
     dealAction: "صفقة", backToProfile: "العودة للملف", activeConsultants: "المستشارون النشطون", totalPipeline: "إجمالي الصفقات",
     avgConversion: "متوسط التحويل", revenueTracked: "الإيراد المتابع", nextEvent: "الفعالية القادمة", bookSeat: "احجز مقعد",
     languageTitle: "اللغة", languageDesc: "التبديل بين اللغة العربية والإنجليزية.", english: "English", arabic: "العربية",
+    howItWorks: "كيف يعمل", approvalEngine: "محرك الاعتماد", rewardsSystem: "نظام المكافآت", getMoney: "استلم أموالك",
+    ownerDetails: "بيانات المالك", companyDetails: "بيانات الشركة", addConsultant: "إضافة مستشار", helpFaq: "المساعدة / الأسئلة الشائعة",
+    notificationsCenter: "مركز الإشعارات", bankTransferPayout: "صرف بتحويل بنكي", requestPayout: "طلب الصرف",
+    eligibleCommission: "العمولة المستحقة", pendingCommission: "العمولة قيد الانتظار", paidCommission: "العمولة المدفوعة",
+    noEligibleCommission: "لا توجد عمولة مستحقة بعد. يجب أن تصل الصفقات إلى مرحلة استحقاق العمولة قبل طلب الصرف.",
+    payoutRequestsEmpty: "لا توجد طلبات صرف بعد. ستظهر هنا طلبات العمولات المستحقة.",
+    consultantsEmpty: "لم تتم إضافة مستشارين بعد. أضف أول مستشار حتى يمكن تعيين الصفقات وتتبع الأداء.",
+    notificationsEmpty: "لا توجد إشعارات بعد. ستظهر هنا تحديثات الصفقات والاعتمادات والمكافآت والصرف المهمة.",
+    rewardsEmpty: "لا توجد طلبات مكافآت بعد.", developerProjectEmpty: "لم يتم العثور على سجل عمولة لمطور أو مشروع.",
+    commissionRefNote: "استخدم هذا المرجع لفهم اتفاقيات المطورين النشطة ونسب عمولات المشاريع وحالة الاتفاق قبل تسجيل أو حساب الصفقة.",
+    ownerCanClose: "يمكنه إغلاق الصفقات مباشرة", ownerDealNote: "يمكن لمالك الشركة تسجيل وإغلاق الصفقات بنفسه أو تعيينها للمستشارين.",
+    addConsultantDesc: "أضف المستشارين حتى يتم تعيين كل صفقة للشخص المناسب وتتبع الأداء ومراجعة العمولات واحتساب نقاط WIN بعدالة.",
+    repeatBuyerWarning: "تم رصد عميل متكرر. لدى هذا العميل صفقة أخرى مسجلة. يمكنك المتابعة لأن KW RED Book يدعم شراء أكثر من وحدة.",
+    active: "نشط", updated: "محدّث", agreementPending: "الاتفاقية قيد الانتظار", completed: "مكتمل", current: "الحالي", upcoming: "قادم",
 
-    prototypeLabel: "نموذج المنتج · الإصدار 6", walkthroughTitle: "RED Book — استعراض التطبيق", viewing: "الشاشة الحالية:",
+    prototypeLabel: "نموذج المنتج · الإصدار 6", walkthroughTitle: "KW RED Book — استعراض التطبيق", viewing: "الشاشة الحالية:",
 
-    regStepOf: "الخطوة {n} من 4", regTitle: "سجّل شركتك", regIntro: "تحقق من بيانات شركتك للانضمام إلى شبكة RED Book المغلقة.",
+    regStepOf: "الخطوة {n} من 4", regTitle: "سجّل شركتك", regIntro: "تحقق من بيانات شركتك للانضمام إلى شبكة KW RED Book المغلقة.",
     companyName: "اسم الشركة", companyNamePlaceholder: "مثال: Highline Realty",
     crNumber: "رقم السجل التجاري", crNumberPlaceholder: "CR-XXXXXX",
     taxId: "الرقم الضريبي", taxIdPlaceholder: "الرقم الضريبي المكوّن من 9 أرقام",
@@ -203,9 +231,9 @@ const STR = {
     otpStepTitle: "أدخل رمز التحقق", otpStepDesc: "أدخل الرمز المكوّن من 4 أرقام المُرسَل إلى",
     verifyBtn: "تحقق ومتابعة", resendCode: "إعادة إرسال الرمز",
     pendingTitle: "تم الإرسال للمراجعة",
-    pendingDesc: "يقوم فريق RED Book بمراجعة السجل التجاري والرقم الضريبي الخاص بشركتك. تستغرق هذه العملية عادةً من يوم إلى يومي عمل. سيصلك إشعار فور اعتماد شركتك.",
-    demoSkip: "عرض تجريبي: تخطي التسجيل", demoApprove: "عرض تجريبي: محاكاة اعتماد RED Book",
-    enterAppBtn: "الدخول إلى RED Book", regDocNote: "ارفع صورة واضحة أو نسخة ممسوحة ضوئيًا — يمكن رفع أكثر من صفحة.",
+    pendingDesc: "يقوم فريق KW RED Book بمراجعة السجل التجاري والرقم الضريبي الخاص بشركتك. تستغرق هذه العملية عادةً من يوم إلى يومي عمل. سيصلك إشعار فور اعتماد شركتك.",
+    demoSkip: "عرض تجريبي: تخطي التسجيل", demoApprove: "عرض تجريبي: محاكاة اعتماد KW RED Book",
+    enterAppBtn: "الدخول إلى KW RED Book", regDocNote: "ارفع صورة واضحة أو نسخة ممسوحة ضوئيًا — يمكن رفع أكثر من صفحة.",
   },
 };
 
@@ -316,7 +344,7 @@ const defaultPayoutDetails = {
 };
 
 const defaultNotifications = [
-  { id: 1, title: "Company approved", body: "RED Book verified Highline Realty and enabled deal registration.", tone: "good", time: "Today" },
+  { id: 1, title: "Company approved", body: "KW RED Book verified Highline Realty and enabled deal registration.", tone: "good", time: "Today" },
   { id: 2, title: "Deal moved to Developer Review", body: "Fifth Square is ready for developer confirmation.", tone: "amber", time: "2h ago" },
   { id: 3, title: "WIN points added", body: "+11,000 WIN points added after Fouka Bay Resort was verified.", tone: "good", time: "Yesterday" },
   { id: 4, title: "Payout paid by bank transfer", body: "EGP 185K was transferred to CIB Egypt.", tone: "good", time: "24 Jun" },
@@ -327,16 +355,16 @@ const approvalStages = [
   { id: "contracted", name: "Contracted", owner: "Owner / Consultant", body: "Signed paperwork is recorded. The company owner can close deals personally." },
   { id: "developer_review", name: "Developer Review", owner: "Developer", body: "Developer checks that the deal and unit match their records." },
   { id: "developer_approved", name: "Developer Approved", owner: "Developer", body: "Developer confirms the transaction is valid for commission processing." },
-  { id: "verified", name: "RED Book Verified", owner: "RED Book", body: "RED Book performs final governance checks before commission eligibility." },
-  { id: "eligible", name: "Commission Eligible", owner: "RED Book Finance", body: "Commission and WIN points are eligible for payout and rewards tracking." },
+  { id: "verified", name: "KW RED Book Verified", owner: "KW RED Book", body: "KW RED Book performs final governance checks before commission eligibility." },
+  { id: "eligible", name: "Commission Eligible", owner: "KW RED Book Finance", body: "Commission and WIN points are eligible for payout and rewards tracking." },
   { id: "payout_requested", name: "Payout Requested", owner: "Company Owner", body: "The owner requests bank-transfer payout for eligible commission." },
-  { id: "paid", name: "Paid", owner: "RED Book Finance", body: "Finance marks the payout as paid by bank transfer." },
+  { id: "paid", name: "Paid", owner: "KW RED Book Finance", body: "Finance marks the payout as paid by bank transfer." },
 ];
 
 const faqItems = [
-  { q: "Can duplicate clients be registered?", a: "Yes. Repeat buyers and multi-unit purchases are allowed. RED Book tracks each deal separately by project, unit, developer, and date." },
+  { q: "Can duplicate clients be registered?", a: "Yes. Repeat buyers and multi-unit purchases are allowed. KW RED Book tracks each deal separately by project, unit, developer, and date." },
   { q: "Who can close a deal?", a: "The company owner can close deals directly. Consultants added by the owner can also register deals." },
-  { q: "Who confirms commission eligibility?", a: "Developer approval and RED Book final verification are required before commission becomes eligible." },
+  { q: "Who confirms commission eligibility?", a: "Developer approval and KW RED Book final verification are required before commission becomes eligible." },
   { q: "How are WIN points earned?", a: "Approved and verified deals generate WIN points based on deal value and platform rules." },
 ];
 
@@ -417,7 +445,12 @@ function useStages() {
     { id: "confirmed", label: tr("stageConfirmed"), actor: tr("actorDevAndRedBook") },
   ];
 }
-function stageIndex(stages, stage) { return stages.findIndex((s) => s.id === stage); }
+function stageIndex(stages, stage) {
+  const direct = stages.findIndex((s) => s.id === stage);
+  if (direct >= 0) return direct;
+  if (["developer_review", "developer_approved", "verified", "eligible", "payout_requested", "paid"].includes(stage)) return stages.length - 1;
+  return 0;
+}
 
 function StageStepper({ stage, compact }) {
   const stages = useStages();
@@ -705,12 +738,12 @@ function HomeScreen({ goTo, deals }) {
 
       <div className="px-5 mt-5 grid grid-cols-2 gap-2.5">
         {[
-          { id: "how", label: "How It Works", icon: ClipboardList },
-          { id: "approval", label: "Approval Engine", icon: ShieldCheck },
-          { id: "addConsultant", label: "Add Consultant", icon: Users },
-          { id: "commissionRef", label: "Developer Rates", icon: Building2 },
-          { id: "payout", label: "Get Your Money", icon: Wallet },
-          { id: "faq", label: "Help / FAQ", icon: FileText },
+          { id: "how", label: tr("howItWorks"), icon: ClipboardList },
+          { id: "approval", label: tr("approvalEngine"), icon: ShieldCheck },
+          { id: "addConsultant", label: tr("addConsultant"), icon: Users },
+          { id: "commissionRef", label: tr("devCommissionTracker"), icon: Building2 },
+          { id: "payout", label: tr("getMoney"), icon: Wallet },
+          { id: "faq", label: tr("helpFaq"), icon: FileText },
         ].map((s) => {
           const Icon = s.icon;
           return (
@@ -825,12 +858,13 @@ function DealDetailsScreen({ deal, onBack, onUpdateStage, onPayout }) {
   const { tr } = useT();
   const rate = rateFor(deal.developer, marketDevelopers);
   const commission = deal.value * (rate / 100);
-  const currentIdx = Math.max(0, approvalStages.findIndex((s) => s.id === deal.stage));
+  const normalizedStage = deal.stage === "confirmed" ? "verified" : deal.stage;
+  const currentIdx = Math.max(0, approvalStages.findIndex((s) => s.id === normalizedStage));
   const actions = [
     { when: "reservation", label: tr("moveToContracted"), next: "contracted" },
     { when: "contracted", label: "Request Developer Review", next: "developer_review" },
     { when: "developer_review", label: "Demo: Simulate Developer Approved", next: "developer_approved" },
-    { when: "developer_approved", label: "Demo: Simulate RED Book Verified", next: "verified" },
+    { when: "developer_approved", label: "Demo: Simulate KW RED Book Verified", next: "verified" },
     { when: "verified", label: "Demo: Mark Commission Eligible", next: "eligible" },
   ];
   const action = actions.find((a) => a.when === deal.stage);
@@ -840,7 +874,7 @@ function DealDetailsScreen({ deal, onBack, onUpdateStage, onPayout }) {
       <div className="mx-5 rounded-2xl p-5" style={{ background: CARD, border: `1px solid ${LINE}` }}>
         <div className="flex items-start justify-between gap-3">
           <div><div style={{ ...fontDisplay, fontSize: 18, color: INK }}>{deal.project}</div><div style={{ ...fontMono, fontSize: 11, color: GREY }}>{deal.developer} · {deal.date}</div></div>
-          <Badge tone={deal.stage === "eligible" || deal.stage === "paid" ? "good" : "amber"}>{(approvalStages.find((s) => s.id === deal.stage)?.name || deal.stage)}</Badge>
+        <Badge tone={normalizedStage === "eligible" || normalizedStage === "paid" ? "good" : "amber"}>{(approvalStages.find((s) => s.id === normalizedStage)?.name || deal.stage)}</Badge>
         </div>
         <div className="mt-4 grid grid-cols-2 gap-2">
           <InfoRow label="Deal value" value={`EGP ${fmtEGP(deal.value)}`} />
@@ -858,17 +892,29 @@ function DealDetailsScreen({ deal, onBack, onUpdateStage, onPayout }) {
       <div className="px-5 mt-4">
         <div className="mb-2" style={{ ...fontDisplay, fontSize: 13, color: INK }}>Approval timeline</div>
         <div className="flex flex-col gap-2">
-          {approvalStages.map((s, i) => (
-            <div key={s.id} className="rounded-xl p-3 flex gap-3" style={{ background: CARD, border: `1px solid ${LINE}` }}>
-              <div className="rounded-full flex items-center justify-center" style={{ width: 26, height: 26, background: i <= currentIdx ? RED : PAPER }}><Check size={13} color={i <= currentIdx ? "#fff" : GREY} /></div>
-              <div><div style={{ ...fontBody, fontSize: 12.5, fontWeight: 700, color: INK }}>{s.name}</div><div style={{ ...fontMono, fontSize: 10.5, color: GREY }}>{s.owner}</div></div>
+          {approvalStages.map((s, i) => {
+            const status = i < currentIdx ? tr("completed") : i === currentIdx ? tr("current") : tr("upcoming");
+            const tone = i < currentIdx ? "good" : i === currentIdx ? "red" : "light";
+            return (
+            <div key={s.id} className="rounded-xl p-3 flex gap-3" style={{ background: i === currentIdx ? "#fff8f9" : CARD, border: `1px solid ${i === currentIdx ? RED : LINE}` }}>
+              <div className="rounded-full flex items-center justify-center flex-shrink-0" style={{ width: 28, height: 28, background: i < currentIdx ? GOOD : i === currentIdx ? RED : PAPER }}>
+                {i < currentIdx ? <Check size={13} color="#fff" /> : <span style={{ ...fontMono, fontSize: 10, color: i === currentIdx ? "#fff" : GREY }}>{i + 1}</span>}
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center justify-between gap-2">
+                  <div style={{ ...fontBody, fontSize: 12.5, fontWeight: 700, color: INK }}>{s.name}</div>
+                  <Badge tone={tone}>{status}</Badge>
+                </div>
+                <div className="mt-0.5" style={{ ...fontMono, fontSize: 10.5, color: GREY }}>{s.owner}</div>
+                <p className="mt-1 leading-relaxed" style={{ ...fontBody, fontSize: 11.5, color: GREY }}>{s.body}</p>
+              </div>
             </div>
-          ))}
+          );})}
         </div>
       </div>
       <div className="px-5 mt-4">
         {action && <button onClick={() => onUpdateStage(deal.id, action.next)} className="w-full rounded-xl py-3 text-white" style={{ background: INK, ...fontMono, fontSize: 12, fontWeight: 700 }}>{action.label}</button>}
-        {deal.stage === "eligible" && <button onClick={() => onPayout(deal.id)} className="w-full rounded-xl py-3 text-white" style={{ background: RED, ...fontMono, fontSize: 12, fontWeight: 700 }}>Request Payout</button>}
+        {deal.stage === "eligible" && <button onClick={() => onPayout(deal.id)} className="w-full rounded-xl py-3 text-white" style={{ background: RED, ...fontMono, fontSize: 12, fontWeight: 700 }}>{tr("requestPayout")}</button>}
       </div>
     </div>
   );
@@ -973,7 +1019,7 @@ function DealsScreen({ deals, setDeals, view, setView, consultants, ownerProfile
               <input value={form.clientMobile} onChange={set("clientMobile")} placeholder={tr("clientMobilePlaceholder")} dir="ltr" className="w-full bg-transparent outline-none placeholder:text-gray-400" style={{ ...fontBody, fontSize: 14, color: INK }} />
             </div>
           </Field>
-          {repeatBuyer && <div className="rounded-xl p-3" style={{ background: "#fbf1e2", border: `1px solid #eddcb8`, ...fontBody, fontSize: 12, color: "#5c4a24" }}>Repeat buyer detected. This client already has another registered deal. You can continue because RED Book supports multiple-unit purchases.</div>}
+          {repeatBuyer && <div className="rounded-xl p-3" style={{ background: "#fbf1e2", border: `1px solid #eddcb8`, ...fontBody, fontSize: 12, color: "#5c4a24" }}>{tr("repeatBuyerWarning")}</div>}
           <Field label={tr("idPassport")}>
             <div className="flex items-center gap-2">
               <Hash size={14} color={GREY} className="flex-shrink-0" />
@@ -1024,6 +1070,8 @@ function DealsScreen({ deals, setDeals, view, setView, consultants, ownerProfile
       </div>
 
       <div className="px-5 flex flex-col gap-2.5">
+        {sorted.length === 0 && <EmptyNote text={tr("noDealsYet")} icon={ClipboardList}
+          action={<button onClick={() => setView("form")} className="mt-3 rounded-full px-4 py-2 text-white" style={{ background: RED, ...fontMono, fontSize: 11, fontWeight: 700 }}>{tr("addDeal")}</button>} />}
         {sorted.map((d) => (
           <div key={d.id} onClick={() => setSelectedDealId(d.id)} className="rounded-xl p-3.5 cursor-pointer" style={{ background: CARD, border: `1px solid ${LINE}` }}>
             <div className="flex items-center justify-between gap-2">
@@ -1102,9 +1150,9 @@ function CommissionsScreen({ deals }) {
 
   return (
     <div className="pb-28 overflow-y-auto h-full" style={{ background: PAPER }}>
-      <ScreenHeader eyebrow={tr("middleLayer")} title="Calculate Commissions" />
+      <ScreenHeader eyebrow={tr("middleLayer")} title={tr("commissionsTitle")} />
       <div className="px-5 mb-3">
-        <SegControl value={view} onChange={setView} options={[{ id: "calc", label: tr("calc") }, { id: "developer", label: "Earnings by Developer" }, { id: "project", label: "Earnings by Project" }]} />
+        <SegControl value={view} onChange={setView} options={[{ id: "calc", label: tr("calc") }, { id: "developer", label: tr("byDeveloper") }, { id: "project", label: tr("byProject") }]} />
       </div>
 
       {view === "calc" && <CommissionCalculator />}
@@ -1134,7 +1182,17 @@ function RowCard({ rank, title, sub, value }) {
     </div>
   );
 }
-function EmptyNote({ text }) { return <div className="rounded-xl p-5 text-center" style={{ ...fontMono, fontSize: 12, color: GREY, background: CARD, border: `1px dashed ${LINE}` }}>{text}</div>; }
+function EmptyNote({ text, icon: Icon = FileText, action }) {
+  return (
+    <div className="rounded-xl p-5 text-center" style={{ ...fontMono, fontSize: 12, color: GREY, background: CARD, border: `1px dashed ${LINE}` }}>
+      <div className="mx-auto mb-2 rounded-full flex items-center justify-center" style={{ width: 34, height: 34, background: PAPER }}>
+        <Icon size={16} color={GREY} />
+      </div>
+      <div className="leading-relaxed">{text}</div>
+      {action}
+    </div>
+  );
+}
 
 function BackHeader({ title, eyebrow, onBack }) {
   return <ScreenHeader eyebrow={eyebrow} title={title} right={<button onClick={onBack}><X size={20} color={GREY} /></button>} />;
@@ -1167,6 +1225,7 @@ function InfoScreen({ title, eyebrow, intro, items, onBack }) {
 }
 
 function CompanyDetailsScreen({ onBack }) {
+  const { tr } = useT();
   const rows = [
     ["Legal company name", defaultPayoutDetails.legalName],
     ["Commercial registration", defaultPayoutDetails.crNumber],
@@ -1176,11 +1235,11 @@ function CompanyDetailsScreen({ onBack }) {
   ];
   return (
     <div className="pb-28 overflow-y-auto h-full" style={{ background: PAPER }}>
-      <BackHeader title="Company Details" eyebrow="Verified Brokerage" onBack={onBack} />
+      <BackHeader title={tr("companyDetails")} eyebrow="Verified Brokerage" onBack={onBack} />
       <div className="mx-5 rounded-2xl p-5" style={{ background: CARD, border: `1px solid ${LINE}` }}>
         <div className="flex items-center gap-3 mb-4">
           <div className="rounded-xl flex items-center justify-center" style={{ width: 48, height: 48, background: INK }}><Building2 size={22} color="#fff" /></div>
-          <div><div style={{ ...fontDisplay, fontSize: 16, color: INK }}>{company.companyTitle || "Highline Realty"}</div><Badge tone="good">RED Book Approved</Badge></div>
+          <div><div style={{ ...fontDisplay, fontSize: 16, color: INK }}>{company.companyTitle || "Highline Realty"}</div><Badge tone="good">KW RED Book Approved</Badge></div>
         </div>
         {rows.map(([label, value]) => <InfoRow key={label} label={label} value={value} />)}
       </div>
@@ -1198,6 +1257,7 @@ function InfoRow({ label, value }) {
 }
 
 function OwnerDetailsScreen({ owner, setOwner, onBack }) {
+  const { tr } = useT();
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(owner);
   const [saved, setSaved] = useState(false);
@@ -1208,14 +1268,19 @@ function OwnerDetailsScreen({ owner, setOwner, onBack }) {
   ];
   return (
     <div className="pb-28 overflow-y-auto h-full" style={{ background: PAPER }}>
-      <BackHeader title="Owner Details" eyebrow="Company Owner" onBack={onBack} />
+      <BackHeader title={tr("ownerDetails")} eyebrow="Company Owner" onBack={onBack} />
       {saved && <div className="mx-5 mb-3 rounded-xl p-3" style={{ background: "#eaf3ec", color: GOOD, ...fontMono, fontSize: 11 }}>Owner details saved locally for this prototype.</div>}
       <div className="mx-5 rounded-2xl p-5" style={{ background: CARD, border: `1px solid ${LINE}` }}>
         <div className="flex items-center gap-3 mb-4">
           <div className="rounded-full flex items-center justify-center" style={{ width: 58, height: 58, background: INK }}><User size={24} color="#fff" /></div>
-          <div className="flex-1"><div style={{ ...fontDisplay, fontSize: 16, color: INK }}>{owner.fullName}</div><div style={{ ...fontMono, fontSize: 11, color: GREY }}>{owner.title} · {owner.companyRole}</div></div>
+          <div className="flex-1">
+            <div style={{ ...fontDisplay, fontSize: 16, color: INK }}>{owner.fullName}</div>
+            <div style={{ ...fontMono, fontSize: 11, color: GREY }}>{owner.title} · {owner.companyRole}</div>
+            <div className="mt-1 flex flex-wrap gap-1.5"><Badge tone="good">Verified</Badge><Badge tone="light">{tr("ownerCanClose")}</Badge></div>
+          </div>
           {!editing && <button onClick={() => { setDraft(owner); setEditing(true); }} className="rounded-full px-3 py-2" style={{ background: INK, color: "#fff", ...fontMono, fontSize: 11 }}>Edit</button>}
         </div>
+        <p className="mb-3 rounded-xl p-3 leading-relaxed" style={{ background: PAPER, ...fontBody, fontSize: 12, color: GREY }}>{tr("ownerDealNote")}</p>
         {editing ? (
           <div className="flex flex-col gap-3">
             {fields.map(([key, label]) => (
@@ -1232,31 +1297,47 @@ function OwnerDetailsScreen({ owner, setOwner, onBack }) {
   );
 }
 
-function PayoutScreen({ payout, setPayout, payoutRequests, setPayoutRequests, onBack }) {
+function PayoutScreen({ payout, setPayout, payoutRequests, setPayoutRequests, deals, setDeals, onBack, onSubmitted }) {
+  const { tr } = useT();
   const [editing, setEditing] = useState(false);
   const [confirming, setConfirming] = useState(false);
   const [success, setSuccess] = useState(false);
   const [draft, setDraft] = useState(payout);
-  const eligible = 286000, pending = 142000, paid = 185000;
+  const commissionFor = (deal) => deal.value * (rateFor(deal.developer, marketDevelopers) / 100);
+  const pendingStages = ["reservation", "contracted", "developer_review", "developer_approved", "verified", "confirmed"];
+  const eligibleDeals = deals.filter((d) => d.stage === "eligible");
+  const pendingDeals = deals.filter((d) => pendingStages.includes(d.stage));
+  const paidDeals = deals.filter((d) => d.stage === "paid");
+  const eligible = eligibleDeals.reduce((sum, d) => sum + commissionFor(d), 0);
+  const pending = pendingDeals.reduce((sum, d) => sum + commissionFor(d), 0);
+  const paid = paidDeals.reduce((sum, d) => sum + commissionFor(d), 0);
   const fields = [
     ["legalName", "Legal company name"], ["crNumber", "Commercial registration"], ["taxId", "Tax ID"], ["bankName", "Bank name"],
     ["accountNumber", "Bank account number"], ["iban", "IBAN"], ["accountHolder", "Account holder"], ["branch", "Branch"],
     ["financeContact", "Finance contact"], ["financeMobile", "Finance mobile"], ["financeEmail", "Finance email"],
   ];
   function save() { setPayout(draft); setEditing(false); }
-  function submitRequest() { setPayoutRequests((p) => [{ id: Date.now(), amount: eligible, date: "Today", status: "Submitted" }, ...p]); setConfirming(false); setSuccess(true); }
+  function submitRequest() {
+    if (!eligible) return;
+    const requestId = Date.now();
+    setPayoutRequests((p) => [{ id: requestId, amount: eligible, date: "Today", status: "Submitted", deals: eligibleDeals.length }, ...p]);
+    setDeals((prev) => prev.map((d) => d.stage === "eligible" ? { ...d, stage: "payout_requested" } : d));
+    onSubmitted?.(eligible, eligibleDeals.length);
+    setConfirming(false);
+    setSuccess(true);
+  }
   return (
     <div className="pb-28 overflow-y-auto h-full" style={{ background: PAPER }}>
-      <BackHeader title="Get Your Money" eyebrow="Bank Transfer Payout" onBack={onBack} />
-      {success && <div className="mx-5 mb-3 rounded-xl p-3" style={{ background: "#eaf3ec", color: GOOD, ...fontMono, fontSize: 11 }}>Payout request submitted. RED Book finance team will review and process the bank transfer.</div>}
+      <BackHeader title={tr("getMoney")} eyebrow={tr("bankTransferPayout")} onBack={onBack} />
+      {success && <div className="mx-5 mb-3 rounded-xl p-3" style={{ background: "#eaf3ec", color: GOOD, ...fontMono, fontSize: 11 }}>Payout request submitted. KW RED Book finance team will review and process the bank transfer.</div>}
       <div className="mx-5 rounded-2xl p-5" style={{ background: INK }}>
-        <div style={{ ...fontMono, fontSize: 10.5, color: "#a7acb2" }}>Eligible commission</div>
+        <div style={{ ...fontMono, fontSize: 10.5, color: "#a7acb2" }}>{tr("eligibleCommission")}</div>
         <div style={{ ...fontDisplay, fontSize: 28, color: "#fff" }}>EGP {fmtEGP(eligible)}</div>
         <div className="grid grid-cols-2 gap-2 mt-3">
-          <div className="rounded-lg p-2.5" style={{ background: "#24282d" }}><div style={{ ...fontMono, fontSize: 9.5, color: "#a7acb2" }}>Pending</div><div style={{ ...fontDisplay, fontSize: 15, color: AMBER }}>EGP {fmtEGP(pending)}</div></div>
-          <div className="rounded-lg p-2.5" style={{ background: "#24282d" }}><div style={{ ...fontMono, fontSize: 9.5, color: "#a7acb2" }}>Paid</div><div style={{ ...fontDisplay, fontSize: 15, color: GOOD }}>EGP {fmtEGP(paid)}</div></div>
+          <div className="rounded-lg p-2.5" style={{ background: "#24282d" }}><div style={{ ...fontMono, fontSize: 9.5, color: "#a7acb2" }}>{tr("pendingCommission")}</div><div style={{ ...fontDisplay, fontSize: 15, color: AMBER }}>EGP {fmtEGP(pending)}</div></div>
+          <div className="rounded-lg p-2.5" style={{ background: "#24282d" }}><div style={{ ...fontMono, fontSize: 9.5, color: "#a7acb2" }}>{tr("paidCommission")}</div><div style={{ ...fontDisplay, fontSize: 15, color: GOOD }}>EGP {fmtEGP(paid)}</div></div>
         </div>
-        <div className="mt-3" style={{ ...fontMono, fontSize: 10.5, color: "#a7acb2" }}>Last payout: 24 Jun · Next expected: 08 Jul</div>
+        {!eligible && <div className="mt-3 leading-relaxed" style={{ ...fontMono, fontSize: 10.5, color: "#a7acb2" }}>{tr("noEligibleCommission")}</div>}
       </div>
       <div className="mx-5 mt-4 rounded-2xl p-4" style={{ background: CARD, border: `1px solid ${LINE}` }}>
         <div className="flex items-center justify-between mb-2"><div style={{ ...fontDisplay, fontSize: 14, color: INK }}>Payout details</div><button onClick={() => { setDraft(payout); setEditing(true); }} style={{ ...fontMono, fontSize: 11, color: RED }}>Edit</button></div>
@@ -1274,17 +1355,32 @@ function PayoutScreen({ payout, setPayout, payoutRequests, setPayoutRequests, on
             <p className="mt-1 mb-3" style={{ ...fontBody, fontSize: 12, color: GREY }}>Request EGP {fmtEGP(eligible)} to {payout.bankName} · {payout.iban.slice(-6)}.</p>
             <button onClick={submitRequest} className="w-full rounded-xl py-3 text-white" style={{ background: RED, ...fontMono, fontSize: 12, fontWeight: 700 }}>Confirm Request</button>
           </div>
-        ) : <button onClick={() => setConfirming(true)} className="w-full rounded-xl py-3.5 text-white" style={{ background: RED, ...fontMono, fontSize: 12, fontWeight: 700 }}>Request Payout</button>}
+        ) : <button disabled={!eligible} onClick={() => setConfirming(true)} className="w-full rounded-xl py-3.5 text-white disabled:opacity-40" style={{ background: RED, ...fontMono, fontSize: 12, fontWeight: 700 }}>{tr("requestPayout")}</button>}
+      </div>
+      <div className="px-5 mt-5 flex flex-col gap-2.5">
+        <div style={{ ...fontDisplay, fontSize: 13, color: INK }}>Payout requests</div>
+        {payoutRequests.length === 0 && <EmptyNote text={tr("payoutRequestsEmpty")} icon={Wallet} />}
+        {payoutRequests.map((r) => (
+          <div key={r.id} className="rounded-xl p-3.5 flex items-center justify-between gap-3" style={{ background: CARD, border: `1px solid ${LINE}` }}>
+            <div>
+              <div style={{ ...fontBody, fontSize: 13, fontWeight: 700, color: INK }}>EGP {fmtEGP(r.amount)}</div>
+              <div style={{ ...fontMono, fontSize: 10.5, color: GREY }}>{r.date} · {r.deals || 0} deals</div>
+            </div>
+            <Badge tone="amber">{r.status}</Badge>
+          </div>
+        ))}
       </div>
     </div>
   );
 }
 
 function NotificationsScreen({ notifications, onBack }) {
+  const { tr } = useT();
   return (
     <div className="pb-28 overflow-y-auto h-full" style={{ background: PAPER }}>
-      <BackHeader title="Notifications Center" eyebrow="RED Book Updates" onBack={onBack} />
+      <BackHeader title={tr("notificationsCenter")} eyebrow="KW RED Book Updates" onBack={onBack} />
       <div className="px-5 flex flex-col gap-2.5">
+        {notifications.length === 0 && <EmptyNote text={tr("notificationsEmpty")} icon={Bell} />}
         {notifications.map((n) => (
           <div key={n.id} className="rounded-xl p-3.5 flex gap-3" style={{ background: CARD, border: `1px solid ${LINE}` }}>
             <div className="rounded-full flex items-center justify-center" style={{ width: 34, height: 34, background: n.tone === "good" ? "#eaf3ec" : "#fbf1e2" }}><Bell size={15} color={n.tone === "good" ? GOOD : AMBER} /></div>
@@ -1297,6 +1393,7 @@ function NotificationsScreen({ notifications, onBack }) {
 }
 
 function AddConsultantScreen({ consultants, setConsultants, onBack }) {
+  const { tr } = useT();
   const [form, setForm] = useState({ name: "", mobile: "", email: "", role: "", specialty: "", branch: "", status: "Active" });
   const [saved, setSaved] = useState(false);
   const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
@@ -1312,13 +1409,14 @@ function AddConsultantScreen({ consultants, setConsultants, onBack }) {
     setConsultants((prev) => [...prev, next]);
     setSaved(true);
     setForm({ name: "", mobile: "", email: "", role: "", specialty: "", branch: "", status: "Active" });
+    setTimeout(onBack, 750);
   }
   return (
     <div className="pb-28 overflow-y-auto h-full" style={{ background: PAPER }}>
-      <BackHeader title="Add Consultant" eyebrow="Team Management" onBack={onBack} />
+      <BackHeader title={tr("addConsultant")} eyebrow="Team Management" onBack={onBack} />
       {saved && <div className="mx-5 mb-3 rounded-xl p-3" style={{ background: "#eaf3ec", color: GOOD, ...fontMono, fontSize: 11 }}>Consultant added successfully and can now be selected in deal registration.</div>}
       <div className="mx-5 mb-4 rounded-xl p-3" style={{ background: "#fbf1e2", border: `1px solid #eddcb8`, ...fontBody, fontSize: 12, color: "#5c4a24" }}>
-        Add consultants so every deal can be assigned to the right sales person, performance can be tracked, commissions can be reviewed, and WIN points can be calculated fairly.
+        {tr("addConsultantDesc")}
       </div>
       <div className="px-5 flex flex-col gap-3">
         {[
@@ -1329,7 +1427,10 @@ function AddConsultantScreen({ consultants, setConsultants, onBack }) {
             <option>Active</option><option>Pending</option><option>Disabled</option>
           </select>
         </Field>
-        <button disabled={!form.name || !form.mobile} onClick={save} className="w-full rounded-xl py-3.5 text-white disabled:opacity-40" style={{ background: RED, ...fontMono, fontSize: 12, fontWeight: 700 }}>Save Consultant</button>
+        <div className="flex gap-2">
+          <button onClick={onBack} className="flex-1 rounded-xl py-3.5" style={{ background: CARD, border: `1px solid ${LINE}`, ...fontMono, fontSize: 12, color: GREY }}>Cancel</button>
+          <button disabled={!form.name || !form.mobile} onClick={save} className="flex-1 rounded-xl py-3.5 text-white disabled:opacity-40" style={{ background: RED, ...fontMono, fontSize: 12, fontWeight: 700 }}>Save Consultant</button>
+        </div>
       </div>
     </div>
   );
@@ -1361,6 +1462,7 @@ function ConsultantProfileScreen({ consultant, deals, onBack }) {
 }
 
 function CommissionReferenceScreen({ onBack }) {
+  const { tr } = useT();
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState("rate");
   const filtered = marketDevelopers
@@ -1368,26 +1470,40 @@ function CommissionReferenceScreen({ onBack }) {
     .sort((a, b) => sort === "name" ? a.name.localeCompare(b.name) : b.rate - a.rate);
   return (
     <div className="pb-28 overflow-y-auto h-full" style={{ background: PAPER }}>
-      <BackHeader title="Developer & Project Commissions" eyebrow="Reference Database" onBack={onBack} />
+      <BackHeader title={tr("devCommissionTracker")} eyebrow="Reference Database" onBack={onBack} />
+      <p className="px-5 -mt-1 mb-3 leading-relaxed" style={{ ...fontBody, fontSize: 12.5, color: GREY }}>{tr("commissionRefNote")}</p>
       <div className="px-5 flex gap-2 mb-3">
         <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search developer or HQ" className="flex-1 rounded-xl px-3 outline-none" style={{ background: CARD, border: `1px solid ${LINE}`, ...fontBody, fontSize: 13, color: INK }} />
         <button onClick={() => setSort(sort === "rate" ? "name" : "rate")} className="rounded-xl px-3" style={{ background: INK, color: "#fff", ...fontMono, fontSize: 11 }}>{sort === "rate" ? "Top %" : "A-Z"}</button>
       </div>
       <div className="px-5 flex flex-col gap-2.5">
+        {filtered.length === 0 && <EmptyNote text={tr("developerProjectEmpty")} icon={Building2} />}
         {filtered.map((d, i) => {
           const projects = marketProjects.filter((p) => p.developer === d.name);
+          const devStatus = i < 3 ? tr("updated") : tr("active");
           return (
             <div key={d.name} className="rounded-xl p-3.5" style={{ background: CARD, border: `1px solid ${LINE}` }}>
               <div className="flex items-start gap-3">
                 <div className="rounded-lg flex items-center justify-center" style={{ width: 40, height: 40, background: PAPER }}><Building2 size={18} color={INK} /></div>
                 <div className="flex-1 min-w-0"><div style={{ ...fontBody, fontSize: 13.5, fontWeight: 700, color: INK }}>{d.name}</div><div style={{ ...fontMono, fontSize: 10.5, color: GREY }}>{d.hq} · {d.projects} active projects</div></div>
-                <Badge tone={i < 3 ? "red" : "light"}>{d.rate}%</Badge>
+                <div className="flex flex-col items-end gap-1">
+                  <Badge tone={i < 3 ? "red" : "light"}>{d.rate}%</Badge>
+                  <Badge tone={i < 3 ? "amber" : "good"}>{devStatus}</Badge>
+                </div>
               </div>
               <div className="mt-3 flex flex-col gap-1.5">
                 {(projects.length ? projects : [{ name: "Agreement pending", rate: d.rate, loc: d.hq }]).map((p) => (
-                  <div key={p.name} className="rounded-lg px-3 py-2 flex justify-between gap-2" style={{ background: PAPER }}>
-                    <span className="truncate" style={{ ...fontBody, fontSize: 12, color: INK }}>{p.name}</span>
-                    <span style={{ ...fontMono, fontSize: 11, color: RED }}>{p.rate}% · {projects.length ? "Active" : "Agreement Pending"}</span>
+                  <div key={p.name} className="rounded-lg px-3 py-2" style={{ background: PAPER }}>
+                    <div className="flex items-start justify-between gap-2">
+                      <div className="min-w-0">
+                        <div className="truncate" style={{ ...fontBody, fontSize: 12, fontWeight: 600, color: INK }}>{p.name}</div>
+                        <div className="truncate" style={{ ...fontMono, fontSize: 10.5, color: GREY }}>{p.loc}</div>
+                      </div>
+                      <div className="text-end flex-shrink-0">
+                        <div style={{ ...fontMono, fontSize: 11, color: RED }}>{p.rate}%</div>
+                        <Badge tone={projects.length ? "good" : "amber"}>{projects.length ? tr("active") : tr("agreementPending")}</Badge>
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -1595,6 +1711,8 @@ function ProfileScreen({ lang, setLang, deals, consultants, setConsultants, goTo
           <button onClick={() => setView("addConsultant")} className="w-full rounded-xl py-3 text-white flex items-center justify-center gap-2" style={{ background: RED, ...fontMono, fontSize: 12, fontWeight: 700 }}><Plus size={15} /> Add Consultant</button>
         </div>
         <div className="px-5 mt-4 flex flex-col gap-2.5">
+          {consultants.length === 0 && <EmptyNote text={tr("consultantsEmpty")} icon={Users}
+            action={<button onClick={() => setView("addConsultant")} className="mt-3 rounded-full px-4 py-2 text-white" style={{ background: RED, ...fontMono, fontSize: 11, fontWeight: 700 }}>{tr("addConsultant")}</button>} />}
           {consultants.map((c) => (
             <button key={c.name} onClick={() => setSelectedConsultant(c)} className="rounded-xl p-3.5 text-start" style={{ background: CARD, border: `1px solid ${LINE}` }}>
               <div className="flex items-start gap-3">
@@ -1604,7 +1722,10 @@ function ProfileScreen({ lang, setLang, deals, consultants, setConsultants, goTo
                   <div className="truncate" style={{ ...fontMono, fontSize: 10.5, color: GREY }}>{c.role}</div>
                   <div className="mt-1 flex items-center gap-1" style={{ ...fontMono, fontSize: 10.5, color: GREY }}><Phone size={10} /> {c.mobile}</div>
                 </div>
-                <Badge tone="good">{c.conversion}%</Badge>
+                <div className="flex flex-col items-end gap-1">
+                  <Badge tone={c.status === "Pending" ? "amber" : "good"}>{c.status || tr("active")}</Badge>
+                  <Badge tone="light">{c.conversion}%</Badge>
+                </div>
               </div>
               <div className="grid grid-cols-3 gap-2 mt-3">
                 <div className="rounded-lg p-2.5" style={{ background: PAPER }}><div style={{ ...fontMono, fontSize: 9.5, color: GREY }}>Deals</div><div style={{ ...fontDisplay, fontSize: 15, color: INK }}>{c.activeDeals}</div></div>
@@ -1706,17 +1827,17 @@ function ProfileScreen({ lang, setLang, deals, consultants, setConsultants, goTo
       <div className="px-5 mt-5" style={{ ...fontDisplay, ...fs(13), color: INK }}>{tr("menu")}</div>
       <div className="px-5 mt-2 flex flex-col gap-1.5">
         {[
-          { icon: ClipboardList, label: "How It Works", route: "how" },
-          { icon: ShieldCheck, label: "Approval Engine", route: "approval" },
-          { icon: Gift, label: "Rewards System", route: "rewardsSystem" },
-          { icon: Wallet, label: "Payout / Get Your Money", route: "payout" },
-          { icon: Building2, label: "Company Details", route: "companyDetails" },
-          { icon: User, label: "Owner Details", route: "ownerDetails" },
+          { icon: ClipboardList, label: tr("howItWorks"), route: "how" },
+          { icon: ShieldCheck, label: tr("approvalEngine"), route: "approval" },
+          { icon: Gift, label: tr("rewardsSystem"), route: "rewardsSystem" },
+          { icon: Wallet, label: tr("getMoney"), route: "payout" },
+          { icon: Building2, label: tr("companyDetails"), route: "companyDetails" },
+          { icon: User, label: tr("ownerDetails"), route: "ownerDetails" },
           { icon: Users, label: tr("manageConsultants"), view: "consultants" },
-          { icon: Building2, label: "Developer & Project Commissions", route: "commissionRef" },
+          { icon: Building2, label: tr("devCommissionTracker"), route: "commissionRef" },
           { icon: FileText, label: tr("devCommissionTracker"), route: "tracker" },
           { icon: Calendar, label: tr("clubEvents"), view: "events" },
-          { icon: FileText, label: "Help / FAQ", route: "faq" },
+          { icon: FileText, label: tr("helpFaq"), route: "faq" },
           { icon: LogOut, label: tr("logout"), view: null },
         ].map((m) => {
           const Icon = m.icon;
@@ -1765,10 +1886,10 @@ export default function RedBookAppPrototype() {
 
   const howItems = [
     ["Company Registration", "A brokerage company registers using company details, commercial registration, tax ID, and owner mobile verification."],
-    ["RED Book Approval", "RED Book reviews the company documents and approves the account."],
+    ["KW RED Book Approval", "KW RED Book reviews the company documents and approves the account."],
     ["Add Consultants", "The company owner adds consultants so deals can be assigned and performance can be tracked."],
     ["Register a Deal", "The owner or consultant registers a reservation or contracted deal."],
-    ["Approval Engine", "The deal moves through review, developer approval, and RED Book verification stages."],
+    ["Approval Engine", "The deal moves through review, developer approval, and KW RED Book verification stages."],
     ["Commission Tracking", "Commission is calculated using developer and project commission agreements."],
     ["WIN Points", "Approved deals generate WIN points for the brokerage company."],
     ["Payout", "Eligible commission can be requested by bank transfer."],
@@ -1776,27 +1897,27 @@ export default function RedBookAppPrototype() {
 
   const screens = {
     home: <HomeScreen goTo={goTo} deals={deals} />,
-    deals: <DealsScreen deals={deals} setDeals={setDeals} view={dealsView} setView={setDealsView} consultants={consultants} ownerProfile={ownerProfile} onPayoutRequested={(deal) => addNotification("Payout request submitted", `${deal.project} payout request is now with RED Book finance.`)} />,
+    deals: <DealsScreen deals={deals} setDeals={setDeals} view={dealsView} setView={setDealsView} consultants={consultants} ownerProfile={ownerProfile} onPayoutRequested={(deal) => addNotification("Payout request submitted", `${deal.project} payout request is now with KW RED Book finance.`)} />,
     commissions: <CommissionsScreen deals={deals} />,
     tracker: <DeveloperCommissionTrackerScreen deals={deals} />,
     rewards: <RewardsScreen />,
     profile: <ProfileScreen lang={lang} setLang={setLang} deals={deals} consultants={consultants} setConsultants={setConsultants} goTo={goTo} ownerProfile={ownerProfile} />,
-    how: <InfoScreen title="How It Works" eyebrow="Demo Guide" intro="RED Book governs broker registration, deal approval, commission tracking, rewards, and payout in one verified workflow." items={howItems} onBack={() => goTo("home")} />,
-    approval: <InfoScreen title="Approval Engine" eyebrow="Deal Governance" intro="Duplicate clients and repeat buyers are allowed. RED Book tracks each deal separately by project, unit, developer, and date." items={approvalStages.map((s) => ({ title: s.name, body: s.body, meta: s.owner, badgeTone: s.owner === "RED Book" ? "red" : "light" }))} onBack={() => goTo("home")} />,
-    rewardsSystem: <InfoScreen title="Rewards System" eyebrow="WIN Points" intro="WIN points help RED Book reward verified production, consistent deal quality, and stronger broker participation." items={[
-      { title: "Earn", body: "Approved and RED Book verified deals generate estimated WIN points." },
+    how: <InfoScreen title="How It Works" eyebrow="Demo Guide" intro="KW RED Book governs broker registration, deal approval, commission tracking, rewards, and payout in one verified workflow." items={howItems} onBack={() => goTo("home")} />,
+    approval: <InfoScreen title="Approval Engine" eyebrow="Deal Governance" intro="Duplicate clients and repeat buyers are allowed. KW RED Book tracks each deal separately by project, unit, developer, and date." items={approvalStages.map((s) => ({ title: s.name, body: s.body, meta: s.owner, badgeTone: s.owner === "KW RED Book" ? "red" : "light" }))} onBack={() => goTo("home")} />,
+    rewardsSystem: <InfoScreen title="Rewards System" eyebrow="WIN Points" intro="WIN points help KW RED Book reward verified production, consistent deal quality, and stronger broker participation." items={[
+      { title: "Earn", body: "Approved and KW RED Book verified deals generate estimated WIN points." },
       { title: "Rank", body: "Companies rank against the verified broker network." },
       { title: "Redeem", body: "Eligible points can be requested for rewards, training credits, and premium access." },
     ]} onBack={() => goTo("profile")} />,
     companyDetails: <CompanyDetailsScreen onBack={() => goTo("profile")} />,
     ownerDetails: <OwnerDetailsScreen owner={ownerProfile} setOwner={setOwnerProfile} onBack={() => goTo("profile")} />,
-    payout: <PayoutScreen payout={payoutDetails} setPayout={setPayoutDetails} payoutRequests={payoutRequests} setPayoutRequests={setPayoutRequests} onBack={() => goTo("profile")} />,
+    payout: <PayoutScreen payout={payoutDetails} setPayout={setPayoutDetails} payoutRequests={payoutRequests} setPayoutRequests={setPayoutRequests} deals={deals} setDeals={setDeals} onBack={() => goTo("profile")} onSubmitted={(amount, count) => addNotification("Payout request submitted", `EGP ${fmtEGP(amount)} across ${count} eligible deal${count === 1 ? "" : "s"} is now with KW RED Book finance.`)} />,
     notifications: <NotificationsScreen notifications={notifications} onBack={() => goTo("home")} />,
     commissionRef: <CommissionReferenceScreen onBack={() => goTo("profile")} />,
     addConsultant: <AddConsultantScreen consultants={consultants} setConsultants={setConsultants} onBack={() => goTo("home")} />,
     faq: <InfoScreen title="Help / FAQ" eyebrow="Support" intro="Quick answers for demo conversations with brokerage owners, consultants, developers, and investors." items={faqItems.map((f) => ({ title: f.q, body: f.a }))} onBack={() => goTo("profile")} />,
   };
-  const labels = { home: "Dashboard", deals: "Deals", rewards: "WIN Points", commissions: "Calculate Commissions", tracker: "Developer Tracker", profile: "Company Profile", how: "How It Works", approval: "Approval Engine", rewardsSystem: "Rewards System", companyDetails: "Company Details", ownerDetails: "Owner Details", payout: "Get Your Money", notifications: "Notifications", commissionRef: "Developer Rates", addConsultant: "Add Consultant", faq: "Help / FAQ" };
+  const labels = { home: "Dashboard", deals: tr("deals"), rewards: "WIN Points", commissions: tr("commissionsTitle"), tracker: tr("devCommissionTracker"), profile: "Company Profile", how: tr("howItWorks"), approval: tr("approvalEngine"), rewardsSystem: tr("rewardsSystem"), companyDetails: tr("companyDetails"), ownerDetails: tr("ownerDetails"), payout: tr("getMoney"), notifications: tr("notificationsCenter"), commissionRef: tr("devCommissionTracker"), addConsultant: tr("addConsultant"), faq: tr("helpFaq") };
   function renderAppSurface() {
     return (
       <div
