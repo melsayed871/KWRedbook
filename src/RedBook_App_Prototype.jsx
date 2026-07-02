@@ -4,7 +4,7 @@ import {
   Building2, Star, Wallet, GraduationCap, Crown, ArrowUp, ArrowDown,
   Check, X, Signal, Wifi, BatteryFull, Calendar, Award, ShieldCheck, Users,
   FileText, LogOut, Lock, FlaskConical, MapPin, Image as ImageIcon, Trash2,
-  Globe, Contact, Phone, Hash, BarChart3
+  Globe, Contact, Phone, Hash, BarChart3, Trophy, Calculator
 } from "lucide-react";
 
 // ---------------------------------------------------------------------------
@@ -59,6 +59,7 @@ function pointsForValue(egp) { return Math.round((egp / 1000000) * 2000); }
 const STR = {
   en: {
     home: "Home", deals: "Deals", commissions: "Calculate", rewards: "Rewards", profile: "Profile", addDeal: "Add Deal",
+    quickActions: "Quick actions", developersShort: "Developers", calculateShort: "Calculate",
     goodMorning: "GOOD MORNING", viewRewards: "View rewards", ptsTo: "pts to",
     topDevs: "Top Commission Developers", topProjects: "Top Commission Projects", swipe: "SWIPE →",
     recentActivity: "Recent Activity", latest4: "LATEST 4", statDeals: "DEALS", statRank: "RANK", statPipeline: "PIPELINE",
@@ -101,13 +102,24 @@ const STR = {
     calcDisclaimer: "Illustrative calculator. Live rates should sync from each developer's signed commission agreement.",
     noDealsYet: "No deals registered yet. Add your first reservation or contracted deal.", activeProjects: "active projects",
 
+    ranking: "Ranking", marketRanking: "Market Ranking", rankingNote: "Your ranking is based on total WIN Points collected. Redeeming rewards does not reduce your ranking.",
+    totalCollectedPoints: "Total collected points", redeemablePoints: "Redeemable points", redeemedPoints: "Redeemed points",
+    nextRankProgress: "Next rank / tier progress", howRankingWorks: "How ranking works", companyTrend: "Company trend",
+    developersProjects: "Developers & Projects", searchDeveloperProject: "Search developer or project", requestNewDeveloper: "Request New Developer",
+    requestNewProject: "Request New Project", newDeveloperProject: "New Developer + Project", requestedDevelopersProjects: "Requested Developers / Projects",
+    requestSubmitted: "Request submitted", otherDeveloper: "Other Developer", otherProject: "Other Project", pendingReview: "Pending Review",
+    pendingVerification: "Pending Verification", developerProjectPendingReview: "Developer / Project Pending KW RED Book Review",
+    commissionPointsPending: "Commission and WIN Points pending verification", agreementInProgress: "Agreement in Progress",
+    agreementConfirmed: "Agreement Confirmed", notEligible: "Not Eligible", editMissingInfo: "Edit Missing Info",
+    editingLocked: "Editing is locked unless KW RED Book, Finance, or Developer requests missing information.",
+    cannotCancelStage: "This deal cannot be cancelled at this stage.", calculatedInstallments: "Calculated installments",
     winPointsTitle: "WIN Points", topLayer: "Top Layer · Value", yourBalance: "YOUR BALANCE",
     redeemRewards: "Redeem Rewards", redeem: "Redeem", requested: "Requested", yourBadges: "Your Badges",
     rewardsTab: "Rewards", rankingsTab: "Rankings",
 
     companyTitle: "Highline Realty", companyLabel: "Company", ownerLabel: "OWNER", marketRankLabel: "MARKET RANK",
     registeredDeals6mo: "Registered Deals — 6 Months", menu: "Menu",
-    manageConsultants: "Manage Consultants", devCommissionTracker: "Developer & Project Commissions",
+    manageConsultants: "Manage Consultants", devCommissionTracker: "Commissions and Revenue Tracker",
     clubEvents: "KW RED Book Club Events", logout: "Log Out",
     dealAction: "Deal", backToProfile: "Back to Profile", activeConsultants: "Active Consultants", totalPipeline: "Total Pipeline",
     avgConversion: "Avg. Conversion", revenueTracked: "Revenue Tracked", nextEvent: "Next Event", bookSeat: "Book Seat",
@@ -126,6 +138,16 @@ const STR = {
     addConsultantDesc: "Add consultants so every deal can be assigned to the right sales person, performance can be tracked, commissions can be reviewed, and WIN points can be calculated fairly.",
     repeatBuyerWarning: "Repeat buyer detected. This client already has another registered deal. You can continue because KW RED Book supports multiple-unit purchases.",
     active: "Active", updated: "Updated", agreementPending: "Agreement Pending", completed: "Completed", current: "Current", upcoming: "Upcoming",
+    revenueTracker: "Revenue Tracker", unitPaymentCalculator: "Unit Payment Calculator", createPaymentPdf: "Create Payment PDF",
+    paymentSchedule: "Payment Schedule", downPayment: "Down Payment", deliveryPayment: "Delivery Payment",
+    installmentFrequency: "Installment Frequency", monthly: "Monthly", quarterly: "Quarterly", semiAnnual: "Semi-Annual", annual: "Annual",
+    annualBalloonPayment: "Annual Balloon Payment", backLoadedPlan: "Back-loaded Plan", equalInstallments: "Equal Installments",
+    alertsOpenCases: "Alerts / Open Cases", missingInfo: "Missing Info", developerRejection: "Developer Rejection",
+    cancelDeal: "Cancel Deal", cancellationReason: "Cancellation Reason", payoutReadyDeals: "Payout-ready Deals",
+    developerDetails: "Developer Details", projectDetails: "Project Details", markResolved: "Mark as Resolved",
+    openDeal: "Open Deal", completeInfo: "Complete Info", viewRejection: "View Rejection", cancelled: "Cancelled",
+    paid: "Paid", payoutRequested: "Payout Requested", noOpenCases: "No open cases. Your active deals are clear.",
+    viewRevenueTracker: "View Revenue Tracker",
 
     prototypeLabel: "Product Prototype · v6", walkthroughTitle: "KW RED Book — App Walkthrough", viewing: "Currently viewing:",
 
@@ -148,6 +170,7 @@ const STR = {
   },
   ar: {
     home: "الرئيسية", deals: "الصفقات", commissions: "احسب", rewards: "النقاط", profile: "الملف", addDeal: "إضافة صفقة",
+    quickActions: "إجراءات سريعة", developersShort: "المطورون", calculateShort: "احسب",
     goodMorning: "صباح الخير", viewRewards: "عرض المكافآت", ptsTo: "نقطة حتى",
     topDevs: "أعلى المطورين عمولة", topProjects: "أعلى المشاريع عمولة", swipe: "اسحب ←",
     recentActivity: "أحدث النشاطات", latest4: "آخر 4", statDeals: "الصفقات", statRank: "الترتيب", statPipeline: "القيمة الإجمالية",
@@ -190,13 +213,24 @@ const STR = {
     calcDisclaimer: "حاسبة توضيحية فقط. يجب مزامنة الأسعار الفعلية من اتفاقية العمولة الموقعة مع كل مطوّر.",
     noDealsYet: "لا توجد صفقات مسجلة بعد. أضف أول حجز أو صفقة متعاقد عليها.", activeProjects: "مشاريع نشطة",
 
+    ranking: "الترتيب", marketRanking: "ترتيب السوق", rankingNote: "يعتمد ترتيبك على إجمالي نقاط WIN المحصلة. استبدال المكافآت لا يقلل ترتيبك.",
+    totalCollectedPoints: "إجمالي النقاط المحصلة", redeemablePoints: "النقاط القابلة للاستبدال", redeemedPoints: "النقاط المستبدلة",
+    nextRankProgress: "التقدم للترتيب / المستوى التالي", howRankingWorks: "كيف يعمل الترتيب", companyTrend: "اتجاه الشركة",
+    developersProjects: "المطورون والمشاريع", searchDeveloperProject: "ابحث عن مطور أو مشروع", requestNewDeveloper: "طلب مطور جديد",
+    requestNewProject: "طلب مشروع جديد", newDeveloperProject: "مطور + مشروع جديد", requestedDevelopersProjects: "طلبات المطورين / المشاريع",
+    requestSubmitted: "تم إرسال الطلب", otherDeveloper: "مطور آخر", otherProject: "مشروع آخر", pendingReview: "قيد المراجعة",
+    pendingVerification: "بانتظار التحقق", developerProjectPendingReview: "المطور / المشروع بانتظار مراجعة KW RED Book",
+    commissionPointsPending: "العمولة ونقاط WIN بانتظار التحقق", agreementInProgress: "الاتفاقية قيد التنفيذ",
+    agreementConfirmed: "تم تأكيد الاتفاقية", notEligible: "غير مؤهل", editMissingInfo: "تعديل البيانات الناقصة",
+    editingLocked: "التعديل مقفل إلا إذا طلب KW RED Book أو التمويل أو المطور بيانات ناقصة.",
+    cannotCancelStage: "لا يمكن إلغاء الصفقة في هذه المرحلة.", calculatedInstallments: "عدد الأقساط المحسوب",
     winPointsTitle: "نقاط WIN", topLayer: "طبقة القيمة · عليا", yourBalance: "رصيدك",
     redeemRewards: "استبدال المكافآت", redeem: "استبدال", requested: "تم الطلب", yourBadges: "أوسمتك",
     rewardsTab: "المكافآت", rankingsTab: "الترتيب",
 
     companyTitle: "Highline Realty", companyLabel: "الشركة", ownerLabel: "المالك", marketRankLabel: "الترتيب في السوق",
     registeredDeals6mo: "الصفقات المسجلة — 6 أشهر", menu: "القائمة",
-    manageConsultants: "إدارة المستشارين", devCommissionTracker: "عمولات المطورين والمشاريع",
+    manageConsultants: "إدارة المستشارين", devCommissionTracker: "متابعة العمولات والإيرادات",
     clubEvents: "فعاليات نادي KW RED Book", logout: "تسجيل الخروج",
     dealAction: "صفقة", backToProfile: "العودة للملف", activeConsultants: "المستشارون النشطون", totalPipeline: "إجمالي الصفقات",
     avgConversion: "متوسط التحويل", revenueTracked: "الإيراد المتابع", nextEvent: "الفعالية القادمة", bookSeat: "احجز مقعد",
@@ -215,6 +249,16 @@ const STR = {
     addConsultantDesc: "أضف المستشارين حتى يتم تعيين كل صفقة للشخص المناسب وتتبع الأداء ومراجعة العمولات واحتساب نقاط WIN بعدالة.",
     repeatBuyerWarning: "تم رصد عميل متكرر. لدى هذا العميل صفقة أخرى مسجلة. يمكنك المتابعة لأن KW RED Book يدعم شراء أكثر من وحدة.",
     active: "نشط", updated: "محدّث", agreementPending: "الاتفاقية قيد الانتظار", completed: "مكتمل", current: "الحالي", upcoming: "قادم",
+    revenueTracker: "متابعة الإيرادات", unitPaymentCalculator: "حاسبة سداد الوحدة", createPaymentPdf: "إنشاء معاينة PDF",
+    paymentSchedule: "جدول السداد", downPayment: "المقدم", deliveryPayment: "دفعة الاستلام",
+    installmentFrequency: "تكرار الأقساط", monthly: "شهري", quarterly: "ربع سنوي", semiAnnual: "نصف سنوي", annual: "سنوي",
+    annualBalloonPayment: "دفعة سنوية إضافية", backLoadedPlan: "خطة متدرجة", equalInstallments: "أقساط متساوية",
+    alertsOpenCases: "تنبيهات / حالات مفتوحة", missingInfo: "بيانات ناقصة", developerRejection: "رفض المطور",
+    cancelDeal: "إلغاء الصفقة", cancellationReason: "سبب الإلغاء", payoutReadyDeals: "صفقات جاهزة للصرف",
+    developerDetails: "تفاصيل المطور", projectDetails: "تفاصيل المشروع", markResolved: "تحديد كمحلول",
+    openDeal: "فتح الصفقة", completeInfo: "استكمال البيانات", viewRejection: "عرض الرفض", cancelled: "ملغاة",
+    paid: "مدفوعة", payoutRequested: "تم طلب الصرف", noOpenCases: "لا توجد حالات مفتوحة. صفقاتك النشطة واضحة.",
+    viewRevenueTracker: "عرض متابعة الإيرادات",
 
     prototypeLabel: "نموذج المنتج · الإصدار 6", walkthroughTitle: "KW RED Book — استعراض التطبيق", viewing: "الشاشة الحالية:",
 
@@ -244,26 +288,26 @@ const useT = () => useContext(LangContext);
 // Market data
 // ---------------------------------------------------------------------------
 const marketDevelopers = [
-  { name: "Arabella Group", rate: 6.5, hq: "Ras El Hekma Bay", projects: 4 },
-  { name: "Hyde Park Developments", rate: 6.0, hq: "New Cairo", projects: 6 },
-  { name: "Edge Developments", rate: 5.75, hq: "New Administrative Capital", projects: 3 },
-  { name: "Menassat Developments", rate: 5.5, hq: "New Cairo", projects: 5 },
-  { name: "Palm Hills Developments", rate: 5.25, hq: "West Cairo", projects: 8 },
-  { name: "Mountain View", rate: 5.0, hq: "New Cairo", projects: 6 },
-  { name: "SODIC", rate: 4.75, hq: "Sheikh Zayed", projects: 5 },
-  { name: "Ora Developers", rate: 4.5, hq: "North Coast", projects: 3 },
-  { name: "Tatweer Misr", rate: 4.25, hq: "Fouka Bay", projects: 4 },
-  { name: "Emaar Misr", rate: 4.0, hq: "Mostakbal City", projects: 3 },
+  { name: "Arabella Group", rate: 6.5, hq: "Ras El Hekma Bay", projects: 4, status: "Active" },
+  { name: "Hyde Park Developments", rate: 6.0, hq: "New Cairo", projects: 6, status: "Updated" },
+  { name: "Edge Developments", rate: 5.75, hq: "New Administrative Capital", projects: 3, status: "Active" },
+  { name: "Menassat Developments", rate: 5.5, hq: "New Cairo", projects: 5, status: "Active" },
+  { name: "Palm Hills Developments", rate: 5.25, hq: "West Cairo", projects: 8, status: "Active" },
+  { name: "Mountain View", rate: 5.0, hq: "New Cairo", projects: 6, status: "Active" },
+  { name: "SODIC", rate: 4.75, hq: "Sheikh Zayed", projects: 5, status: "Agreement Pending" },
+  { name: "Ora Developers", rate: 4.5, hq: "North Coast", projects: 3, status: "Active" },
+  { name: "Tatweer Misr", rate: 4.25, hq: "Fouka Bay", projects: 4, status: "Active" },
+  { name: "Emaar Misr", rate: 4.0, hq: "Mostakbal City", projects: 3, status: "Agreement Pending" },
 ];
 const marketProjects = [
-  { name: "Direction White", developer: "Arabella Group", rate: 6.5, loc: "Ras El Hekma Bay" },
-  { name: "Hyde Park New Cairo", developer: "Hyde Park Developments", rate: 6.0, loc: "New Cairo" },
-  { name: "North Edge Towers", developer: "Edge Developments", rate: 5.75, loc: "New Admin. Capital" },
-  { name: "Fifth Square", developer: "Menassat Developments", rate: 5.5, loc: "New Cairo" },
-  { name: "Palm Hills Village Gate", developer: "Palm Hills Developments", rate: 5.25, loc: "West Cairo" },
-  { name: "Central", developer: "Mountain View", rate: 5.0, loc: "New Cairo" },
-  { name: "Villette", developer: "SODIC", rate: 4.75, loc: "Sheikh Zayed" },
-  { name: "Fouka Bay Resort", developer: "Tatweer Misr", rate: 4.25, loc: "North Coast" },
+  { name: "Direction White", developer: "Arabella Group", rate: 6.5, loc: "North Coast", status: "Active" },
+  { name: "Hyde Park New Cairo", developer: "Hyde Park Developments", rate: 6.0, loc: "New Cairo", status: "Active" },
+  { name: "North Edge Towers", developer: "Edge Developments", rate: 5.75, loc: "New Administrative Capital", status: "Active" },
+  { name: "Fifth Square", developer: "Menassat Developments", rate: 5.5, loc: "New Cairo", status: "Active" },
+  { name: "Palm Hills Village Gate", developer: "Palm Hills Developments", rate: 5.25, loc: "West Cairo", status: "Active" },
+  { name: "Central", developer: "Mountain View", rate: 5.0, loc: "New Cairo", status: "Active" },
+  { name: "Villette", developer: "SODIC", rate: 4.75, loc: "Sheikh Zayed", status: "Agreement Pending" },
+  { name: "Fouka Bay Resort", developer: "Tatweer Misr", rate: 4.25, loc: "North Coast", status: "Active" },
 ];
 const developerNames = marketDevelopers.map((d) => d.name);
 const consultantsList = ["Mona Adel", "Karim Fathy", "Rana Yousry", "Tarek Nabil", "Yasmin Adly"];
@@ -314,9 +358,13 @@ const leaderboard = [
 ];
 const company = {
   owner: "Ahmed Hassan", tier: "Silver Partner", nextTier: "Gold Partner",
-  winPoints: 24600, tierFloor: 15000, tierCeiling: 30000, rank: 7, totalCompanies: 62,
+  winPoints: 24600, totalCollectedPoints: 31200, redeemablePoints: 24600, redeemedPoints: 6600, tierFloor: 15000, tierCeiling: 30000, rank: 7, totalCompanies: 62, trend: "up",
   consultants: 22, crNumber: "CR-119402", badges: ["Founding 100", "Top Closer — June", "Fastest-Growing Q2"],
 };
+
+const defaultDeveloperProjectRequests = [
+  { id: 1001, type: "New Project", developerName: "SODIC", projectName: "VYE", location: "Sheikh Zayed", expectedRate: "4.75", closedDeal: "No", notes: "Requested by sales team after client inquiry.", reason: "Project needs agreement confirmation.", submitted: "Today", status: "Under Review" },
+];
 
 const defaultOwnerProfile = {
   fullName: "Ahmed Hassan",
@@ -360,6 +408,102 @@ const approvalStages = [
   { id: "payout_requested", name: "Payout Requested", owner: "Company Owner", body: "The owner requests bank-transfer payout for eligible commission." },
   { id: "paid", name: "Paid", owner: "KW RED Book Finance", body: "Finance marks the payout as paid by bank transfer." },
 ];
+
+const pendingRevenueStages = ["reservation", "contracted", "developer_review", "developer_approved", "verified", "confirmed"];
+function isCancelledDeal(deal) { return deal.stage === "cancelled"; }
+function isEligibleDeal(deal) { return deal.stage === "eligible" && !isCancelledDeal(deal); }
+function isPayoutRequestedDeal(deal) { return deal.stage === "payout_requested"; }
+function isPaidDeal(deal) { return deal.stage === "paid"; }
+function isPayoutReadyDeal(deal) { return ["eligible", "payout_requested", "paid"].includes(deal.stage) && !isCancelledDeal(deal); }
+function getDealCommission(deal) {
+  if (!deal || isCancelledDeal(deal)) return 0;
+  const rate = (deal.unlistedDeveloper || deal.unlistedProject) ? (parseFloat(deal.expectedCommissionRate) || 0) : rateFor(deal.developer, marketDevelopers);
+  return (deal.value || 0) * (rate / 100);
+}
+function getProjectRate(projectName, developerName) {
+  const project = marketProjects.find((p) => p.name === projectName);
+  return project?.rate || rateFor(developerName, marketDevelopers);
+}
+function getDealUnitSummary(deal) {
+  if (!deal) return "";
+  const parts = [deal.unitType, deal.bedrooms && `${deal.bedrooms} BR`, deal.finishing, deal.delivery, deal.bua && `${deal.bua} sqm`].filter(Boolean);
+  return parts.length ? parts.join(" · ") : (deal.unitDetails || "");
+}
+function getRevenueSummary(deals) {
+  const activeDeals = deals.filter((d) => !isCancelledDeal(d));
+  const total = activeDeals.reduce((sum, d) => sum + getDealCommission(d), 0);
+  const eligible = activeDeals.filter(isEligibleDeal).reduce((sum, d) => sum + getDealCommission(d), 0);
+  const pending = activeDeals.filter((d) => pendingRevenueStages.includes(d.stage)).reduce((sum, d) => sum + getDealCommission(d), 0);
+  const paid = activeDeals.filter(isPaidDeal).reduce((sum, d) => sum + getDealCommission(d), 0);
+  const pipeline = activeDeals.reduce((sum, d) => sum + (d.value || 0), 0);
+  return { total, eligible, pending, paid, pipeline, payoutReadyCount: activeDeals.filter(isEligibleDeal).length, cancelledCount: deals.filter(isCancelledDeal).length };
+}
+function getDeveloperStats(developerName, deals) {
+  const developer = marketDevelopers.find((d) => d.name === developerName) || { name: developerName, rate: 5, hq: "Other", projects: 0 };
+  const related = deals.filter((d) => d.developer === developerName);
+  const active = related.filter((d) => !isCancelledDeal(d));
+  const totalValue = active.reduce((sum, d) => sum + (d.value || 0), 0);
+  const totalCommission = active.reduce((sum, d) => sum + getDealCommission(d), 0);
+  return {
+    ...developer,
+    related,
+    active,
+    projectsList: marketProjects.filter((p) => p.developer === developerName),
+    totalDeals: related.length,
+    totalValue,
+    totalCommission,
+    eligible: active.filter(isEligibleDeal).reduce((sum, d) => sum + getDealCommission(d), 0),
+    pending: active.filter((d) => pendingRevenueStages.includes(d.stage)).reduce((sum, d) => sum + getDealCommission(d), 0),
+    paid: active.filter(isPaidDeal).reduce((sum, d) => sum + getDealCommission(d), 0),
+    cancelled: related.filter(isCancelledDeal).length,
+  };
+}
+function getProjectStats(projectName, deals) {
+  const project = marketProjects.find((p) => p.name === projectName) || { name: projectName, developer: deals.find((d) => d.project === projectName)?.developer || "Unknown Developer", loc: "Other", rate: 5 };
+  const related = deals.filter((d) => d.project === projectName);
+  const active = related.filter((d) => !isCancelledDeal(d));
+  const totalValue = active.reduce((sum, d) => sum + (d.value || 0), 0);
+  const totalCommission = active.reduce((sum, d) => sum + getDealCommission(d), 0);
+  return {
+    ...project,
+    related,
+    active,
+    totalDeals: related.length,
+    totalValue,
+    totalCommission,
+    eligible: active.filter(isEligibleDeal).reduce((sum, d) => sum + getDealCommission(d), 0),
+    pending: active.filter((d) => pendingRevenueStages.includes(d.stage)).reduce((sum, d) => sum + getDealCommission(d), 0),
+    paid: active.filter(isPaidDeal).reduce((sum, d) => sum + getDealCommission(d), 0),
+    cancelled: related.filter(isCancelledDeal).length,
+  };
+}
+function getOpenCases(deals, resolvedIds = []) {
+  const resolved = new Set(resolvedIds);
+  return deals.flatMap((deal) => {
+    if (isCancelledDeal(deal)) return [];
+    const cases = [];
+    if (!deal.idNumber) cases.push({ id: `${deal.id}-id`, dealId: deal.id, title: "Missing client ID", project: deal.project, reason: "Client ID or passport is required for approval.", priority: "High", status: "Open", cta: "Complete Info" });
+    if (!deal.unitNumber) cases.push({ id: `${deal.id}-unit`, dealId: deal.id, title: "Missing unit number", project: deal.project, reason: "Add the unit code before developer review.", priority: "Medium", status: "Open", cta: "Complete Info" });
+    if ((deal.stage === "contracted" || deal.stage === "developer_review") && !(deal.images?.length)) cases.push({ id: `${deal.id}-contract`, dealId: deal.id, title: "Missing contract attachment", project: deal.project, reason: "Signed documents are needed to continue.", priority: "High", status: "Open", cta: "Open Deal" });
+    if (deal.stage === "developer_review") cases.push({ id: `${deal.id}-review`, dealId: deal.id, title: "Developer review pending", project: deal.project, reason: "Follow up approval before commission eligibility.", priority: "Medium", status: "Pending", cta: "Open Deal" });
+    if (deal.unlistedDeveloper || deal.unlistedProject) cases.push({ id: `${deal.id}-listing`, dealId: deal.id, title: "Unlisted developer/project review", project: deal.project, reason: "KW RED Book must verify agreement, commission, and WIN Points.", priority: "High", status: "Pending Review", cta: "Open Deal" });
+    return cases.filter((c) => !resolved.has(c.id));
+  }).slice(0, 6);
+}
+function canCancelDeal(deal) { return ["reservation", "developer_review"].includes(deal?.stage); }
+function canEditDeal(deal, openCases = []) {
+  if (!deal || ["paid", "cancelled"].includes(deal.stage)) return false;
+  return openCases.some((c) => c.dealId === deal.id && /(missing|correction|requested|unlisted|review)/i.test(`${c.title} ${c.reason}`));
+}
+function listingStatusTone(status) {
+  return status === "Active" || status === "Updated" || status === "Approved" ? "good" : status === "Rejected" || status === "Not Eligible" ? "red" : "amber";
+}
+function requestToDeveloper(req) {
+  return { name: req.developerName || "Requested Developer", rate: parseFloat(req.expectedRate) || 0, hq: req.location || "Other", projects: req.projectName ? 1 : 0, status: req.status || "Submitted", requested: true, request: req };
+}
+function requestToProject(req) {
+  return { name: req.projectName || `${req.developerName} Project`, developer: req.developerName || "Requested Developer", rate: parseFloat(req.expectedRate) || 0, loc: req.location || "Other", status: req.status || "Submitted", requested: true, request: req };
+}
 
 const faqItems = [
   { q: "Can duplicate clients be registered?", a: "Yes. Repeat buyers and multi-unit purchases are allowed. KW RED Book tracks each deal separately by project, unit, developer, and date." },
@@ -446,6 +590,7 @@ function useStages() {
   ];
 }
 function stageIndex(stages, stage) {
+  if (stage === "cancelled") return -1;
   const direct = stages.findIndex((s) => s.id === stage);
   if (direct >= 0) return direct;
   if (["developer_review", "developer_approved", "verified", "eligible", "payout_requested", "paid"].includes(stage)) return stages.length - 1;
@@ -455,6 +600,7 @@ function stageIndex(stages, stage) {
 function StageStepper({ stage, compact }) {
   const stages = useStages();
   const idx = stageIndex(stages, stage);
+  if (stage === "cancelled") return <Badge tone="red">Cancelled</Badge>;
   return (
     <div className="flex items-center">
       {stages.map((s, i) => (
@@ -633,24 +779,70 @@ function RegistrationFlow({ onComplete }) {
 
 function TabBar({ active, onSelect }) {
   const { tr } = useT();
+  const [open, setOpen] = useState(false);
+  useEffect(() => {
+    setOpen(false);
+  }, [active]);
   const tabs = [
     { id: "home", label: tr("home"), icon: Home },
     { id: "deals", label: tr("deals"), icon: ClipboardList },
-    { id: "rewards", label: tr("rewards"), icon: Gift },
-    { id: "commissions", label: tr("commissions"), icon: Percent },
+    { id: "quick", label: tr("quickActions"), icon: Plus, action: true },
     { id: "tracker", label: tr("devCommissionTracker"), icon: BarChart3 },
     { id: "profile", label: tr("profile"), icon: User },
   ];
+  const quickActions = [
+    { id: "addDeal", label: tr("addDeal"), icon: Plus },
+    { id: "developersProjects", label: tr("developersShort"), icon: Building2 },
+    { id: "commissions", label: tr("calculateShort"), icon: Calculator },
+    { id: "ranking", label: tr("ranking"), icon: Trophy },
+    { id: "rewards", label: tr("winPointsTitle"), icon: Gift },
+  ];
+  function choose(id) {
+    setOpen(false);
+    onSelect(id);
+  }
   return (
-    <div className="absolute left-5 right-5 z-30" style={{ bottom: 18 }}>
-      <div className="flex items-center justify-between gap-1 px-2 py-2 rounded-full" style={{ background: "rgba(20,23,26,0.84)", boxShadow: "0 18px 38px rgba(20,23,26,0.25)", backdropFilter: "blur(14px)" }}>
+    <div className="absolute left-5 right-5 z-30" style={{ bottom: 18, isolation: "isolate" }}>
+      {open && <button aria-label="Close quick actions" onClick={() => setOpen(false)} className="fixed inset-0 cursor-default" style={{ background: "rgba(20,23,26,0.03)", zIndex: 0 }} />}
+      <div
+        className="absolute left-2 right-2 rounded-2xl p-2.5"
+        style={{
+          bottom: 64,
+          background: "rgba(255,255,255,0.97)",
+          border: `1px solid ${LINE}`,
+          boxShadow: "0 18px 36px rgba(20,23,26,0.16)",
+          backdropFilter: "blur(16px)",
+          opacity: open ? 1 : 0,
+          pointerEvents: open ? "auto" : "none",
+          transform: `translateY(${open ? 0 : 8}px) scale(${open ? 1 : 0.97})`,
+          transformOrigin: "bottom center",
+          transition: "opacity .2s ease, transform .22s cubic-bezier(.2,.8,.2,1)",
+          zIndex: 1,
+        }}
+      >
+        <div className="flex flex-col gap-1">
+          {quickActions.map((a, i) => {
+            const Icon = a.icon;
+            return (
+              <button key={a.id} onClick={() => choose(a.id)} className="w-full rounded-xl px-3 py-2 flex items-center gap-3 text-start" style={{ minHeight: 40, background: i === 0 ? "#FFF7F8" : "transparent" }}>
+                <span className="rounded-full flex items-center justify-center flex-shrink-0" style={{ width: 30, height: 30, background: i === 0 ? RED : PAPER, border: i === 0 ? "none" : `1px solid ${LINE}` }}>
+                  <Icon size={15.5} strokeWidth={2.35} color={i === 0 ? "#fff" : RED} />
+                </span>
+                <span className="min-w-0 flex-1" style={{ ...fontBody, fontSize: 12.5, fontWeight: 700, color: INK, whiteSpace: "nowrap" }}>{a.label}</span>
+                <ChevronRight size={15} color={GREY} className="flex-shrink-0 rtl:rotate-180" />
+              </button>
+            );
+          })}
+        </div>
+      </div>
+      <div className="relative flex items-center justify-between gap-1 px-2 py-2 rounded-full" style={{ background: "rgba(20,23,26,0.86)", boxShadow: "0 16px 34px rgba(20,23,26,0.24)", backdropFilter: "blur(14px)", zIndex: 2 }}>
         {tabs.map((t) => {
-          const isActive = active === t.id; const Icon = t.icon;
+          const isActive = active === t.id || (t.id === "quick" && open); const Icon = t.icon;
           return (
-            <button key={t.id} onClick={() => onSelect(t.id)} aria-label={t.label}
+            <button key={t.id} onClick={() => t.action ? setOpen((v) => !v) : choose(t.id)} aria-label={t.label}
               className="flex items-center justify-center rounded-full"
-              style={{ width: isActive ? 58 : 42, height: 42, background: isActive ? "rgba(255,255,255,0.22)" : "transparent", transition: "width .18s ease, background .18s ease" }}>
-              <Icon size={22} strokeWidth={isActive ? 2.8 : 2.35} color="#fff" />
+              style={{ width: t.action ? 44 : isActive ? 54 : 40, height: t.action ? 44 : 40, background: t.action ? "rgba(255,255,255,0.08)" : isActive ? "rgba(255,255,255,0.22)" : "transparent", border: t.action ? `1px solid ${open ? RED : "rgba(255,255,255,0.22)"}` : "none", boxShadow: t.action && open ? "0 0 0 3px rgba(226,35,61,0.12)" : "none", transition: "width .18s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease" }}>
+              <Icon size={t.action ? 22 : 21} strokeWidth={isActive ? 2.7 : 2.35} color="#fff" style={{ transform: t.action && open ? "rotate(45deg)" : "rotate(0deg)", transition: "transform .2s ease" }} />
             </button>
           );
         })}
@@ -695,9 +887,11 @@ function SplashScreen({ onDone }) {
 // ---------------------------------------------------------------------------
 // Home
 // ---------------------------------------------------------------------------
-function HomeScreen({ goTo, deals }) {
+function HomeScreen({ goTo, deals, goToDeal, goToDeveloper, goToProject, goToRevenueTracker, resolvedCaseIds, onResolveCase }) {
   const { tr } = useT();
   const recent = deals.slice(-4).reverse();
+  const summary = getRevenueSummary(deals);
+  const openCases = getOpenCases(deals, resolvedCaseIds);
   return (
     <div className="pb-28 overflow-y-auto h-full" style={{ background: PAPER }}>
       <div className="px-5 pt-5 pb-2 flex items-center justify-between">
@@ -728,10 +922,39 @@ function HomeScreen({ goTo, deals }) {
       </div>
 
       <div className="mx-5 mt-4 grid grid-cols-3 gap-2.5">
-        {[{ label: tr("statDeals"), value: deals.length }, { label: tr("statRank"), value: `#${company.rank}` }, { label: tr("statPipeline"), value: fmtEGP(deals.reduce((a, d) => a + d.value, 0)) }].map((s) => (
-          <div key={s.label} className="rounded-xl p-3 text-center" style={{ background: CARD, border: `1px solid ${LINE}` }}>
+        {[
+          { label: tr("statDeals"), value: deals.length, onClick: () => goTo("deals") },
+          { label: tr("statRank"), value: `#${company.rank}`, onClick: () => goTo("ranking") },
+          { label: tr("statPipeline"), value: fmtEGP(summary.pipeline), onClick: goToRevenueTracker },
+        ].map((s) => (
+          <button key={s.label} onClick={s.onClick} className="rounded-xl p-3 text-center" style={{ background: CARD, border: `1px solid ${LINE}` }}>
             <div style={{ ...fontDisplay, fontSize: 17, color: INK }}>{s.value}</div>
-            <div className="mt-0.5" style={{ ...fontMono, fontSize: 10, color: GREY }}>{s.label}</div>
+            <div className="mt-0.5 flex items-center justify-center gap-1" style={{ ...fontMono, fontSize: 10, color: GREY }}>{s.label}<ChevronRight size={10} /></div>
+          </button>
+        ))}
+      </div>
+
+      <div className="px-5 mt-5 flex items-center justify-between">
+        <div style={{ ...fontDisplay, ...fs(13), color: INK }}>{tr("alertsOpenCases")}</div>
+        <Badge tone={openCases.length ? "amber" : "good"}>{openCases.length}</Badge>
+      </div>
+      <div className="px-5 mt-2 flex flex-col gap-2">
+        {openCases.length === 0 && <EmptyNote text={tr("noOpenCases")} icon={ShieldCheck} />}
+        {openCases.slice(0, 3).map((item) => (
+          <div key={item.id} className="rounded-xl p-3.5" style={{ background: CARD, border: `1px solid ${LINE}` }}>
+            <button onClick={() => goToDeal(item.dealId)} className="w-full text-start">
+              <div className="flex items-start justify-between gap-2">
+                <div className="min-w-0">
+                  <div style={{ ...fontBody, fontSize: 13.5, fontWeight: 700, color: INK }}>{item.title}</div>
+                  <div className="truncate" style={{ ...fontMono, fontSize: 10.5, color: GREY }}>{item.project} · {item.reason}</div>
+                </div>
+                <Badge tone={item.priority === "High" ? "red" : item.priority === "Medium" ? "amber" : "light"}>{item.priority}</Badge>
+              </div>
+            </button>
+            <div className="mt-3 flex gap-2">
+              <button onClick={() => goToDeal(item.dealId)} className="flex-1 rounded-lg py-2 text-white" style={{ background: INK, ...fontMono, fontSize: 11, fontWeight: 700 }}>{item.cta}</button>
+              <button onClick={() => onResolveCase(item.id)} className="rounded-lg px-3 py-2" style={{ background: PAPER, color: GREY, ...fontMono, fontSize: 11, fontWeight: 700 }}>{tr("markResolved")}</button>
+            </div>
           </div>
         ))}
       </div>
@@ -740,6 +963,8 @@ function HomeScreen({ goTo, deals }) {
         {[
           { id: "how", label: tr("howItWorks"), icon: ClipboardList },
           { id: "approval", label: tr("approvalEngine"), icon: ShieldCheck },
+          { id: "ranking", label: tr("ranking"), icon: Trophy },
+          { id: "developersProjects", label: tr("developersProjects"), icon: Building2 },
           { id: "addConsultant", label: tr("addConsultant"), icon: Users },
           { id: "commissionRef", label: tr("devCommissionTracker"), icon: Building2 },
           { id: "payout", label: tr("getMoney"), icon: Wallet },
@@ -747,7 +972,7 @@ function HomeScreen({ goTo, deals }) {
         ].map((s) => {
           const Icon = s.icon;
           return (
-            <button key={s.id} onClick={() => goTo(s.id)} className="rounded-xl p-3 flex items-center gap-2.5 text-start" style={{ background: CARD, border: `1px solid ${LINE}` }}>
+            <button key={s.id} onClick={() => s.id === "commissionRef" ? goToRevenueTracker() : goTo(s.id)} className="rounded-xl p-3 flex items-center gap-2.5 text-start" style={{ background: CARD, border: `1px solid ${LINE}` }}>
               <Icon size={16} color={RED} />
               <span style={{ ...fontBody, fontSize: 12.5, fontWeight: 600, color: INK }}>{s.label}</span>
             </button>
@@ -762,14 +987,14 @@ function HomeScreen({ goTo, deals }) {
       <div className="relative mt-2">
         <div className="ps-5 flex gap-2.5 overflow-x-auto pb-1" style={{ scrollbarWidth: "none" }}>
           {marketDevelopers.map((d, i) => (
-            <div key={d.name} className="flex-shrink-0 rounded-xl p-3.5" style={{ width: 148, background: CARD, border: `1px solid ${LINE}` }}>
+            <button key={d.name} onClick={() => goToDeveloper(d.name)} className="flex-shrink-0 rounded-xl p-3.5 text-start" style={{ width: 148, background: CARD, border: `1px solid ${LINE}` }}>
               <div className="flex items-center justify-between">
                 <span style={{ ...fontMono, fontSize: 10, color: GREY }}>#{i + 1}</span>
                 <Badge tone="red">{d.rate}%</Badge>
               </div>
               <div className="mt-2 leading-tight" style={{ ...fontBody, fontSize: 12.5, fontWeight: 500, color: INK }}>{d.name}</div>
               <div className="mt-1 flex items-center gap-1" style={{ ...fontMono, fontSize: 10, color: GREY }}><MapPin size={10} /> {d.hq}</div>
-            </div>
+            </button>
           ))}
           <div className="flex-shrink-0" style={{ width: 12 }} />
         </div>
@@ -782,14 +1007,14 @@ function HomeScreen({ goTo, deals }) {
       <div className="relative mt-2">
         <div className="ps-5 flex gap-2.5 overflow-x-auto pb-1" style={{ scrollbarWidth: "none" }}>
           {marketProjects.map((p, i) => (
-            <div key={p.name} className="flex-shrink-0 rounded-xl p-3.5" style={{ width: 160, background: CARD, border: `1px solid ${LINE}` }}>
+            <button key={p.name} onClick={() => goToProject(p.name)} className="flex-shrink-0 rounded-xl p-3.5 text-start" style={{ width: 160, background: CARD, border: `1px solid ${LINE}` }}>
               <div className="flex items-center justify-between">
                 <span style={{ ...fontMono, fontSize: 10, color: GREY }}>#{i + 1}</span>
                 <Badge tone="red">{p.rate}%</Badge>
               </div>
               <div className="mt-2 leading-tight" style={{ ...fontBody, fontSize: 12.5, fontWeight: 500, color: INK }}>{p.name}</div>
               <div className="mt-1" style={{ ...fontMono, fontSize: 10, color: GREY }}>{p.developer}</div>
-            </div>
+            </button>
           ))}
           <div className="flex-shrink-0" style={{ width: 12 }} />
         </div>
@@ -802,15 +1027,31 @@ function HomeScreen({ goTo, deals }) {
       </div>
       <div className="px-5 mt-2 flex flex-col gap-2">
         {recent.map((a) => (
-          <div key={a.id} className="rounded-xl p-3.5 flex items-center gap-3" style={{ background: CARD, border: `1px solid ${LINE}` }}>
+          <button key={a.id} onClick={() => goToDeal(a.id)} className="rounded-xl p-3.5 flex items-center gap-3 text-start" style={{ background: CARD, border: `1px solid ${LINE}` }}>
             <div className="rounded-lg flex items-center justify-center flex-shrink-0" style={{ width: 36, height: 36, background: PAPER }}><Building2 size={16} color={INK} /></div>
             <div className="flex-1 min-w-0">
               <div className="truncate" style={{ ...fontBody, fontSize: 13, fontWeight: 500, color: INK }}>{a.project}</div>
               <div className="truncate" style={{ ...fontMono, fontSize: 11, color: GREY }}>{a.developer} · EGP {fmtEGP(a.value)}</div>
             </div>
             <StageStepper stage={a.stage} compact />
-          </div>
+          </button>
         ))}
+      </div>
+
+      <div className="px-5 mt-6 flex items-center justify-between">
+        <div style={{ ...fontDisplay, ...fs(13), color: INK }}>{tr("revenueTracker")}</div>
+      </div>
+      <div className="mx-5 mt-2 rounded-2xl p-4" style={{ background: INK }}>
+        <div className="grid grid-cols-2 gap-2">
+          <div><div style={{ ...fontMono, fontSize: 10, color: "#a7acb2" }}>Total tracked</div><div style={{ ...fontDisplay, fontSize: 20, color: "#fff" }}>EGP {fmtEGP(summary.total)}</div></div>
+          <div><div style={{ ...fontMono, fontSize: 10, color: "#a7acb2" }}>{tr("payoutReadyDeals")}</div><div style={{ ...fontDisplay, fontSize: 20, color: RED }}>{summary.payoutReadyCount}</div></div>
+        </div>
+        <div className="grid grid-cols-3 gap-2 mt-3">
+          <div className="rounded-lg p-2" style={{ background: "#24282d" }}><div style={{ ...fontMono, fontSize: 9, color: "#a7acb2" }}>{tr("eligibleCommission")}</div><div style={{ ...fontDisplay, fontSize: 14, color: GOOD }}>EGP {fmtEGP(summary.eligible)}</div></div>
+          <div className="rounded-lg p-2" style={{ background: "#24282d" }}><div style={{ ...fontMono, fontSize: 9, color: "#a7acb2" }}>{tr("pendingCommission")}</div><div style={{ ...fontDisplay, fontSize: 14, color: AMBER }}>EGP {fmtEGP(summary.pending)}</div></div>
+          <div className="rounded-lg p-2" style={{ background: "#24282d" }}><div style={{ ...fontMono, fontSize: 9, color: "#a7acb2" }}>{tr("paidCommission")}</div><div style={{ ...fontDisplay, fontSize: 14, color: GOOD }}>EGP {fmtEGP(summary.paid)}</div></div>
+        </div>
+        <button onClick={goToRevenueTracker} className="w-full mt-3 rounded-xl py-2.5 text-white" style={{ background: RED, ...fontMono, fontSize: 12, fontWeight: 700 }}>{tr("viewRevenueTracker")}</button>
       </div>
     </div>
   );
@@ -852,12 +1093,22 @@ function ImageUploader({ images, setImages, label, hint }) {
   );
 }
 
-const emptyForm = { developer: developerNames[0], project: "", value: "", consultant: "", clientName: "", clientMobile: "", idNumber: "", unitNumber: "", unitDetails: "", images: [] };
+const emptyForm = {
+  developer: developerNames[0], manualDeveloper: "", project: marketProjects[0]?.name || "", manualProject: "", projectLocation: "", expectedCommissionRate: "", value: "", consultant: "", clientName: "", clientMobile: "", idNumber: "", unitNumber: "", unitDetails: "", images: [],
+  unitType: "", bedrooms: "", finishing: "Not selected", delivery: "Not selected", floor: "", bua: "", gardenArea: "", roofArea: "",
+};
 
-function DealDetailsScreen({ deal, onBack, onUpdateStage, onPayout }) {
+function DealDetailsScreen({ deal, onBack, onUpdateStage, onPayout, onCancelDeal, onGoDeveloper, onGoProject, onUpdateDeal, onInfoUpdated }) {
   const { tr } = useT();
-  const rate = rateFor(deal.developer, marketDevelopers);
-  const commission = deal.value * (rate / 100);
+  const [showCancel, setShowCancel] = useState(false);
+  const [cancelReason, setCancelReason] = useState("");
+  const [cancelNotes, setCancelNotes] = useState("");
+  const [editingMissing, setEditingMissing] = useState(false);
+  const [editDraft, setEditDraft] = useState({ idNumber: deal.idNumber || "", unitNumber: deal.unitNumber || "", unitType: deal.unitType || "", unitDetails: deal.unitDetails || "", notes: deal.notes || "" });
+  const openCases = getOpenCases([deal]);
+  const editAllowed = canEditDeal(deal, openCases);
+  const cancelAllowed = canCancelDeal(deal);
+  const commission = getDealCommission(deal);
   const normalizedStage = deal.stage === "confirmed" ? "verified" : deal.stage;
   const currentIdx = Math.max(0, approvalStages.findIndex((s) => s.id === normalizedStage));
   const actions = [
@@ -868,13 +1119,23 @@ function DealDetailsScreen({ deal, onBack, onUpdateStage, onPayout }) {
     { when: "verified", label: "Demo: Mark Commission Eligible", next: "eligible" },
   ];
   const action = actions.find((a) => a.when === deal.stage);
+  const unitSummary = getDealUnitSummary(deal);
+  const cancelReasons = ["Client cancelled reservation", "Client changed unit", "Client no longer interested", "Developer rejected during review", "Wrong entry", "Other"];
+  function saveMissingInfo() {
+    onUpdateDeal?.(deal.id, editDraft);
+    onInfoUpdated?.(deal, openCases);
+    setEditingMissing(false);
+  }
   return (
     <div className="pb-28 overflow-y-auto h-full" style={{ background: PAPER }}>
       <BackHeader title="Deal Details" eyebrow={deal.project} onBack={onBack} />
       <div className="mx-5 rounded-2xl p-5" style={{ background: CARD, border: `1px solid ${LINE}` }}>
         <div className="flex items-start justify-between gap-3">
-          <div><div style={{ ...fontDisplay, fontSize: 18, color: INK }}>{deal.project}</div><div style={{ ...fontMono, fontSize: 11, color: GREY }}>{deal.developer} · {deal.date}</div></div>
-        <Badge tone={normalizedStage === "eligible" || normalizedStage === "paid" ? "good" : "amber"}>{(approvalStages.find((s) => s.id === normalizedStage)?.name || deal.stage)}</Badge>
+          <div>
+            <button onClick={() => onGoProject?.(deal.project)} style={{ ...fontDisplay, fontSize: 18, color: INK }} className="text-start">{deal.project}</button>
+            <button onClick={() => onGoDeveloper?.(deal.developer)} className="block text-start" style={{ ...fontMono, fontSize: 11, color: GREY }}>{deal.developer} · {deal.date}</button>
+          </div>
+        <Badge tone={isCancelledDeal(deal) ? "red" : normalizedStage === "eligible" || normalizedStage === "paid" ? "good" : "amber"}>{isCancelledDeal(deal) ? tr("cancelled") : (approvalStages.find((s) => s.id === normalizedStage)?.name || deal.stage)}</Badge>
         </div>
         <div className="mt-4 grid grid-cols-2 gap-2">
           <InfoRow label="Deal value" value={`EGP ${fmtEGP(deal.value)}`} />
@@ -883,13 +1144,42 @@ function DealDetailsScreen({ deal, onBack, onUpdateStage, onPayout }) {
           <InfoRow label="Mobile" value={deal.clientMobile || "—"} />
           <InfoRow label="ID / Passport" value={deal.idNumber || "—"} />
           <InfoRow label="Unit" value={deal.unitNumber || "—"} />
+          <InfoRow label="Unit summary" value={unitSummary || "—"} />
           <InfoRow label="Attachments" value={`${deal.images?.length || 0}`} />
           <InfoRow label="Est. commission" value={`EGP ${fmtEGP(commission)}`} />
-          <InfoRow label="Est. WIN points" value={`+${pointsForValue(deal.value)}`} />
+          <InfoRow label="Est. WIN points" value={deal.unlistedDeveloper || deal.unlistedProject ? tr("pendingVerification") : `+${pointsForValue(deal.value)}`} />
+          {isPayoutRequestedDeal(deal) && <InfoRow label="Payout" value={tr("payoutRequested")} />}
+          {isPaidDeal(deal) && <InfoRow label="Payout" value={tr("paid")} />}
         </div>
+        {(deal.unlistedDeveloper || deal.unlistedProject) && (
+          <div className="mt-3 rounded-xl p-3" style={{ background: "#fbf1e2", border: `1px solid #eddcb8` }}>
+            <div style={{ ...fontBody, fontSize: 13, fontWeight: 700, color: INK }}>{tr("developerProjectPendingReview")}</div>
+            <p className="mt-1 leading-relaxed" style={{ ...fontBody, fontSize: 12, color: "#5c4a24" }}>Commission and WIN Points will be calculated after KW RED Book verifies the deal, reviews it with the developer, and confirms the agreement.</p>
+            <div className="grid grid-cols-2 gap-2 mt-2">
+              <InfoRow label="Agreement status" value={deal.agreementStatus || tr("pendingReview")} />
+              <InfoRow label="Commission status" value={deal.commissionStatus || tr("pendingVerification")} />
+              <InfoRow label="Points status" value={deal.pointsStatus || tr("pendingVerification")} />
+              <InfoRow label="Expected rate" value={deal.expectedCommissionRate ? `${deal.expectedCommissionRate}%` : "—"} />
+            </div>
+          </div>
+        )}
+        {isCancelledDeal(deal) && <div className="mt-3 rounded-xl p-3" style={{ background: "#fff1f1", border: `1px solid #e8c7c7`, ...fontBody, fontSize: 12, color: RED }}>{deal.cancellationReason} {deal.cancellationNotes ? `· ${deal.cancellationNotes}` : ""}</div>}
         {deal.unitDetails && <p className="mt-3 rounded-xl p-3" style={{ background: PAPER, ...fontBody, fontSize: 12, color: GREY }}>{deal.unitDetails}</p>}
       </div>
-      <div className="px-5 mt-4">
+      <div className="mx-5 mt-4 rounded-xl p-3" style={{ background: CARD, border: `1px solid ${LINE}` }}>
+        <div style={{ ...fontBody, fontSize: 12.5, color: GREY }}>{tr("editingLocked")}</div>
+        {editAllowed && !editingMissing && <button onClick={() => setEditingMissing(true)} className="mt-3 w-full rounded-xl py-3 text-white" style={{ background: INK, ...fontMono, fontSize: 12, fontWeight: 700 }}>{tr("editMissingInfo")}</button>}
+        {editingMissing && (
+          <div className="mt-3 flex flex-col gap-3">
+            <Field label={tr("idPassport")}><input value={editDraft.idNumber} onChange={(e) => setEditDraft((d) => ({ ...d, idNumber: e.target.value }))} className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>
+            <Field label={tr("unitNumber")}><input value={editDraft.unitNumber} onChange={(e) => setEditDraft((d) => ({ ...d, unitNumber: e.target.value }))} className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>
+            <Field label="Unit type"><input value={editDraft.unitType} onChange={(e) => setEditDraft((d) => ({ ...d, unitType: e.target.value }))} className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>
+            <Field label={tr("unitDetails")}><textarea value={editDraft.unitDetails} onChange={(e) => setEditDraft((d) => ({ ...d, unitDetails: e.target.value }))} rows={2} className="w-full bg-transparent outline-none resize-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>
+            <div className="flex gap-2"><button onClick={() => setEditingMissing(false)} className="flex-1 rounded-xl py-3" style={{ background: PAPER, color: GREY, ...fontMono, fontSize: 12 }}>Cancel</button><button onClick={saveMissingInfo} className="flex-1 rounded-xl py-3 text-white" style={{ background: RED, ...fontMono, fontSize: 12, fontWeight: 700 }}>Save</button></div>
+          </div>
+        )}
+      </div>
+      {!isCancelledDeal(deal) && <div className="px-5 mt-4">
         <div className="mb-2" style={{ ...fontDisplay, fontSize: 13, color: INK }}>Approval timeline</div>
         <div className="flex flex-col gap-2">
           {approvalStages.map((s, i) => {
@@ -911,41 +1201,80 @@ function DealDetailsScreen({ deal, onBack, onUpdateStage, onPayout }) {
             </div>
           );})}
         </div>
-      </div>
-      <div className="px-5 mt-4">
+      </div>}
+      <div className="px-5 mt-4 flex flex-col gap-2">
         {action && <button onClick={() => onUpdateStage(deal.id, action.next)} className="w-full rounded-xl py-3 text-white" style={{ background: INK, ...fontMono, fontSize: 12, fontWeight: 700 }}>{action.label}</button>}
         {deal.stage === "eligible" && <button onClick={() => onPayout(deal.id)} className="w-full rounded-xl py-3 text-white" style={{ background: RED, ...fontMono, fontSize: 12, fontWeight: 700 }}>{tr("requestPayout")}</button>}
+        {!isCancelledDeal(deal) && (cancelAllowed ? <button onClick={() => setShowCancel(true)} className="w-full rounded-xl py-3" style={{ background: CARD, border: `1px solid #e8c7c7`, color: RED, ...fontMono, fontSize: 12, fontWeight: 700 }}>{tr("cancelDeal")}</button> : <div className="w-full rounded-xl py-3 px-3 text-center" style={{ background: CARD, border: `1px solid ${LINE}`, color: GREY, ...fontMono, fontSize: 11 }}>{tr("cannotCancelStage")}</div>)}
       </div>
+      {showCancel && (
+        <div className="mx-5 mt-3 rounded-2xl p-4" style={{ background: CARD, border: `1px solid ${LINE}` }}>
+          <div style={{ ...fontDisplay, fontSize: 15, color: INK }}>{tr("cancelDeal")}</div>
+          <Field label={tr("cancellationReason")}>
+            <select value={cancelReason} onChange={(e) => setCancelReason(e.target.value)} className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }}>
+              <option value="">Select reason</option>
+              {cancelReasons.map((r) => <option key={r}>{r}</option>)}
+            </select>
+          </Field>
+          <div className="mt-2"><Field label="Notes"><textarea value={cancelNotes} onChange={(e) => setCancelNotes(e.target.value)} rows={2} className="w-full bg-transparent outline-none resize-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field></div>
+          <div className="flex gap-2 mt-3">
+            <button onClick={() => setShowCancel(false)} className="flex-1 rounded-xl py-3" style={{ background: PAPER, color: GREY, ...fontMono, fontSize: 12, fontWeight: 700 }}>Back</button>
+            <button disabled={!cancelReason} onClick={() => onCancelDeal?.(deal.id, cancelReason, cancelNotes)} className="flex-1 rounded-xl py-3 text-white disabled:opacity-40" style={{ background: RED, ...fontMono, fontSize: 12, fontWeight: 700 }}>Confirm</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
 
-function DealsScreen({ deals, setDeals, view, setView, consultants, ownerProfile, onPayoutRequested }) {
+function DealsScreen({ deals, setDeals, view, setView, consultants, ownerProfile, onPayoutRequested, onDealAdded, onStageChanged, onDealCancelled, onDealUpdated, onOpenDeal, selectedDealId, clearSelectedDeal, goToDeveloper, goToProject }) {
   const { tr } = useT();
   const [startStage, setStartStage] = useState("reservation");
   const [form, setForm] = useState(emptyForm);
   const [lastAdded, setLastAdded] = useState(null);
-  const [selectedDealId, setSelectedDealId] = useState(null);
+  const [localSelectedDealId, setLocalSelectedDealId] = useState(null);
   const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target ? e.target.value : e }));
 
   const numValue = parseFloat(form.value) || 0;
   const estPoints = pointsForValue(numValue);
   const closers = [`${ownerProfile.fullName} — Owner`, ...consultants.map((c) => c.name)];
   const repeatBuyer = form.clientMobile && deals.some((d) => d.clientMobile && d.clientMobile === form.clientMobile);
+  const isOtherDeveloper = form.developer === "Other Developer";
+  const isOtherProject = form.project === "Other Project";
+  const selectedProjects = marketProjects.filter((p) => !isOtherDeveloper && p.developer === form.developer);
 
   function submit() {
-    const deal = { id: Date.now(), ...form, consultant: form.consultant || closers[0], value: numValue, stage: startStage, date: "Today" };
+    const unlistedDeveloper = isOtherDeveloper;
+    const unlistedProject = isOtherProject || !marketProjects.some((p) => p.name === form.project);
+    const deal = {
+      id: Date.now(),
+      ...form,
+      developer: unlistedDeveloper ? form.manualDeveloper : form.developer,
+      project: unlistedProject ? form.manualProject : form.project,
+      consultant: form.consultant || closers[0],
+      value: numValue,
+      stage: startStage,
+      date: "Today",
+      unlistedDeveloper,
+      unlistedProject,
+      agreementStatus: unlistedDeveloper || unlistedProject ? "Pending Review" : "Active",
+      commissionStatus: unlistedDeveloper || unlistedProject ? "Pending Verification" : "Estimated",
+      pointsStatus: unlistedDeveloper || unlistedProject ? "Pending Verification" : "Estimated",
+    };
     setDeals((prev) => [...prev, deal]);
+    onDealAdded?.(deal);
     setLastAdded(deal);
     setView("done");
     setForm(emptyForm);
   }
-  function advance(id) { setDeals((prev) => prev.map((d) => (d.id === id && d.stage === "reservation" ? { ...d, stage: "contracted" } : d))); }
-  function simulateConfirm(id) { setDeals((prev) => prev.map((d) => (d.id === id ? { ...d, stage: "confirmed" } : d))); }
-  function updateStage(id, stage) { setDeals((prev) => prev.map((d) => (d.id === id ? { ...d, stage } : d))); }
+  function advance(id) { updateStage(id, "contracted"); }
+  function simulateConfirm(id) { updateStage(id, "confirmed"); }
+  function updateStage(id, stage) { const deal = deals.find((d) => d.id === id); setDeals((prev) => prev.map((d) => (d.id === id ? { ...d, stage } : d))); onStageChanged?.(deal, stage); }
+  function cancelDeal(id, reason, notes) { const deal = deals.find((d) => d.id === id); setDeals((prev) => prev.map((d) => (d.id === id ? { ...d, stage: "cancelled", cancellationReason: reason, cancellationNotes: notes, cancellationDate: "Today" } : d))); onDealCancelled?.(deal, reason); clearSelectedDeal?.(); setLocalSelectedDealId(null); }
+  function updateDeal(id, patch) { const deal = deals.find((d) => d.id === id); setDeals((prev) => prev.map((d) => (d.id === id ? { ...d, ...patch } : d))); onDealUpdated?.(deal); }
 
-  const selectedDeal = deals.find((d) => d.id === selectedDealId);
-  if (selectedDeal) return <DealDetailsScreen deal={selectedDeal} onBack={() => setSelectedDealId(null)} onUpdateStage={updateStage} onPayout={(id) => { updateStage(id, "payout_requested"); onPayoutRequested?.(selectedDeal); }} />;
+  const selectedDeal = deals.find((d) => d.id === (selectedDealId || localSelectedDealId));
+  if (selectedDeal) return <DealDetailsScreen deal={selectedDeal} onBack={() => { clearSelectedDeal?.(); setLocalSelectedDealId(null); }} onUpdateStage={updateStage} onPayout={(id) => { updateStage(id, "payout_requested"); onPayoutRequested?.(selectedDeal); }} onCancelDeal={cancelDeal} onUpdateDeal={updateDeal} onInfoUpdated={onDealUpdated} onGoDeveloper={goToDeveloper} onGoProject={goToProject} />;
 
   if (view === "done" && lastAdded) {
     return (
@@ -990,13 +1319,28 @@ function DealsScreen({ deals, setDeals, view, setView, consultants, ownerProfile
 
         <div className="px-5 flex flex-col gap-4">
           <Field label={tr("developer")}>
-            <select value={form.developer} onChange={set("developer")} className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }}>
+            <select value={form.developer} onChange={(e) => setForm((f) => ({ ...f, developer: e.target.value, project: e.target.value === "Other Developer" ? "Other Project" : (marketProjects.find((p) => p.developer === e.target.value)?.name || "Other Project") }))} className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }}>
               {developerNames.map((d) => <option key={d}>{d}</option>)}
+              <option>Other Developer</option>
             </select>
           </Field>
+          {isOtherDeveloper && <Field label={tr("otherDeveloper")}><input value={form.manualDeveloper} onChange={set("manualDeveloper")} placeholder="Developer name" className="w-full bg-transparent outline-none placeholder:text-gray-400" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>}
           <Field label={tr("projectName")}>
-            <input value={form.project} onChange={set("project")} placeholder={tr("projectPlaceholder")} className="w-full bg-transparent outline-none placeholder:text-gray-400" style={{ ...fontBody, fontSize: 14, color: INK }} />
+            <select value={form.project} onChange={set("project")} className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }}>
+              {(selectedProjects.length ? selectedProjects : marketProjects).map((p) => <option key={p.name}>{p.name}</option>)}
+              <option>Other Project</option>
+            </select>
           </Field>
+          {isOtherProject && (
+            <>
+              <Field label={tr("otherProject")}><input value={form.manualProject} onChange={set("manualProject")} placeholder="Project name" className="w-full bg-transparent outline-none placeholder:text-gray-400" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>
+              <div className="grid grid-cols-2 gap-3">
+                <Field label="Location"><input value={form.projectLocation} onChange={set("projectLocation")} className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>
+                <Field label="Expected commission %"><input value={form.expectedCommissionRate} onChange={set("expectedCommissionRate")} inputMode="decimal" className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>
+              </div>
+              <div className="rounded-xl p-3" style={{ background: "#fbf1e2", border: `1px solid #eddcb8`, ...fontBody, fontSize: 12, color: "#5c4a24" }}>This developer/project is not listed yet. You can still register the deal, but commission and WIN Points will remain pending until KW RED Book verifies the deal and agreement.</div>
+            </>
+          )}
           <Field label={tr("dealValue")}>
             <input value={form.value} onChange={(e) => setForm((f) => ({ ...f, value: e.target.value.replace(/[^0-9]/g, "") }))} placeholder="3200000" inputMode="numeric" className="w-full bg-transparent outline-none placeholder:text-gray-400" style={{ ...fontBody, fontSize: 14, color: INK }} />
           </Field>
@@ -1031,7 +1375,34 @@ function DealsScreen({ deals, setDeals, view, setView, consultants, ownerProfile
           <Field label={tr("unitNumber")}>
             <input value={form.unitNumber} onChange={set("unitNumber")} placeholder={tr("unitNumberPlaceholder")} className="w-full bg-transparent outline-none placeholder:text-gray-400" style={{ ...fontBody, fontSize: 14, color: INK }} />
           </Field>
-          <Field label={tr("unitDetails")}>
+          <div className="grid grid-cols-2 gap-3">
+            <Field label="Unit type">
+              <select value={form.unitType} onChange={set("unitType")} className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }}>
+                {["", "Apartment", "Villa", "Townhouse", "Twinhouse", "Chalet", "Studio", "Duplex", "Office", "Clinic", "Retail", "Other"].map((v) => <option key={v} value={v}>{v || "Not selected"}</option>)}
+              </select>
+            </Field>
+            <Field label="Bedrooms">
+              <select value={form.bedrooms} onChange={set("bedrooms")} className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }}>
+                {["", "Studio", "1", "2", "3", "4", "5+"].map((v) => <option key={v} value={v}>{v || "Not selected"}</option>)}
+              </select>
+            </Field>
+            <Field label="Finishing">
+              <select value={form.finishing} onChange={set("finishing")} className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }}>
+                {["Not selected", "Core & Shell", "Semi Finished", "Fully Finished", "Furnished"].map((v) => <option key={v}>{v}</option>)}
+              </select>
+            </Field>
+            <Field label="Delivery">
+              <select value={form.delivery} onChange={set("delivery")} className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }}>
+                {["Not selected", "Ready to move", "1 year", "2 years", "3 years", "4+ years"].map((v) => <option key={v}>{v}</option>)}
+              </select>
+            </Field>
+            <Field label="Floor"><input value={form.floor} onChange={set("floor")} className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>
+            <Field label="BUA sqm"><input value={form.bua} onChange={set("bua")} inputMode="numeric" className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>
+            <Field label="Garden sqm"><input value={form.gardenArea} onChange={set("gardenArea")} inputMode="numeric" className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>
+            <Field label="Roof sqm"><input value={form.roofArea} onChange={set("roofArea")} inputMode="numeric" className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>
+          </div>
+          {!form.unitType && <div className="rounded-xl p-3" style={{ background: "#fbf1e2", border: `1px solid #eddcb8`, ...fontBody, fontSize: 12, color: "#5c4a24" }}>Unit type is helpful for approvals, but you can add it later.</div>}
+          <Field label="Additional unit notes">
             <textarea value={form.unitDetails} onChange={set("unitDetails")} placeholder={tr("unitDetailsPlaceholder")} rows={3}
               className="w-full bg-transparent outline-none placeholder:text-gray-400 resize-none" style={{ ...fontBody, fontSize: 14, color: INK }} />
           </Field>
@@ -1047,7 +1418,7 @@ function DealsScreen({ deals, setDeals, view, setView, consultants, ownerProfile
             <div className="text-end leading-tight" style={{ ...fontMono, fontSize: 10, color: GREY, maxWidth: 110 }}>{tr("illustrativeNote")}</div>
           </div>
 
-          <button disabled={!form.project || !numValue} onClick={submit}
+          <button disabled={(!form.project || !numValue) || (isOtherDeveloper && !form.manualDeveloper) || (isOtherProject && !form.manualProject)} onClick={submit}
             className="w-full rounded-xl py-3.5 flex items-center justify-center gap-2 text-white mt-1 disabled:opacity-40" style={{ background: RED, ...fontBody, fontSize: 14.5, fontWeight: 600 }}>
             {startStage === "reservation" ? tr("saveReservation") : tr("registerContracted")} <ChevronRight size={17} />
           </button>
@@ -1073,15 +1444,20 @@ function DealsScreen({ deals, setDeals, view, setView, consultants, ownerProfile
         {sorted.length === 0 && <EmptyNote text={tr("noDealsYet")} icon={ClipboardList}
           action={<button onClick={() => setView("form")} className="mt-3 rounded-full px-4 py-2 text-white" style={{ background: RED, ...fontMono, fontSize: 11, fontWeight: 700 }}>{tr("addDeal")}</button>} />}
         {sorted.map((d) => (
-          <div key={d.id} onClick={() => setSelectedDealId(d.id)} className="rounded-xl p-3.5 cursor-pointer" style={{ background: CARD, border: `1px solid ${LINE}` }}>
+          <div key={d.id} onClick={() => onOpenDeal ? onOpenDeal(d.id) : setLocalSelectedDealId(d.id)} className="rounded-xl p-3.5 cursor-pointer" style={{ background: CARD, border: `1px solid ${isCancelledDeal(d) ? "#e8c7c7" : LINE}` }}>
             <div className="flex items-center justify-between gap-2">
               <div className="min-w-0">
                 <div className="truncate" style={{ ...fontBody, fontSize: 13.5, fontWeight: 500, color: INK }}>{d.project}</div>
                 <div className="truncate" style={{ ...fontMono, fontSize: 10.5, color: GREY }}>{d.developer} · EGP {fmtEGP(d.value)} · {d.consultant}</div>
                 {d.unitNumber && <div className="truncate" style={{ ...fontMono, fontSize: 10.5, color: GREY }}>{tr("unitNumber")}: {d.unitNumber}</div>}
+                {getDealUnitSummary(d) && <div className="truncate" style={{ ...fontMono, fontSize: 10.5, color: GREY }}>{getDealUnitSummary(d)}</div>}
+                <div className="mt-1" style={{ ...fontMono, fontSize: 10.5, color: d.unlistedDeveloper || d.unlistedProject ? AMBER : GOOD }}>{d.unlistedDeveloper || d.unlistedProject ? tr("commissionPointsPending") : `Est. commission EGP ${fmtEGP(getDealCommission(d))}`}</div>
               </div>
               <div className="text-end flex-shrink-0">
                 <div style={{ ...fontMono, fontSize: 10.5, color: GREY }}>{d.date}</div>
+                {isCancelledDeal(d) && <div className="mt-1"><Badge tone="red">{tr("cancelled")}</Badge></div>}
+                {isEligibleDeal(d) && <div className="mt-1"><Badge tone="good">Eligible</Badge></div>}
+                {isPayoutRequestedDeal(d) && <div className="mt-1"><Badge tone="amber">{tr("payoutRequested")}</Badge></div>}
                 {d.images && d.images.length > 0 && (
                   <div className="flex items-center gap-1 justify-end mt-1"><ImageIcon size={11} color={GREY} /><span style={{ ...fontMono, fontSize: 10, color: GREY }}>{d.images.length} {tr("photosAttached")}</span></div>
                 )}
@@ -1133,42 +1509,15 @@ function CommissionsScreen({ deals }) {
   const { tr } = useT();
   const [view, setView] = useState("calc");
 
-  const byProject = {}; const byDeveloper = {};
-  deals.forEach((d) => {
-    const rate = rateFor(d.project, marketProjects) || 5;
-    const commission = d.value * (rate / 100);
-    byProject[d.project] = byProject[d.project] || { name: d.project, developer: d.developer, total: 0, count: 0 };
-    byProject[d.project].total += commission; byProject[d.project].count += 1;
-
-    const drate = rateFor(d.developer, marketDevelopers);
-    const dcommission = d.value * (drate / 100);
-    byDeveloper[d.developer] = byDeveloper[d.developer] || { name: d.developer, total: 0, count: 0 };
-    byDeveloper[d.developer].total += dcommission; byDeveloper[d.developer].count += 1;
-  });
-  const projectRows = Object.values(byProject).sort((a, b) => b.total - a.total);
-  const developerRows = Object.values(byDeveloper).sort((a, b) => b.total - a.total);
-
   return (
     <div className="pb-28 overflow-y-auto h-full" style={{ background: PAPER }}>
       <ScreenHeader eyebrow={tr("middleLayer")} title={tr("commissionsTitle")} />
       <div className="px-5 mb-3">
-        <SegControl value={view} onChange={setView} options={[{ id: "calc", label: tr("calc") }, { id: "developer", label: tr("byDeveloper") }, { id: "project", label: tr("byProject") }]} />
+        <SegControl value={view} onChange={setView} options={[{ id: "calc", label: tr("calc") }, { id: "payment", label: tr("unitPaymentCalculator") }]} />
       </div>
 
       {view === "calc" && <CommissionCalculator />}
-
-      {view === "project" && (
-        <div className="px-5 flex flex-col gap-2">
-          {projectRows.length === 0 && <EmptyNote text={tr("noDealsYet")} />}
-          {projectRows.map((p, i) => <RowCard key={p.name} rank={i + 1} title={p.name} sub={`${p.developer} · ${p.count}`} value={`EGP ${fmtEGP(p.total)}`} />)}
-        </div>
-      )}
-      {view === "developer" && (
-        <div className="px-5 flex flex-col gap-2">
-          {developerRows.length === 0 && <EmptyNote text={tr("noDealsYet")} />}
-          {developerRows.map((d, i) => <RowCard key={d.name} rank={i + 1} title={d.name} sub={`${d.count}`} value={`EGP ${fmtEGP(d.total)}`} />)}
-        </div>
-      )}
+      {view === "payment" && <UnitPaymentCalculator />}
     </div>
   );
 }
@@ -1180,6 +1529,35 @@ function RowCard({ rank, title, sub, value }) {
       <div className="flex-1 min-w-0"><div className="truncate" style={{ ...fontBody, fontSize: 13, fontWeight: 500, color: INK }}>{title}</div><div className="truncate" style={{ ...fontMono, fontSize: 10.5, color: GREY }}>{sub}</div></div>
       <div className="flex-shrink-0" style={{ ...fontMono, fontSize: 13, fontWeight: 600, color: GOOD }}>{value}</div>
     </div>
+  );
+}
+function SummaryCard({ label, value, tone = "dark" }) {
+  const color = tone === "good" ? GOOD : tone === "amber" ? AMBER : tone === "red" ? RED : INK;
+  return (
+    <div className="rounded-xl p-3" style={{ background: CARD, border: `1px solid ${LINE}` }}>
+      <div style={{ ...fontMono, fontSize: 9.5, color: GREY }}>{label}</div>
+      <div className="mt-1 leading-tight" style={{ ...fontDisplay, fontSize: 16, color }}>{value}</div>
+    </div>
+  );
+}
+function DealMiniCard({ deal, onClick, right, showUnit = true }) {
+  const stageName = approvalStages.find((s) => s.id === (deal.stage === "confirmed" ? "verified" : deal.stage))?.name || deal.stage;
+  const cancelled = isCancelledDeal(deal);
+  return (
+    <button onClick={onClick} className="w-full rounded-xl p-3.5 text-start" style={{ background: CARD, border: `1px solid ${cancelled ? "#e8c7c7" : LINE}` }}>
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0 flex-1">
+          <div className="truncate" style={{ ...fontBody, fontSize: 13.5, fontWeight: 700, color: INK }}>{deal.project}</div>
+          <div className="truncate" style={{ ...fontMono, fontSize: 10.5, color: GREY }}>{deal.developer} · EGP {fmtEGP(deal.value || 0)} · {deal.consultant}</div>
+          {showUnit && (deal.unitNumber || getDealUnitSummary(deal)) && <div className="truncate" style={{ ...fontMono, fontSize: 10.5, color: GREY }}>{deal.unitNumber || "Unit"}{getDealUnitSummary(deal) ? ` · ${getDealUnitSummary(deal)}` : ""}</div>}
+        </div>
+        <div className="text-end flex-shrink-0">
+          <Badge tone={cancelled ? "red" : isEligibleDeal(deal) ? "good" : isPayoutRequestedDeal(deal) ? "amber" : "light"}>{cancelled ? "Cancelled" : stageName}</Badge>
+          {right || <div className="mt-1" style={{ ...fontMono, fontSize: 10.5, color: GOOD }}>EGP {fmtEGP(getDealCommission(deal))}</div>}
+        </div>
+      </div>
+      {cancelled && deal.cancellationReason && <div className="mt-2" style={{ ...fontMono, fontSize: 10.5, color: RED }}>{deal.cancellationReason}</div>}
+    </button>
   );
 }
 function EmptyNote({ text, icon: Icon = FileText, action }) {
@@ -1374,7 +1752,7 @@ function PayoutScreen({ payout, setPayout, payoutRequests, setPayoutRequests, de
   );
 }
 
-function NotificationsScreen({ notifications, onBack }) {
+function NotificationsScreen({ notifications, onBack, goToDeal }) {
   const { tr } = useT();
   return (
     <div className="pb-28 overflow-y-auto h-full" style={{ background: PAPER }}>
@@ -1382,17 +1760,17 @@ function NotificationsScreen({ notifications, onBack }) {
       <div className="px-5 flex flex-col gap-2.5">
         {notifications.length === 0 && <EmptyNote text={tr("notificationsEmpty")} icon={Bell} />}
         {notifications.map((n) => (
-          <div key={n.id} className="rounded-xl p-3.5 flex gap-3" style={{ background: CARD, border: `1px solid ${LINE}` }}>
+          <button key={n.id} onClick={() => n.dealId && goToDeal?.(n.dealId)} className="rounded-xl p-3.5 flex gap-3 text-start" style={{ background: CARD, border: `1px solid ${LINE}` }}>
             <div className="rounded-full flex items-center justify-center" style={{ width: 34, height: 34, background: n.tone === "good" ? "#eaf3ec" : "#fbf1e2" }}><Bell size={15} color={n.tone === "good" ? GOOD : AMBER} /></div>
             <div className="flex-1"><div style={{ ...fontBody, fontSize: 13.5, fontWeight: 700, color: INK }}>{n.title}</div><p className="mt-1" style={{ ...fontBody, fontSize: 12, color: GREY }}>{n.body}</p><div className="mt-1" style={{ ...fontMono, fontSize: 10, color: GREY }}>{n.time}</div></div>
-          </div>
+          </button>
         ))}
       </div>
     </div>
   );
 }
 
-function AddConsultantScreen({ consultants, setConsultants, onBack }) {
+function AddConsultantScreen({ consultants, setConsultants, onBack, onConsultantAdded }) {
   const { tr } = useT();
   const [form, setForm] = useState({ name: "", mobile: "", email: "", role: "", specialty: "", branch: "", status: "Active" });
   const [saved, setSaved] = useState(false);
@@ -1407,6 +1785,7 @@ function AddConsultantScreen({ consultants, setConsultants, onBack }) {
       points: 0,
     };
     setConsultants((prev) => [...prev, next]);
+    onConsultantAdded?.(next);
     setSaved(true);
     setForm({ name: "", mobile: "", email: "", role: "", specialty: "", branch: "", status: "Active" });
     setTimeout(onBack, 750);
@@ -1431,6 +1810,146 @@ function AddConsultantScreen({ consultants, setConsultants, onBack }) {
           <button onClick={onBack} className="flex-1 rounded-xl py-3.5" style={{ background: CARD, border: `1px solid ${LINE}`, ...fontMono, fontSize: 12, color: GREY }}>Cancel</button>
           <button disabled={!form.name || !form.mobile} onClick={save} className="flex-1 rounded-xl py-3.5 text-white disabled:opacity-40" style={{ background: RED, ...fontMono, fontSize: 12, fontWeight: 700 }}>Save Consultant</button>
         </div>
+      </div>
+    </div>
+  );
+}
+
+function DevelopersProjectsScreen({ requests, setRequests, onBack, goToDeveloper, goToProject, goToDealForm, onSubmitted }) {
+  const { tr } = useT();
+  const [query, setQuery] = useState("");
+  const [filter, setFilter] = useState("All");
+  const [mode, setMode] = useState("list");
+  const [success, setSuccess] = useState(false);
+  const [form, setForm] = useState({ type: "New Developer", developerName: "", projectName: "", location: "", contactPerson: "", mobile: "", email: "", expectedRate: "", closedDeal: "No", notes: "", reason: "" });
+  const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
+  const requestedDevelopers = requests.filter((r) => r.developerName).map(requestToDeveloper);
+  const requestedProjects = requests.filter((r) => r.projectName).map(requestToProject);
+  const developers = [...marketDevelopers, ...requestedDevelopers];
+  const projects = [...marketProjects, ...requestedProjects];
+  const filters = ["All", "Developers", "Projects", "Active agreements", "Agreement pending", "New Cairo", "West Cairo", "North Coast", "New Administrative Capital", "Sheikh Zayed", "Sokhna", "Other", "Requests"];
+  const q = query.trim().toLowerCase();
+  function matches(item) {
+    const blob = [item.name, item.developer, item.hq, item.loc, item.location, item.rate, item.status].join(" ").toLowerCase();
+    return !q || blob.includes(q);
+  }
+  function filterOk(item, kind) {
+    if (filter === "All") return true;
+    if (filter === "Developers") return kind === "developer";
+    if (filter === "Projects") return kind === "project";
+    if (filter === "Requests") return item.requested;
+    if (filter === "Active agreements") return item.status === "Active" || item.status === "Updated";
+    if (filter === "Agreement pending") return /pending|review|progress|submitted/i.test(item.status || "");
+    const loc = item.hq || item.loc || "Other";
+    return filter === "Other" ? !filters.slice(5, 11).some((x) => loc.includes(x)) : loc.includes(filter);
+  }
+  const visibleDevelopers = developers.filter((d) => matches(d) && filterOk(d, "developer"));
+  const visibleProjects = projects.filter((p) => matches(p) && filterOk(p, "project"));
+  const noMatches = visibleDevelopers.length === 0 && visibleProjects.length === 0;
+  function submitRequest() {
+    const request = { id: Date.now(), ...form, submitted: "Today", status: "Submitted" };
+    setRequests((prev) => [request, ...prev]);
+    onSubmitted?.(request);
+    setSuccess(true);
+    setMode("list");
+    setForm({ type: "New Developer", developerName: "", projectName: "", location: "", contactPerson: "", mobile: "", email: "", expectedRate: "", closedDeal: "No", notes: "", reason: "" });
+  }
+  if (mode === "request") {
+    const needsProject = form.type !== "New Developer";
+    return (
+      <div className="pb-28 overflow-y-auto h-full" style={{ background: PAPER }}>
+        <BackHeader title="Request New Developer / Project" eyebrow={tr("developersProjects")} onBack={() => setMode("list")} />
+        <div className="px-5 flex flex-col gap-3">
+          <Field label="Request type">
+            <select value={form.type} onChange={set("type")} className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }}>
+              <option>New Developer</option><option>New Project</option><option>New Developer + Project</option>
+            </select>
+          </Field>
+          <Field label={tr("developer")}><input value={form.developerName} onChange={set("developerName")} className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>
+          {needsProject && <Field label={tr("projectName")}><input value={form.projectName} onChange={set("projectName")} className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>}
+          <div className="grid grid-cols-2 gap-3">
+            <Field label="Location"><input value={form.location} onChange={set("location")} className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>
+            <Field label="Expected commission %"><input value={form.expectedRate} onChange={set("expectedRate")} inputMode="decimal" className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>
+          </div>
+          <Field label="Developer contact person"><input value={form.contactPerson} onChange={set("contactPerson")} className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>
+          <div className="grid grid-cols-2 gap-3">
+            <Field label="Contact mobile"><input value={form.mobile} onChange={set("mobile")} className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>
+            <Field label="Contact email"><input value={form.email} onChange={set("email")} className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>
+          </div>
+          <Field label="Closed deal already?">
+            <select value={form.closedDeal} onChange={set("closedDeal")} className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }}><option>Yes</option><option>No</option></select>
+          </Field>
+          <Field label="Reason for request"><textarea value={form.reason} onChange={set("reason")} rows={2} className="w-full bg-transparent outline-none resize-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>
+          <Field label="Notes"><textarea value={form.notes} onChange={set("notes")} rows={2} className="w-full bg-transparent outline-none resize-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>
+          <button disabled={!form.developerName || (needsProject && !form.projectName)} onClick={submitRequest} className="w-full rounded-xl py-3.5 text-white disabled:opacity-40" style={{ background: RED, ...fontMono, fontSize: 12, fontWeight: 700 }}>{tr("requestSubmitted")}</button>
+        </div>
+      </div>
+    );
+  }
+  return (
+    <div className="pb-28 overflow-y-auto h-full" style={{ background: PAPER }}>
+      <BackHeader title={tr("developersProjects")} eyebrow="Reference/listing module" onBack={onBack} />
+      {success && <div className="mx-5 mb-3 rounded-xl p-3" style={{ background: "#eaf3ec", color: GOOD, ...fontMono, fontSize: 11 }}>Request submitted. KW RED Book will review the developer/project and start the agreement process if eligible.</div>}
+      <div className="px-5 flex flex-col gap-2">
+        <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder={tr("searchDeveloperProject")} className="w-full rounded-xl px-3 outline-none" style={{ height: 44, background: CARD, border: `1px solid ${LINE}`, ...fontBody, fontSize: 13, color: INK }} />
+        <div className="flex gap-1.5 overflow-x-auto pb-1" style={{ scrollbarWidth: "none" }}>
+          {filters.map((f) => <button key={f} onClick={() => setFilter(f)} className="rounded-full px-3 py-2 flex-shrink-0" style={{ background: filter === f ? INK : CARD, color: filter === f ? "#fff" : GREY, border: `1px solid ${filter === f ? INK : LINE}`, ...fontMono, fontSize: 10.5 }}>{f}</button>)}
+        </div>
+      </div>
+      {noMatches && (
+        <div className="mx-5 mt-4 rounded-2xl p-4" style={{ background: CARD, border: `1px dashed ${LINE}` }}>
+          <div style={{ ...fontDisplay, fontSize: 15, color: INK }}>No matching developer or project found.</div>
+          <p className="mt-1" style={{ ...fontBody, fontSize: 12, color: GREY }}>If the developer or project is not listed, you can request KW RED Book to review it and start the agreement process.</p>
+          <div className="grid grid-cols-2 gap-2 mt-3">
+            <button onClick={() => { setMode("request"); setForm((f) => ({ ...f, type: "New Developer" })); }} className="rounded-xl py-3 text-white" style={{ background: INK, ...fontMono, fontSize: 11, fontWeight: 700 }}>{tr("requestNewDeveloper")}</button>
+            <button onClick={() => { setMode("request"); setForm((f) => ({ ...f, type: "New Project" })); }} className="rounded-xl py-3 text-white" style={{ background: RED, ...fontMono, fontSize: 11, fontWeight: 700 }}>{tr("requestNewProject")}</button>
+          </div>
+        </div>
+      )}
+      <div className="px-5 mt-5 flex items-center justify-between"><div style={{ ...fontDisplay, fontSize: 13, color: INK }}>Developers</div><button onClick={() => setMode("request")} style={{ ...fontMono, fontSize: 11, color: RED }}>{tr("requestNewDeveloper")}</button></div>
+      <div className="px-5 mt-2 flex flex-col gap-2.5">
+        {visibleDevelopers.map((d) => (
+          <div key={`${d.name}-${d.status}`} className="rounded-xl p-3.5" style={{ background: CARD, border: `1px solid ${LINE}` }}>
+            <div className="flex items-start gap-3">
+              <div className="rounded-lg flex items-center justify-center flex-shrink-0" style={{ width: 40, height: 40, background: PAPER }}><Building2 size={18} color={INK} /></div>
+              <div className="flex-1 min-w-0"><div style={{ ...fontBody, fontSize: 13.5, fontWeight: 700, color: INK }}>{d.name}</div><div style={{ ...fontMono, fontSize: 10.5, color: GREY }}>{d.hq} · {d.projects} active projects · {d.rate || "TBD"}%</div></div>
+              <Badge tone={listingStatusTone(d.status)}>{d.status}</Badge>
+            </div>
+            <div className="grid grid-cols-2 gap-2 mt-3">
+              <button onClick={() => goToDeveloper(d.name)} className="rounded-lg py-2.5 text-white" style={{ background: INK, ...fontMono, fontSize: 11, fontWeight: 700 }}>View Developer</button>
+              <button onClick={() => setFilter("Projects")} className="rounded-lg py-2.5" style={{ background: PAPER, color: GREY, ...fontMono, fontSize: 11, fontWeight: 700 }}>View Projects</button>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="px-5 mt-5 flex items-center justify-between"><div style={{ ...fontDisplay, fontSize: 13, color: INK }}>Projects</div><button onClick={() => { setMode("request"); setForm((f) => ({ ...f, type: "New Project" })); }} style={{ ...fontMono, fontSize: 11, color: RED }}>{tr("requestNewProject")}</button></div>
+      <div className="px-5 mt-2 flex flex-col gap-2.5">
+        {visibleProjects.map((p) => (
+          <div key={`${p.name}-${p.status}`} className="rounded-xl p-3.5" style={{ background: CARD, border: `1px solid ${LINE}` }}>
+            <div className="flex items-start gap-3">
+              <div className="rounded-lg flex items-center justify-center flex-shrink-0" style={{ width: 40, height: 40, background: PAPER }}><MapPin size={18} color={INK} /></div>
+              <div className="flex-1 min-w-0"><div style={{ ...fontBody, fontSize: 13.5, fontWeight: 700, color: INK }}>{p.name}</div><div style={{ ...fontMono, fontSize: 10.5, color: GREY }}>{p.developer} · {p.loc} · {p.rate || "TBD"}%</div></div>
+              <Badge tone={listingStatusTone(p.status)}>{p.status}</Badge>
+            </div>
+            <div className="grid grid-cols-2 gap-2 mt-3">
+              <button onClick={() => goToProject(p.name)} className="rounded-lg py-2.5 text-white" style={{ background: INK, ...fontMono, fontSize: 11, fontWeight: 700 }}>View Project</button>
+              <button onClick={goToDealForm} className="rounded-lg py-2.5 text-white" style={{ background: RED, ...fontMono, fontSize: 11, fontWeight: 700 }}>{tr("dealAction")}</button>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="px-5 mt-5" style={{ ...fontDisplay, fontSize: 13, color: INK }}>{tr("requestedDevelopersProjects")}</div>
+      <div className="px-5 mt-2 flex flex-col gap-2.5">
+        {requests.length === 0 && <EmptyNote text="No developer or project requests yet." icon={Building2} />}
+        {requests.map((r) => (
+          <div key={r.id} className="rounded-xl p-3.5" style={{ background: CARD, border: `1px solid ${LINE}` }}>
+            <div className="flex items-start justify-between gap-3">
+              <div><div style={{ ...fontBody, fontSize: 13.5, fontWeight: 700, color: INK }}>{r.developerName}</div><div style={{ ...fontMono, fontSize: 10.5, color: GREY }}>{r.projectName || "Developer only"} · {r.location || "Other"} · {r.submitted}</div></div>
+              <Badge tone={listingStatusTone(r.status)}>{r.status}</Badge>
+            </div>
+            {r.notes && <p className="mt-2" style={{ ...fontBody, fontSize: 12, color: GREY }}>{r.notes}</p>}
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -1550,6 +2069,143 @@ function CommissionCalculator() {
     </div>
   );
 }
+function addMonths(date, months) {
+  const d = new Date(date || "2026-07-01");
+  d.setMonth(d.getMonth() + months);
+  return d.toISOString().slice(0, 10);
+}
+function UnitPaymentCalculator() {
+  const { tr } = useT();
+  const [form, setForm] = useState({
+    client: "", project: "", unit: "", price: "6000000", downMode: "pct", down: "10", deliveryMode: "pct", deliveryAmount: "5", years: "8",
+    frequency: "Quarterly", plan: "Equal installments", start: "2026-07-01", delivery: "", balloon: "", maintenance: "8", clubhouse: "", parking: "", notes: "",
+  });
+  const [preview, setPreview] = useState(false);
+  const [advanced, setAdvanced] = useState(false);
+  const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
+  const price = parseFloat(form.price) || 0;
+  const years = Math.max(1, parseFloat(form.years) || 0);
+  const freqMap = { Monthly: { count: 12, months: 1 }, Quarterly: { count: 4, months: 3 }, "Semi-Annual": { count: 2, months: 6 }, Annual: { count: 1, months: 12 } };
+  const installments = Math.max(1, Math.round(years * (freqMap[form.frequency]?.count || 4)));
+  const monthStep = freqMap[form.frequency]?.months || 3;
+  const down = form.downMode === "amount" ? (parseFloat(form.down) || 0) : price * ((parseFloat(form.down) || 0) / 100);
+  const delivery = form.deliveryMode === "amount" ? (parseFloat(form.deliveryAmount) || 0) : price * ((parseFloat(form.deliveryAmount) || 0) / 100);
+  const maintenance = price * ((parseFloat(form.maintenance) || 0) / 100);
+  const clubhouse = parseFloat(form.clubhouse) || 0;
+  const parking = parseFloat(form.parking) || 0;
+  const addOns = maintenance + clubhouse + parking;
+  const annualBalloon = parseFloat(form.balloon) || 0;
+  const remaining = Math.max(0, price - down - delivery - annualBalloon * Math.floor(years));
+  const rows = [];
+  if (price) {
+    rows.push({ no: 1, date: form.start, type: "Down Payment", amount: down, balance: price - down });
+    let balance = price - down;
+    const firstHalf = Math.ceil(installments / 2);
+    const secondHalf = Math.max(1, installments - firstHalf);
+    for (let i = 0; i < installments; i += 1) {
+      const isBackHalf = i >= firstHalf;
+      const base = form.plan === "Back-loaded installments"
+        ? (isBackHalf ? (remaining * 0.6) / secondHalf : (remaining * 0.4) / firstHalf)
+        : remaining / installments;
+      balance = Math.max(0, balance - base);
+      rows.push({ no: rows.length + 1, date: addMonths(form.start, monthStep * (i + 1)), type: "Installment", amount: base, balance });
+      if (annualBalloon && (i + 1) % (freqMap[form.frequency]?.count || 4) === 0) {
+        balance = Math.max(0, balance - annualBalloon);
+        rows.push({ no: rows.length + 1, date: addMonths(form.start, monthStep * (i + 1)), type: "Annual Balloon", amount: annualBalloon, balance });
+      }
+    }
+    if (delivery) rows.push({ no: rows.length + 1, date: form.delivery || addMonths(form.start, years * 12), type: "Delivery Payment", amount: delivery, balance: Math.max(0, balance - delivery) });
+    if (maintenance) rows.push({ no: rows.length + 1, date: form.delivery || addMonths(form.start, years * 12), type: "Maintenance", amount: maintenance, balance: 0 });
+    if (clubhouse) rows.push({ no: rows.length + 1, date: form.start, type: "Clubhouse", amount: clubhouse, balance: 0 });
+    if (parking) rows.push({ no: rows.length + 1, date: form.start, type: "Parking", amount: parking, balance: 0 });
+  }
+  const totalScheduled = rows.reduce((sum, r) => sum + r.amount, 0);
+  const firstInstallment = rows.find((r) => r.type === "Installment")?.amount || 0;
+  const pct = (amount) => price ? Math.min(100, (amount / price) * 100) : 0;
+  return (
+    <div className="px-5 flex flex-col gap-4">
+      <div className="rounded-2xl p-4" style={{ background: INK }}>
+        <div style={{ ...fontMono, fontSize: 10.5, color: "#a7acb2" }}>Client Payment Snapshot</div>
+        <div className="mt-1" style={{ ...fontDisplay, fontSize: 24, color: "#fff" }}>EGP {fmtEGP(price)}</div>
+        <div className="mt-2" style={{ ...fontBody, fontSize: 12, color: "#fff" }}>Plan ready for client review · {tr("calculatedInstallments")}: {installments}</div>
+      </div>
+      <div className="grid grid-cols-2 gap-3">
+        <Field label="Client name"><input value={form.client} onChange={set("client")} className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>
+        <Field label={tr("projectName")}><input value={form.project} onChange={set("project")} className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>
+        <Field label={tr("unitNumber")}><input value={form.unit} onChange={set("unit")} className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>
+        <Field label="Unit price"><input value={form.price} onChange={(e) => setForm((f) => ({ ...f, price: e.target.value.replace(/[^0-9]/g, "") }))} inputMode="numeric" className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>
+        <Field label={tr("downPayment")}><div className="flex gap-2"><select value={form.downMode} onChange={set("downMode")} className="bg-transparent outline-none" style={{ ...fontBody, fontSize: 13, color: INK }}><option value="pct">%</option><option value="amount">EGP</option></select><input value={form.down} onChange={set("down")} inputMode="decimal" className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></div></Field>
+        <Field label={tr("deliveryPayment")}><div className="flex gap-2"><select value={form.deliveryMode} onChange={set("deliveryMode")} className="bg-transparent outline-none" style={{ ...fontBody, fontSize: 13, color: INK }}><option value="pct">%</option><option value="amount">EGP</option></select><input value={form.deliveryAmount} onChange={set("deliveryAmount")} inputMode="decimal" className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></div></Field>
+        <Field label="Years"><input value={form.years} onChange={set("years")} inputMode="decimal" className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>
+        <Field label={tr("calculatedInstallments")}><div style={{ ...fontDisplay, fontSize: 16, color: RED }}>{installments}</div></Field>
+      </div>
+      <Field label={tr("installmentFrequency")}>
+        <select value={form.frequency} onChange={set("frequency")} className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }}>
+          {["Monthly", "Quarterly", "Semi-Annual", "Annual"].map((v) => <option key={v}>{v}</option>)}
+        </select>
+      </Field>
+      <Field label="Payment plan type">
+        <select value={form.plan} onChange={set("plan")} className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }}>
+          {["Equal installments", "Back-loaded installments"].map((v) => <option key={v}>{v}</option>)}
+        </select>
+      </Field>
+      <div className="grid grid-cols-2 gap-3">
+        <Field label="Start date"><input type="date" value={form.start} onChange={set("start")} className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>
+        <Field label="Delivery date"><input type="date" value={form.delivery} onChange={set("delivery")} className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>
+      </div>
+      <button onClick={() => setAdvanced((v) => !v)} className="rounded-xl py-3" style={{ background: CARD, border: `1px solid ${LINE}`, color: INK, ...fontMono, fontSize: 12, fontWeight: 700 }}>{advanced ? "Hide advanced options" : "Advanced options"}</button>
+      {advanced && <div className="grid grid-cols-2 gap-3">
+        <Field label={tr("annualBalloonPayment")}><input value={form.balloon} onChange={set("balloon")} inputMode="numeric" className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>
+        <Field label="Maintenance %"><input value={form.maintenance} onChange={set("maintenance")} inputMode="decimal" className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>
+        <Field label="Clubhouse EGP"><input value={form.clubhouse} onChange={set("clubhouse")} inputMode="numeric" className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>
+        <Field label="Parking EGP"><input value={form.parking} onChange={set("parking")} inputMode="numeric" className="w-full bg-transparent outline-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>
+      </div>}
+      <Field label="Notes"><textarea value={form.notes} onChange={set("notes")} rows={2} className="w-full bg-transparent outline-none resize-none" style={{ ...fontBody, fontSize: 14, color: INK }} /></Field>
+      {!price && <div className="rounded-xl p-3" style={{ background: "#fbf1e2", border: `1px solid #eddcb8`, ...fontBody, fontSize: 12, color: "#5c4a24" }}>Enter unit price to calculate the schedule.</div>}
+      <div className="rounded-2xl p-4" style={{ background: CARD, border: `1px solid ${LINE}` }}>
+        <div className="mb-3" style={{ ...fontDisplay, fontSize: 14, color: INK }}>Installments calculated automatically</div>
+        {[[tr("downPayment"), down, RED], [tr("deliveryPayment"), delivery, AMBER], ["Installments", remaining, INK], ["Optional add-ons", addOns, GOOD]].map(([label, amount, color]) => (
+          <div key={label} className="mb-2">
+            <div className="flex justify-between" style={{ ...fontMono, fontSize: 10.5, color: GREY }}><span>{label}</span><span>EGP {fmtEGP(amount)}</span></div>
+            <div className="mt-1 h-2 rounded-full" style={{ background: PAPER }}><div className="h-2 rounded-full" style={{ width: `${pct(amount)}%`, background: color }} /></div>
+          </div>
+        ))}
+      </div>
+      <div className="rounded-2xl p-4" style={{ background: INK }}>
+        <Row label="Total unit price" value={`EGP ${fmtEGP(price)}`} big />
+        <Row label={tr("downPayment")} value={`EGP ${fmtEGP(down)}`} />
+        <Row label={tr("deliveryPayment")} value={`EGP ${fmtEGP(delivery)}`} />
+        <Row label="Remaining amount" value={`EGP ${fmtEGP(remaining)}`} />
+        <Row label="First installment" value={`EGP ${fmtEGP(firstInstallment)}`} />
+        <Row label="Total add-ons" value={`EGP ${fmtEGP(addOns)}`} />
+        <Row label="Total scheduled" value={`EGP ${fmtEGP(totalScheduled)}`} accent />
+      </div>
+      <div className="rounded-2xl p-3" style={{ background: CARD, border: `1px solid ${LINE}`, maxHeight: 260, overflowY: "auto" }}>
+        {rows.slice(0, 18).map((r) => (
+          <div key={`${r.no}-${r.type}`} className="py-2 flex items-center justify-between gap-2" style={{ borderTop: r.no > 1 ? `1px solid ${LINE}` : "none" }}>
+            <div><div style={{ ...fontBody, fontSize: 12.5, fontWeight: 700, color: INK }}>{r.no}. {r.type}</div><div style={{ ...fontMono, fontSize: 10, color: GREY }}>{r.date} · remaining EGP {fmtEGP(r.balance)}</div></div>
+            <div style={{ ...fontMono, fontSize: 12, color: GOOD }}>EGP {fmtEGP(r.amount)}</div>
+          </div>
+        ))}
+      </div>
+      <button disabled={!price || !installments || !years} onClick={() => setPreview(true)} className="w-full rounded-xl py-3 text-white disabled:opacity-40" style={{ background: RED, ...fontMono, fontSize: 12, fontWeight: 700 }}>{tr("createPaymentPdf")}</button>
+      {preview && (
+        <div className="rounded-2xl p-4" style={{ background: CARD, border: `1px solid ${LINE}` }}>
+          <div className="flex items-start justify-between gap-2"><div><div style={{ ...fontDisplay, fontSize: 17, color: INK }}>KW RED Book</div><div style={{ ...fontBody, fontSize: 13, color: GREY }}>{tr("paymentSchedule")} preview generated for client sharing.</div></div><button onClick={() => setPreview(false)}><X size={18} color={GREY} /></button></div>
+          <div className="mt-3 grid grid-cols-2 gap-2">
+            <InfoRow label="Client" value={form.client || "—"} /><InfoRow label="Project" value={form.project || "—"} /><InfoRow label="Unit" value={form.unit || "—"} /><InfoRow label="Unit price" value={`EGP ${fmtEGP(price)}`} /><InfoRow label="Years" value={years} /><InfoRow label="Frequency" value={form.frequency} /><InfoRow label="Plan" value={form.plan} /><InfoRow label={tr("calculatedInstallments")} value={installments} />
+          </div>
+          <div className="mt-3 rounded-xl" style={{ border: `1px solid ${LINE}`, maxHeight: 220, overflowY: "auto" }}>
+            {rows.slice(0, 30).map((r) => <div key={`preview-${r.no}-${r.type}`} className="grid grid-cols-4 gap-2 px-2 py-2" style={{ borderTop: r.no > 1 ? `1px solid ${LINE}` : "none", ...fontMono, fontSize: 9.5, color: GREY }}><span>{r.no}</span><span>{r.date}</span><span>{r.type}</span><span>EGP {fmtEGP(r.amount)}</span></div>)}
+          </div>
+          {form.notes && <p className="mt-3" style={{ ...fontBody, fontSize: 12, color: INK }}>{form.notes}</p>}
+          <div className="mt-3 rounded-xl p-3" style={{ background: "#eaf3ec", color: GOOD, ...fontMono, fontSize: 11 }}>Shareable payment schedule generated.</div>
+          <p className="mt-3" style={{ ...fontBody, fontSize: 12, color: GREY }}>This schedule is indicative and subject to developer contract terms.</p>
+        </div>
+      )}
+    </div>
+  );
+}
 function Row({ label, value, big, accent }) {
   return (
     <div className="flex items-center justify-between gap-2">
@@ -1562,32 +2218,89 @@ function Row({ label, value, big, accent }) {
 // ---------------------------------------------------------------------------
 // Rewards
 // ---------------------------------------------------------------------------
+function RankingScreen() {
+  const { tr } = useT();
+  const nextRank = leaderboard.find((c) => c.rank === company.rank - 1);
+  const gap = Math.max(0, (nextRank?.points || company.totalCollectedPoints) - company.totalCollectedPoints);
+  const tierProgress = Math.min(100, ((company.totalCollectedPoints - company.tierFloor) / (company.tierCeiling - company.tierFloor)) * 100);
+  const trendIcon = company.trend === "up" ? <ArrowUp size={15} color={GOOD} /> : company.trend === "down" ? <ArrowDown size={15} color={RED} /> : <div style={{ width: 15, height: 2, background: GREY }} />;
+  return (
+    <div className="pb-28 overflow-y-auto h-full" style={{ background: PAPER }}>
+      <ScreenHeader eyebrow={tr("marketRanking")} title={tr("ranking")} />
+      <div className="mx-5 rounded-2xl p-5" style={{ background: INK }}>
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <div style={{ ...fontMono, fontSize: 10.5, color: "#a7acb2" }}>{tr("companyTitle")}</div>
+            <div style={{ ...fontDisplay, fontSize: 28, color: "#fff" }}>#{company.rank}</div>
+            <div className="mt-1" style={{ ...fontMono, fontSize: 11, color: "#a7acb2" }}>{company.totalCompanies} companies · {company.tier}</div>
+          </div>
+          <div className="rounded-full flex items-center justify-center" style={{ width: 54, height: 54, background: RED }}><Trophy size={25} color="#fff" /></div>
+        </div>
+        <div className="mt-4 rounded-xl p-3" style={{ background: "#24282d", ...fontBody, fontSize: 12.5, color: "#fff" }}>{tr("rankingNote")}</div>
+        <div className="mt-4 h-2 rounded-full" style={{ background: "#2a2e33" }}><div className="h-2 rounded-full" style={{ width: `${tierProgress}%`, background: RED }} /></div>
+        <div className="mt-2 flex items-center justify-between" style={{ ...fontMono, fontSize: 10.5, color: "#a7acb2" }}><span>{tr("nextRankProgress")}</span><span>{gap.toLocaleString()} pts</span></div>
+      </div>
+
+      <div className="mx-5 mt-4 grid grid-cols-2 gap-2.5">
+        <SummaryCard label={tr("totalCollectedPoints")} value={company.totalCollectedPoints.toLocaleString()} tone="red" />
+        <SummaryCard label={tr("redeemablePoints")} value={company.redeemablePoints.toLocaleString()} />
+        <SummaryCard label={tr("redeemedPoints")} value={company.redeemedPoints.toLocaleString()} tone="amber" />
+        <div className="rounded-xl p-3" style={{ background: CARD, border: `1px solid ${LINE}` }}>
+          <div style={{ ...fontMono, fontSize: 9.5, color: GREY }}>{tr("companyTrend")}</div>
+          <div className="mt-1 flex items-center gap-1.5" style={{ ...fontDisplay, fontSize: 16, color: INK }}>{trendIcon} {company.trend === "up" ? "Up" : company.trend === "down" ? "Down" : "Stable"}</div>
+        </div>
+      </div>
+
+      <div className="mx-5 mt-4 rounded-xl p-4" style={{ background: CARD, border: `1px solid ${LINE}` }}>
+        <div className="flex items-center gap-2"><Award size={16} color={RED} /><div style={{ ...fontDisplay, fontSize: 14, color: INK }}>{tr("howRankingWorks")}</div></div>
+        <p className="mt-2 leading-relaxed" style={{ ...fontBody, fontSize: 12.5, color: GREY }}>Company ranking reflects historical collected WIN Points, verified production, and market contribution. Reward redemption only changes the redeemable balance.</p>
+      </div>
+
+      <div className="px-5 mt-5" style={{ ...fontDisplay, ...fs(13), color: INK }}>Leaderboard</div>
+      <div className="px-5 mt-2 flex flex-col gap-1.5">
+        {leaderboard.map((c) => (
+          <div key={c.rank} className="rounded-xl p-3 flex items-center gap-3" style={{ background: c.isYou ? INK : CARD, border: `1px solid ${c.isYou ? INK : LINE}` }}>
+            <div className="rounded-full flex items-center justify-center flex-shrink-0" style={{ width: 32, height: 32, ...fontMono, fontSize: 12, fontWeight: 600, background: c.rank <= 3 ? RED : c.isYou ? "#2a2e33" : PAPER, color: c.rank <= 3 ? "#fff" : c.isYou ? "#fff" : INK }}>{c.rank}</div>
+            <div className="flex-1 min-w-0"><div className="truncate" style={{ ...fontBody, fontSize: 13, fontWeight: 500, color: c.isYou ? "#fff" : INK }}>{c.name} {c.isYou && <span style={{ color: RED }}>· You</span>}</div><div style={{ ...fontMono, fontSize: 10.5, color: c.isYou ? "#a7acb2" : GREY }}>{c.points.toLocaleString()} pts</div></div>
+            {c.isYou && <Badge tone="red">{company.tier}</Badge>}
+            {c.trend === "up" && <ArrowUp size={15} color={GOOD} />}
+            {c.trend === "down" && <ArrowDown size={15} color={RED} />}
+            {c.trend === "same" && <div style={{ width: 15, height: 2, background: GREY }} />}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function RewardsScreen() {
   const { tr } = useT();
-  const [view, setView] = useState("rewards");
   const [redeemed, setRedeemed] = useState(null);
+  const redeemedNow = rewardsCatalog.find((r) => r.titleKey === redeemed)?.cost || 0;
+  const redeemable = Math.max(0, company.redeemablePoints - redeemedNow);
   return (
     <div className="pb-28 overflow-y-auto h-full" style={{ background: PAPER }}>
       <ScreenHeader eyebrow={tr("topLayer")} title={tr("winPointsTitle")} />
-      <div className="px-5 mb-3"><SegControl value={view} onChange={setView} options={[{ id: "rewards", label: tr("rewardsTab") }, { id: "rankings", label: tr("rankingsTab") }]} /></div>
-
-      {view === "rewards" && (
         <>
           <div className="mx-5 rounded-2xl p-5" style={{ background: INK }}>
             <div className="flex items-center justify-between">
-              <div><div style={{ ...fontMono, fontSize: 10.5, color: "#a7acb2" }}>{tr("yourBalance")}</div><div style={{ ...fontDisplay, fontSize: 26, color: "#fff" }}>{company.winPoints.toLocaleString()}</div></div>
+              <div><div style={{ ...fontMono, fontSize: 10.5, color: "#a7acb2" }}>{tr("redeemablePoints")}</div><div style={{ ...fontDisplay, fontSize: 26, color: "#fff" }}>{redeemable.toLocaleString()}</div></div>
               <Badge tone="red">{company.tier.toUpperCase()}</Badge>
+            </div>
+            <div className="mt-3 grid grid-cols-2 gap-2">
+              <div className="rounded-lg p-2.5" style={{ background: "#24282d" }}><div style={{ ...fontMono, fontSize: 9.5, color: "#a7acb2" }}>{tr("totalCollectedPoints")}</div><div style={{ ...fontDisplay, fontSize: 15, color: "#fff" }}>{company.totalCollectedPoints.toLocaleString()}</div></div>
+              <div className="rounded-lg p-2.5" style={{ background: "#24282d" }}><div style={{ ...fontMono, fontSize: 9.5, color: "#a7acb2" }}>{tr("redeemedPoints")}</div><div style={{ ...fontDisplay, fontSize: 15, color: AMBER }}>{(company.redeemedPoints + redeemedNow).toLocaleString()}</div></div>
             </div>
             <div className="mt-4">
               <div className="flex justify-between mb-1.5" style={{ ...fontMono, fontSize: 10, color: "#a7acb2" }}><span>Bronze</span><span>Silver</span><span>Gold</span><span>Platinum</span></div>
-              <div className="h-2 rounded-full w-full" style={{ background: "#2a2e33" }}><div className="h-2 rounded-full" style={{ width: `${Math.min(100, (company.winPoints / 40000) * 100)}%`, background: RED }} /></div>
+              <div className="h-2 rounded-full w-full" style={{ background: "#2a2e33" }}><div className="h-2 rounded-full" style={{ width: `${Math.min(100, (company.totalCollectedPoints / 40000) * 100)}%`, background: RED }} /></div>
             </div>
           </div>
 
           <div className="px-5 mt-5" style={{ ...fontDisplay, ...fs(13), color: INK }}>{tr("redeemRewards")}</div>
           <div className="px-5 mt-2 flex flex-col gap-2.5">
             {rewardsCatalog.map((r) => {
-              const Icon = r.icon; const canAfford = company.winPoints >= r.cost; const isRedeemed = redeemed === r.titleKey;
+              const Icon = r.icon; const canAfford = redeemable >= r.cost || redeemed === r.titleKey; const isRedeemed = redeemed === r.titleKey;
               return (
                 <div key={r.titleKey} className="rounded-xl p-3.5 flex items-center gap-3" style={{ background: CARD, border: `1px solid ${LINE}` }}>
                   <div className="rounded-lg flex items-center justify-center flex-shrink-0" style={{ width: 44, height: 44, background: PAPER }}><Icon size={19} color={INK} /></div>
@@ -1614,69 +2327,211 @@ function RewardsScreen() {
             </div>
           </div>
         </>
-      )}
-
-      {view === "rankings" && (
-        <div className="px-5 flex flex-col gap-1.5">
-          {leaderboard.map((c) => (
-            <div key={c.rank} className="rounded-xl p-3 flex items-center gap-3" style={{ background: c.isYou ? INK : CARD, border: `1px solid ${c.isYou ? INK : LINE}` }}>
-              <div className="rounded-full flex items-center justify-center flex-shrink-0" style={{ width: 32, height: 32, ...fontMono, fontSize: 12, fontWeight: 600, background: c.rank <= 3 ? RED : c.isYou ? "#2a2e33" : PAPER, color: c.rank <= 3 ? "#fff" : c.isYou ? "#fff" : INK }}>{c.rank}</div>
-              <div className="flex-1 min-w-0"><div className="truncate" style={{ ...fontBody, fontSize: 13, fontWeight: 500, color: c.isYou ? "#fff" : INK }}>{c.name} {c.isYou && <span style={{ color: RED }}>· You</span>}</div><div style={{ ...fontMono, fontSize: 10.5, color: c.isYou ? "#a7acb2" : GREY }}>{c.points.toLocaleString()} pts</div></div>
-              {c.trend === "up" && <ArrowUp size={15} color={GOOD} />}
-              {c.trend === "down" && <ArrowDown size={15} color={RED} />}
-              {c.trend === "same" && <div style={{ width: 15, height: 2, background: GREY }} />}
-            </div>
-          ))}
-        </div>
-      )}
     </div>
   );
 }
 
 function getDeveloperCommissionRows(deals) {
   return marketDevelopers.map((dev) => {
-    const related = deals.filter((d) => d.developer === dev.name);
-    const totalValue = related.reduce((sum, d) => sum + d.value, 0);
-    const gross = totalValue * (dev.rate / 100);
-    const confirmed = related.filter((d) => d.stage === "confirmed").length;
-    return { ...dev, deals: related.length, gross, confirmed, status: confirmed === related.length && related.length > 0 ? "Ready" : related.length > 0 ? "Pending" : "Open" };
+    const stats = getDeveloperStats(dev.name, deals);
+    return { ...dev, deals: stats.totalDeals, gross: stats.totalCommission, confirmed: stats.active.filter((d) => d.stage === "verified" || d.stage === "confirmed").length, status: stats.totalDeals ? "Active" : "Open" };
   }).sort((a, b) => b.gross - a.gross);
 }
 
-function DeveloperCommissionTrackerScreen({ deals, onBack }) {
+function getProjectCommissionRows(deals) {
+  const names = Array.from(new Set([...marketProjects.map((p) => p.name), ...deals.map((d) => d.project)]));
+  return names.map((name) => {
+    const stats = getProjectStats(name, deals);
+    return { ...stats, name, gross: stats.totalCommission };
+  }).sort((a, b) => b.gross - a.gross);
+}
+
+function DeveloperCommissionTrackerScreen({ deals, setDeals, onBack, goToDeveloper, goToProject, goToDeal, goToDevelopersProjects, onPayoutRequested, resolvedCaseIds, onResolveCase }) {
   const { tr } = useT();
+  const [query, setQuery] = useState("");
+  const [location, setLocation] = useState("All locations");
+  const summary = getRevenueSummary(deals);
   const developerTotals = getDeveloperCommissionRows(deals);
-  const revenueTracked = developerTotals.reduce((sum, d) => sum + d.gross, 0);
+  const projectTotals = getProjectCommissionRows(deals);
+  const payoutDeals = deals.filter(isPayoutReadyDeal);
+  const openCases = getOpenCases(deals, resolvedCaseIds).filter((c) => c.title.toLowerCase().includes("payout") || c.title.toLowerCase().includes("contract") || c.title.toLowerCase().includes("developer") || true).slice(0, 3);
+  const locations = ["All locations", "New Cairo", "West Cairo", "North Coast", "New Administrative Capital", "Sheikh Zayed", "Sokhna", "Other"];
+  const matches = (text) => String(text || "").toLowerCase().includes(query.toLowerCase());
+  const visibleDevelopers = developerTotals.filter((d) => {
+    const locationOk = location === "All locations" || d.hq.includes(location) || (location === "New Administrative Capital" && d.hq.includes("Administrative"));
+    return locationOk && (!query || [d.name, d.hq, d.rate, d.status].some(matches));
+  });
+  const visibleProjects = projectTotals.filter((p) => {
+    const loc = p.loc || "Other";
+    const locationOk = location === "All locations" || loc.includes(location) || (location === "New Administrative Capital" && loc.includes("Admin"));
+    const relatedText = p.related.map((d) => `${d.stage} ${d.unitNumber} ${d.clientName} ${d.consultant}`).join(" ");
+    return locationOk && (!query || [p.name, p.developer, p.loc, p.rate, relatedText].some(matches));
+  });
+  function requestDealPayout(deal) {
+    if (!isEligibleDeal(deal)) return;
+    setDeals((prev) => prev.map((d) => d.id === deal.id ? { ...d, stage: "payout_requested" } : d));
+    onPayoutRequested?.(deal);
+  }
   return (
     <div className="pb-28 overflow-y-auto h-full" style={{ background: PAPER }}>
       <ScreenHeader eyebrow={tr("middleLayer")} title={tr("devCommissionTracker")} right={onBack && <button onClick={onBack}><X size={20} color={GREY} /></button>} />
       <div className="mx-5 rounded-2xl p-5" style={{ background: INK }}>
         <div style={{ ...fontMono, fontSize: 10.5, color: "#a7acb2" }}>{tr("revenueTracked")}</div>
-        <div className="mt-1" style={{ ...fontDisplay, fontSize: 26, color: "#fff" }}>EGP {fmtEGP(revenueTracked)}</div>
+        <div className="mt-1" style={{ ...fontDisplay, fontSize: 26, color: "#fff" }}>EGP {fmtEGP(summary.total)}</div>
         <div className="mt-3 grid grid-cols-3 gap-2">
-          {["Ready", "Pending", "Open"].map((status) => (
-            <div key={status} className="rounded-lg p-2.5" style={{ background: "#24282d" }}>
-              <div style={{ ...fontDisplay, fontSize: 15, color: status === "Ready" ? GOOD : status === "Pending" ? AMBER : "#fff" }}>{developerTotals.filter((d) => d.status === status).length}</div>
-              <div style={{ ...fontMono, fontSize: 9.5, color: "#a7acb2" }}>{status}</div>
+          {[
+            [tr("eligibleCommission"), summary.eligible, GOOD],
+            [tr("pendingCommission"), summary.pending, AMBER],
+            [tr("paidCommission"), summary.paid, GOOD],
+          ].map(([label, value, color]) => (
+            <div key={label} className="rounded-lg p-2.5" style={{ background: "#24282d" }}>
+              <div style={{ ...fontDisplay, fontSize: 15, color }}>EGP {fmtEGP(value)}</div>
+              <div style={{ ...fontMono, fontSize: 9.5, color: "#a7acb2" }}>{label}</div>
             </div>
           ))}
         </div>
       </div>
-      <div className="px-5 mt-4 flex flex-col gap-2.5">
-        {developerTotals.map((d) => (
-          <div key={d.name} className="rounded-xl p-3.5 flex items-center gap-3" style={{ background: CARD, border: `1px solid ${LINE}` }}>
-            <div className="rounded-lg flex items-center justify-center flex-shrink-0" style={{ width: 40, height: 40, background: PAPER }}><Building2 size={18} color={INK} /></div>
-            <div className="flex-1 min-w-0">
-              <div className="truncate" style={{ ...fontBody, fontSize: 13.5, fontWeight: 600, color: INK }}>{d.name}</div>
-              <div className="truncate" style={{ ...fontMono, fontSize: 10.5, color: GREY }}>{d.deals} deals · {d.rate}% agreement · {d.confirmed} confirmed</div>
-            </div>
-            <div className="text-end flex-shrink-0">
-              <div style={{ ...fontMono, fontSize: 12.5, fontWeight: 700, color: d.gross > 0 ? GOOD : GREY }}>EGP {fmtEGP(d.gross)}</div>
-              <Badge tone={d.status === "Ready" ? "good" : d.status === "Pending" ? "amber" : "light"}>{d.status}</Badge>
-            </div>
+      <div className="mx-5 mt-4 rounded-xl p-3.5 flex items-center gap-3" style={{ background: CARD, border: `1px solid ${LINE}` }}>
+        <div className="rounded-lg flex items-center justify-center flex-shrink-0" style={{ width: 38, height: 38, background: PAPER }}><Building2 size={17} color={RED} /></div>
+        <div className="flex-1 min-w-0"><div style={{ ...fontBody, fontSize: 13, fontWeight: 700, color: INK }}>{tr("developersProjects")}</div><div style={{ ...fontMono, fontSize: 10.5, color: GREY }}>Search listed agreements before registering or calculating a deal.</div></div>
+        <button onClick={goToDevelopersProjects} className="rounded-lg px-3 py-2 text-white" style={{ background: INK, ...fontMono, fontSize: 11, fontWeight: 700 }}>Open</button>
+      </div>
+
+      <div className="px-5 mt-4 flex flex-col gap-2">
+        <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search developer, project, location, client, unit..." className="w-full rounded-xl px-3 outline-none" style={{ height: 44, background: CARD, border: `1px solid ${LINE}`, ...fontBody, fontSize: 13, color: INK }} />
+        <select value={location} onChange={(e) => setLocation(e.target.value)} className="w-full rounded-xl px-3 outline-none" style={{ height: 44, background: CARD, border: `1px solid ${LINE}`, ...fontBody, fontSize: 13, color: INK }}>
+          {locations.map((l) => <option key={l}>{l}</option>)}
+        </select>
+      </div>
+
+      <div className="px-5 mt-5" style={{ ...fontDisplay, fontSize: 13, color: INK }}>{tr("alertsOpenCases")}</div>
+      <div className="px-5 mt-2 flex flex-col gap-2">
+        {openCases.length === 0 && <EmptyNote text={tr("noOpenCases")} icon={ShieldCheck} />}
+        {openCases.map((c) => (
+          <div key={c.id} className="rounded-xl p-3.5" style={{ background: CARD, border: `1px solid ${LINE}` }}>
+            <button onClick={() => goToDeal(c.dealId)} className="w-full text-start"><div style={{ ...fontBody, fontSize: 13, fontWeight: 700, color: INK }}>{c.title}</div><div style={{ ...fontMono, fontSize: 10.5, color: GREY }}>{c.project} · {c.reason}</div></button>
+            <button onClick={() => onResolveCase(c.id)} className="mt-2 rounded-lg px-3 py-2" style={{ background: PAPER, color: GREY, ...fontMono, fontSize: 11, fontWeight: 700 }}>{tr("markResolved")}</button>
           </div>
         ))}
       </div>
+
+      <div className="px-5 mt-5" style={{ ...fontDisplay, fontSize: 13, color: INK }}>{tr("payoutReadyDeals")}</div>
+      <div className="px-5 mt-2 flex flex-col gap-2">
+        {payoutDeals.length === 0 && <EmptyNote text="No payout-ready deals yet." icon={Wallet} />}
+        {payoutDeals.map((deal) => (
+          <DealMiniCard key={deal.id} deal={deal} onClick={() => goToDeal(deal.id)} right={
+            isEligibleDeal(deal)
+              ? <button onClick={(e) => { e.stopPropagation(); requestDealPayout(deal); }} className="rounded-lg px-3 py-2 text-white" style={{ background: RED, ...fontMono, fontSize: 10.5, fontWeight: 700 }}>{tr("requestPayout")}</button>
+              : <Badge tone={isPaidDeal(deal) ? "good" : "amber"}>{isPaidDeal(deal) ? tr("paid") : tr("payoutRequested")}</Badge>
+          } />
+        ))}
+      </div>
+
+      <div className="px-5 mt-5" style={{ ...fontDisplay, fontSize: 13, color: INK }}>{tr("byDeveloper")}</div>
+      <div className="px-5 mt-4 flex flex-col gap-2.5">
+        {visibleDevelopers.map((d) => (
+          <button key={d.name} onClick={() => goToDeveloper(d.name)} className="rounded-xl p-3.5 flex items-center gap-3 text-start" style={{ background: CARD, border: `1px solid ${LINE}` }}>
+            <div className="rounded-lg flex items-center justify-center flex-shrink-0" style={{ width: 40, height: 40, background: PAPER }}><Building2 size={18} color={INK} /></div>
+            <div className="flex-1 min-w-0">
+              <div className="truncate" style={{ ...fontBody, fontSize: 13.5, fontWeight: 600, color: INK }}>{d.name}</div>
+              <div className="truncate" style={{ ...fontMono, fontSize: 10.5, color: GREY }}>{d.deals} deals · {d.rate}% agreement · {d.hq}</div>
+            </div>
+            <div className="text-end flex-shrink-0">
+              <div style={{ ...fontMono, fontSize: 12.5, fontWeight: 700, color: d.gross > 0 ? GOOD : GREY }}>EGP {fmtEGP(d.gross)}</div>
+              <Badge tone={d.status === "Active" ? "good" : "light"}>{d.status}</Badge>
+            </div>
+          </button>
+        ))}
+      </div>
+
+      <div className="px-5 mt-5" style={{ ...fontDisplay, fontSize: 13, color: INK }}>{tr("byProject")}</div>
+      <div className="px-5 mt-2 flex flex-col gap-2.5">
+        {visibleProjects.map((p) => (
+          <button key={p.name} onClick={() => goToProject(p.name)} className="rounded-xl p-3.5 flex items-center gap-3 text-start" style={{ background: CARD, border: `1px solid ${LINE}` }}>
+            <div className="rounded-lg flex items-center justify-center flex-shrink-0" style={{ width: 40, height: 40, background: PAPER }}><MapPin size={18} color={INK} /></div>
+            <div className="flex-1 min-w-0">
+              <div className="truncate" style={{ ...fontBody, fontSize: 13.5, fontWeight: 600, color: INK }}>{p.name}</div>
+              <div className="truncate" style={{ ...fontMono, fontSize: 10.5, color: GREY }}>{p.developer} · {p.loc || "Other"} · {p.totalDeals} deals</div>
+            </div>
+            <div className="text-end flex-shrink-0">
+              <div style={{ ...fontMono, fontSize: 12.5, fontWeight: 700, color: p.gross > 0 ? GOOD : GREY }}>EGP {fmtEGP(p.gross)}</div>
+              <Badge tone="light">{p.rate}%</Badge>
+            </div>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function DeveloperDetailsScreen({ developerName, deals, requests = [], onBack, goToProject, goToDeal }) {
+  const { tr } = useT();
+  const request = requests.find((r) => r.developerName === developerName);
+  const stats = request && !marketDevelopers.some((d) => d.name === developerName) ? { ...getDeveloperStats(developerName, deals), ...requestToDeveloper(request) } : getDeveloperStats(developerName, deals);
+  const cases = getOpenCases(deals).filter((c) => stats.related.some((d) => d.id === c.dealId));
+  return (
+    <div className="pb-28 overflow-y-auto h-full" style={{ background: PAPER }}>
+      <BackHeader title={stats.name} eyebrow={tr("developerDetails")} onBack={onBack} />
+      <div className="mx-5 rounded-2xl p-5" style={{ background: CARD, border: `1px solid ${LINE}` }}>
+        <div className="flex items-start justify-between gap-3">
+          <div><div style={{ ...fontDisplay, fontSize: 18, color: INK }}>{stats.name}</div><div style={{ ...fontMono, fontSize: 11, color: GREY }}>{stats.hq} · {stats.rate || "TBD"}% agreement</div></div>
+          <Badge tone={listingStatusTone(request?.status || stats.status || (stats.totalDeals ? "Active" : "Agreement Pending"))}>{request?.status || stats.status || (stats.totalDeals ? tr("active") : tr("agreementPending"))}</Badge>
+        </div>
+        <div className="grid grid-cols-2 gap-2 mt-4">
+          <SummaryCard label="Listing" value={request ? "Requested" : "Listed"} tone={request ? "amber" : "good"} />
+          <SummaryCard label="Total deals" value={stats.totalDeals} />
+          <SummaryCard label="Sales value" value={`EGP ${fmtEGP(stats.totalValue)}`} />
+          <SummaryCard label="Commission" value={`EGP ${fmtEGP(stats.totalCommission)}`} tone="good" />
+          <SummaryCard label={tr("eligibleCommission")} value={`EGP ${fmtEGP(stats.eligible)}`} tone="good" />
+          <SummaryCard label={tr("pendingCommission")} value={`EGP ${fmtEGP(stats.pending)}`} tone="amber" />
+          <SummaryCard label={tr("cancelled")} value={stats.cancelled} tone="red" />
+        </div>
+      </div>
+      {request && <div className="mx-5 mt-4 rounded-xl p-3" style={{ background: "#fbf1e2", border: `1px solid #eddcb8`, ...fontBody, fontSize: 12, color: "#5c4a24" }}>Request status: {request.status}. {request.reason || request.notes}</div>}
+      <div className="px-5 mt-5" style={{ ...fontDisplay, fontSize: 13, color: INK }}>Projects</div>
+      <div className="px-5 mt-2 flex flex-col gap-2">
+        {(stats.projectsList.length ? stats.projectsList : marketProjects.filter((p) => p.developer === stats.name)).map((p) => (
+          <button key={p.name} onClick={() => goToProject(p.name)} className="rounded-xl p-3.5 text-start flex items-center justify-between gap-3" style={{ background: CARD, border: `1px solid ${LINE}` }}>
+            <div><div style={{ ...fontBody, fontSize: 13.5, fontWeight: 700, color: INK }}>{p.name}</div><div style={{ ...fontMono, fontSize: 10.5, color: GREY }}>{p.loc} · {p.rate}%</div></div><ChevronRight size={16} color={GREY} />
+          </button>
+        ))}
+      </div>
+      <div className="px-5 mt-5" style={{ ...fontDisplay, fontSize: 13, color: INK }}>{tr("alertsOpenCases")}</div>
+      <div className="px-5 mt-2">{cases.length ? cases.map((c) => <button key={c.id} onClick={() => goToDeal(c.dealId)} className="w-full rounded-xl p-3.5 text-start mb-2" style={{ background: CARD, border: `1px solid ${LINE}` }}><div style={{ ...fontBody, fontSize: 13, fontWeight: 700, color: INK }}>{c.title}</div><div style={{ ...fontMono, fontSize: 10.5, color: GREY }}>{c.project}</div></button>) : <EmptyNote text={tr("noOpenCases")} icon={ShieldCheck} />}</div>
+      <div className="px-5 mt-5" style={{ ...fontDisplay, fontSize: 13, color: INK }}>Related deals</div>
+      <div className="px-5 mt-2 flex flex-col gap-2">{stats.related.map((d) => <DealMiniCard key={d.id} deal={d} onClick={() => goToDeal(d.id)} />)}</div>
+    </div>
+  );
+}
+
+function ProjectDetailsScreen({ projectName, deals, requests = [], onBack, goToDeveloper, goToDeal }) {
+  const { tr } = useT();
+  const request = requests.find((r) => r.projectName === projectName);
+  const stats = request && !marketProjects.some((p) => p.name === projectName) ? { ...getProjectStats(projectName, deals), ...requestToProject(request) } : getProjectStats(projectName, deals);
+  const cases = getOpenCases(deals).filter((c) => stats.related.some((d) => d.id === c.dealId));
+  return (
+    <div className="pb-28 overflow-y-auto h-full" style={{ background: PAPER }}>
+      <BackHeader title={stats.name} eyebrow={tr("projectDetails")} onBack={onBack} />
+      <div className="mx-5 rounded-2xl p-5" style={{ background: CARD, border: `1px solid ${LINE}` }}>
+        <div className="flex items-start justify-between gap-3">
+          <div><div style={{ ...fontDisplay, fontSize: 18, color: INK }}>{stats.name}</div><button onClick={() => goToDeveloper(stats.developer)} style={{ ...fontMono, fontSize: 11, color: GREY }}>{stats.developer} · {stats.loc}</button></div>
+          <Badge tone={listingStatusTone(request?.status || stats.status || "Active")}>{request?.status || stats.status || `${stats.rate}%`}</Badge>
+        </div>
+        <div className="grid grid-cols-2 gap-2 mt-4">
+          <SummaryCard label="Listing" value={request ? "Requested" : "Listed"} tone={request ? "amber" : "good"} />
+          <SummaryCard label="Total deals" value={stats.totalDeals} />
+          <SummaryCard label="Sales value" value={`EGP ${fmtEGP(stats.totalValue)}`} />
+          <SummaryCard label="Commission" value={`EGP ${fmtEGP(stats.totalCommission)}`} tone="good" />
+          <SummaryCard label={tr("eligibleCommission")} value={`EGP ${fmtEGP(stats.eligible)}`} tone="good" />
+          <SummaryCard label={tr("pendingCommission")} value={`EGP ${fmtEGP(stats.pending)}`} tone="amber" />
+          <SummaryCard label={tr("cancelled")} value={stats.cancelled} tone="red" />
+        </div>
+      </div>
+      {request && <div className="mx-5 mt-4 rounded-xl p-3" style={{ background: "#fbf1e2", border: `1px solid #eddcb8`, ...fontBody, fontSize: 12, color: "#5c4a24" }}>Request status: {request.status}. {request.reason || request.notes}</div>}
+      <div className="px-5 mt-5" style={{ ...fontDisplay, fontSize: 13, color: INK }}>{tr("alertsOpenCases")}</div>
+      <div className="px-5 mt-2">{cases.length ? cases.map((c) => <button key={c.id} onClick={() => goToDeal(c.dealId)} className="w-full rounded-xl p-3.5 text-start mb-2" style={{ background: CARD, border: `1px solid ${LINE}` }}><div style={{ ...fontBody, fontSize: 13, fontWeight: 700, color: INK }}>{c.title}</div><div style={{ ...fontMono, fontSize: 10.5, color: GREY }}>{c.reason}</div></button>) : <EmptyNote text={tr("noOpenCases")} icon={ShieldCheck} />}</div>
+      <div className="px-5 mt-5" style={{ ...fontDisplay, fontSize: 13, color: INK }}>Related deals</div>
+      <div className="px-5 mt-2 flex flex-col gap-2">{stats.related.map((d) => <DealMiniCard key={d.id} deal={d} onClick={() => goToDeal(d.id)} />)}</div>
     </div>
   );
 }
@@ -1684,7 +2539,7 @@ function DeveloperCommissionTrackerScreen({ deals, onBack }) {
 // ---------------------------------------------------------------------------
 // Profile
 // ---------------------------------------------------------------------------
-function ProfileScreen({ lang, setLang, deals, consultants, setConsultants, goTo, ownerProfile }) {
+function ProfileScreen({ lang, setLang, deals, setDeals, consultants, setConsultants, goTo, ownerProfile, goToDeveloper, goToProject, goToDeal, onPayoutRequested, resolvedCaseIds, onResolveCase, onConsultantAdded }) {
   const { tr } = useT();
   const [view, setView] = useState("main");
   const [bookedEvent, setBookedEvent] = useState(null);
@@ -1739,10 +2594,10 @@ function ProfileScreen({ lang, setLang, deals, consultants, setConsultants, goTo
     );
   }
 
-  if (view === "addConsultant") return <AddConsultantScreen consultants={consultants} setConsultants={setConsultants} onBack={() => setView("consultants")} />;
+  if (view === "addConsultant") return <AddConsultantScreen consultants={consultants} setConsultants={setConsultants} onBack={() => setView("consultants")} onConsultantAdded={onConsultantAdded} />;
 
   if (view === "tracker") {
-    return <DeveloperCommissionTrackerScreen deals={deals} onBack={() => setView("main")} />;
+    return <DeveloperCommissionTrackerScreen deals={deals} setDeals={setDeals} onBack={() => setView("main")} goToDeveloper={goToDeveloper} goToProject={goToProject} goToDeal={goToDeal} goToDevelopersProjects={() => goTo("developersProjects")} onPayoutRequested={onPayoutRequested} resolvedCaseIds={resolvedCaseIds} onResolveCase={onResolveCase} />;
   }
 
   if (view === "events") {
@@ -1818,6 +2673,7 @@ function ProfileScreen({ lang, setLang, deals, consultants, setConsultants, goTo
       <div className="mx-5 mt-2 rounded-xl p-4 flex items-end gap-2.5" style={{ background: CARD, border: `1px solid ${LINE}`, height: 120 }}>
         {monthlyDeals.map((d) => (
           <div key={d.m} className="flex-1 flex flex-col items-center gap-1.5">
+            <div style={{ ...fontMono, fontSize: 10, fontWeight: 700, color: d.m === "Jul" ? RED : INK }}>{d.v}</div>
             <div className="w-full rounded-t-md" style={{ height: `${(d.v / maxV) * 78}px`, background: d.m === "Jul" ? RED : INK }} />
             <div style={{ ...fontMono, fontSize: 9.5, color: GREY }}>{d.m}</div>
           </div>
@@ -1827,22 +2683,25 @@ function ProfileScreen({ lang, setLang, deals, consultants, setConsultants, goTo
       <div className="px-5 mt-5" style={{ ...fontDisplay, ...fs(13), color: INK }}>{tr("menu")}</div>
       <div className="px-5 mt-2 flex flex-col gap-1.5">
         {[
-          { icon: ClipboardList, label: tr("howItWorks"), route: "how" },
-          { icon: ShieldCheck, label: tr("approvalEngine"), route: "approval" },
-          { icon: Gift, label: tr("rewardsSystem"), route: "rewardsSystem" },
-          { icon: Wallet, label: tr("getMoney"), route: "payout" },
           { icon: Building2, label: tr("companyDetails"), route: "companyDetails" },
           { icon: User, label: tr("ownerDetails"), route: "ownerDetails" },
           { icon: Users, label: tr("manageConsultants"), view: "consultants" },
-          { icon: Building2, label: tr("devCommissionTracker"), route: "commissionRef" },
-          { icon: FileText, label: tr("devCommissionTracker"), route: "tracker" },
+          { icon: Globe, label: tr("languageTitle"), view: null },
+          { icon: Trophy, label: tr("ranking"), route: "ranking" },
+          { icon: Building2, label: tr("developersProjects"), route: "developersProjects" },
+          { icon: Building2, label: tr("devCommissionTracker"), route: "tracker" },
+          { icon: Calculator, label: tr("commissionsTitle"), route: "commissions" },
+          { icon: Wallet, label: tr("getMoney"), route: "payout" },
+          { icon: Gift, label: tr("rewardsSystem"), route: "rewardsSystem" },
+          { icon: ClipboardList, label: tr("howItWorks"), route: "how" },
+          { icon: ShieldCheck, label: tr("approvalEngine"), route: "approval" },
           { icon: Calendar, label: tr("clubEvents"), view: "events" },
           { icon: FileText, label: tr("helpFaq"), route: "faq" },
           { icon: LogOut, label: tr("logout"), view: null },
         ].map((m) => {
           const Icon = m.icon;
           return (
-            <button key={m.label} onClick={() => m.route ? goTo(m.route) : m.view && setView(m.view)} className="rounded-xl p-3.5 flex items-center gap-3" style={{ background: CARD, border: `1px solid ${LINE}` }}>
+            <button key={m.route || m.view || m.label} onClick={() => m.route ? goTo(m.route) : m.view && setView(m.view)} className="rounded-xl p-3.5 flex items-center gap-3" style={{ background: CARD, border: `1px solid ${LINE}` }}>
               <Icon size={17} color={INK} className="flex-shrink-0" /><span className="flex-1 text-start" style={{ ...fontBody, fontSize: 13, color: INK }}>{m.label}</span><ChevronRight size={16} color={GREY} className="flex-shrink-0" />
             </button>
           );
@@ -1865,7 +2724,12 @@ export default function RedBookAppPrototype() {
   const [consultants, setConsultants] = useState(consultantRoster);
   const [notifications, setNotifications] = useState(defaultNotifications);
   const [payoutRequests, setPayoutRequests] = useState([]);
+  const [developerProjectRequests, setDeveloperProjectRequests] = useState(defaultDeveloperProjectRequests);
   const [dealsView, setDealsView] = useState("list");
+  const [selectedDealId, setSelectedDealId] = useState(null);
+  const [selectedDeveloperName, setSelectedDeveloperName] = useState(null);
+  const [selectedProjectName, setSelectedProjectName] = useState(null);
+  const [resolvedCaseIds, setResolvedCaseIds] = useState([]);
   const [stage, setStage] = useState("splash"); // splash | onboarding | app
 
   const dir = lang === "ar" ? "rtl" : "ltr";
@@ -1873,15 +2737,88 @@ export default function RedBookAppPrototype() {
   const ctxValue = { lang, tr, dir };
 
   function handleTabSelect(nextTab) {
+    if (nextTab === "addDeal") {
+      setTab("deals");
+      setDealsView("form");
+      setSelectedDealId(null);
+      setSelectedDeveloperName(null);
+      setSelectedProjectName(null);
+      return;
+    }
     setTab(nextTab);
     if (nextTab === "deals") setDealsView("list");
+    if (!["dealDetails", "developerDetails", "projectDetails"].includes(nextTab)) {
+      setSelectedDealId(null);
+      setSelectedDeveloperName(null);
+      setSelectedProjectName(null);
+    }
   }
   function goTo(nextTab) {
     setStage("app");
     handleTabSelect(nextTab);
   }
-  function addNotification(title, body, tone = "good") {
-    setNotifications((prev) => [{ id: Date.now(), title, body, tone, time: "Now" }, ...prev]);
+  function addNotification(title, body, tone = "good", dealId = null) {
+    setNotifications((prev) => [{ id: Date.now(), title, body, tone, time: "Now", dealId }, ...prev]);
+  }
+  function goToRevenueTracker() {
+    setStage("app");
+    setSelectedDealId(null);
+    setSelectedDeveloperName(null);
+    setSelectedProjectName(null);
+    setTab("tracker");
+  }
+  function goToDevelopersProjects() {
+    setStage("app");
+    setSelectedDealId(null);
+    setSelectedDeveloperName(null);
+    setSelectedProjectName(null);
+    setTab("developersProjects");
+  }
+  function goToDealForm() {
+    setStage("app");
+    handleTabSelect("deals");
+    setDealsView("form");
+  }
+  function goToDeal(dealId) {
+    setStage("app");
+    setSelectedDealId(dealId);
+    setSelectedDeveloperName(null);
+    setSelectedProjectName(null);
+    setTab("dealDetails");
+  }
+  function goToDeveloper(name) {
+    setStage("app");
+    setSelectedDeveloperName(name);
+    setSelectedDealId(null);
+    setSelectedProjectName(null);
+    setTab("developerDetails");
+  }
+  function goToProject(name) {
+    setStage("app");
+    setSelectedProjectName(name);
+    setSelectedDealId(null);
+    setSelectedDeveloperName(null);
+    setTab("projectDetails");
+  }
+  function resolveCase(caseId) {
+    setResolvedCaseIds((prev) => prev.includes(caseId) ? prev : [...prev, caseId]);
+    addNotification("Open case resolved", "The case was marked as resolved locally.", "good");
+  }
+  function notifyDealUpdated(deal) {
+    if (!deal) return;
+    addNotification("Deal information updated", `${deal.project} missing information was updated.`, "good", deal.id);
+  }
+  function notifyStageChange(deal, stageName) {
+    if (!deal) return;
+    const labels = {
+      developer_review: "Deal moved to Developer Review",
+      developer_approved: "Deal became Developer Approved",
+      verified: "Deal became KW RED Book Verified",
+      eligible: "Deal became Commission Eligible",
+      contracted: "Deal moved to Contracted",
+      payout_requested: "Payout request submitted",
+    };
+    if (labels[stageName]) addNotification(labels[stageName], `${deal.project} is now ${stageName.replaceAll("_", " ")}.`, stageName === "eligible" ? "good" : "amber", deal.id);
   }
 
   const howItems = [
@@ -1896,12 +2833,17 @@ export default function RedBookAppPrototype() {
   ].map(([title, body]) => ({ title, body }));
 
   const screens = {
-    home: <HomeScreen goTo={goTo} deals={deals} />,
-    deals: <DealsScreen deals={deals} setDeals={setDeals} view={dealsView} setView={setDealsView} consultants={consultants} ownerProfile={ownerProfile} onPayoutRequested={(deal) => addNotification("Payout request submitted", `${deal.project} payout request is now with KW RED Book finance.`)} />,
+    home: <HomeScreen goTo={goTo} deals={deals} goToDeal={goToDeal} goToDeveloper={goToDeveloper} goToProject={goToProject} goToRevenueTracker={goToRevenueTracker} resolvedCaseIds={resolvedCaseIds} onResolveCase={resolveCase} />,
+    deals: <DealsScreen deals={deals} setDeals={setDeals} view={dealsView} setView={setDealsView} consultants={consultants} ownerProfile={ownerProfile} onPayoutRequested={(deal) => addNotification("Payout request submitted", `${deal.project} payout request is now with KW RED Book finance.`, "good", deal.id)} onDealAdded={(deal) => addNotification("Deal added", `${deal.project} was registered.`, "good", deal.id)} onStageChanged={notifyStageChange} onDealCancelled={(deal) => addNotification("Deal cancelled", `Deal cancelled: ${deal?.project || "Deal"}`, "amber", deal?.id)} onDealUpdated={notifyDealUpdated} onOpenDeal={goToDeal} selectedDealId={selectedDealId} clearSelectedDeal={() => setSelectedDealId(null)} goToDeveloper={goToDeveloper} goToProject={goToProject} />,
     commissions: <CommissionsScreen deals={deals} />,
-    tracker: <DeveloperCommissionTrackerScreen deals={deals} />,
+    tracker: <DeveloperCommissionTrackerScreen deals={deals} setDeals={setDeals} goToDeveloper={goToDeveloper} goToProject={goToProject} goToDeal={goToDeal} goToDevelopersProjects={goToDevelopersProjects} onPayoutRequested={(deal) => addNotification("Payout request submitted", `Payout request submitted for ${deal.project}`, "good", deal.id)} resolvedCaseIds={resolvedCaseIds} onResolveCase={resolveCase} />,
+    ranking: <RankingScreen />,
+    developersProjects: <DevelopersProjectsScreen requests={developerProjectRequests} setRequests={setDeveloperProjectRequests} onBack={() => goTo("home")} goToDeveloper={goToDeveloper} goToProject={goToProject} goToDealForm={goToDealForm} onSubmitted={(req) => addNotification("Developer/project request submitted", `${req.developerName}${req.projectName ? ` · ${req.projectName}` : ""} was submitted for KW RED Book review.`, "good")} />,
     rewards: <RewardsScreen />,
-    profile: <ProfileScreen lang={lang} setLang={setLang} deals={deals} consultants={consultants} setConsultants={setConsultants} goTo={goTo} ownerProfile={ownerProfile} />,
+    profile: <ProfileScreen lang={lang} setLang={setLang} deals={deals} setDeals={setDeals} consultants={consultants} setConsultants={setConsultants} goTo={goTo} ownerProfile={ownerProfile} goToDeveloper={goToDeveloper} goToProject={goToProject} goToDeal={goToDeal} onPayoutRequested={(deal) => addNotification("Payout request submitted", `Payout request submitted for ${deal.project}`, "good", deal.id)} resolvedCaseIds={resolvedCaseIds} onResolveCase={resolveCase} onConsultantAdded={(c) => addNotification("Consultant added", `${c.name} can now receive deals.`, "good")} />,
+    dealDetails: <DealsScreen deals={deals} setDeals={setDeals} view="list" setView={setDealsView} consultants={consultants} ownerProfile={ownerProfile} onPayoutRequested={(deal) => addNotification("Payout request submitted", `${deal.project} payout request is now with KW RED Book finance.`, "good", deal.id)} onStageChanged={notifyStageChange} onDealCancelled={(deal) => addNotification("Deal cancelled", `Deal cancelled: ${deal?.project || "Deal"}`, "amber", deal?.id)} onDealUpdated={notifyDealUpdated} selectedDealId={selectedDealId} clearSelectedDeal={() => goTo("home")} goToDeveloper={goToDeveloper} goToProject={goToProject} />,
+    developerDetails: <DeveloperDetailsScreen developerName={selectedDeveloperName} deals={deals} requests={developerProjectRequests} onBack={goToDevelopersProjects} goToProject={goToProject} goToDeal={goToDeal} />,
+    projectDetails: <ProjectDetailsScreen projectName={selectedProjectName} deals={deals} requests={developerProjectRequests} onBack={goToDevelopersProjects} goToDeveloper={goToDeveloper} goToDeal={goToDeal} />,
     how: <InfoScreen title="How It Works" eyebrow="Demo Guide" intro="KW RED Book governs broker registration, deal approval, commission tracking, rewards, and payout in one verified workflow." items={howItems} onBack={() => goTo("home")} />,
     approval: <InfoScreen title="Approval Engine" eyebrow="Deal Governance" intro="Duplicate clients and repeat buyers are allowed. KW RED Book tracks each deal separately by project, unit, developer, and date." items={approvalStages.map((s) => ({ title: s.name, body: s.body, meta: s.owner, badgeTone: s.owner === "KW RED Book" ? "red" : "light" }))} onBack={() => goTo("home")} />,
     rewardsSystem: <InfoScreen title="Rewards System" eyebrow="WIN Points" intro="WIN points help KW RED Book reward verified production, consistent deal quality, and stronger broker participation." items={[
@@ -1912,12 +2854,12 @@ export default function RedBookAppPrototype() {
     companyDetails: <CompanyDetailsScreen onBack={() => goTo("profile")} />,
     ownerDetails: <OwnerDetailsScreen owner={ownerProfile} setOwner={setOwnerProfile} onBack={() => goTo("profile")} />,
     payout: <PayoutScreen payout={payoutDetails} setPayout={setPayoutDetails} payoutRequests={payoutRequests} setPayoutRequests={setPayoutRequests} deals={deals} setDeals={setDeals} onBack={() => goTo("profile")} onSubmitted={(amount, count) => addNotification("Payout request submitted", `EGP ${fmtEGP(amount)} across ${count} eligible deal${count === 1 ? "" : "s"} is now with KW RED Book finance.`)} />,
-    notifications: <NotificationsScreen notifications={notifications} onBack={() => goTo("home")} />,
+    notifications: <NotificationsScreen notifications={notifications} onBack={() => goTo("home")} goToDeal={goToDeal} />,
     commissionRef: <CommissionReferenceScreen onBack={() => goTo("profile")} />,
-    addConsultant: <AddConsultantScreen consultants={consultants} setConsultants={setConsultants} onBack={() => goTo("home")} />,
+    addConsultant: <AddConsultantScreen consultants={consultants} setConsultants={setConsultants} onBack={() => goTo("home")} onConsultantAdded={(c) => addNotification("Consultant added", `${c.name} can now receive deals.`, "good")} />,
     faq: <InfoScreen title="Help / FAQ" eyebrow="Support" intro="Quick answers for demo conversations with brokerage owners, consultants, developers, and investors." items={faqItems.map((f) => ({ title: f.q, body: f.a }))} onBack={() => goTo("profile")} />,
   };
-  const labels = { home: "Dashboard", deals: tr("deals"), rewards: "WIN Points", commissions: tr("commissionsTitle"), tracker: tr("devCommissionTracker"), profile: "Company Profile", how: tr("howItWorks"), approval: tr("approvalEngine"), rewardsSystem: tr("rewardsSystem"), companyDetails: tr("companyDetails"), ownerDetails: tr("ownerDetails"), payout: tr("getMoney"), notifications: tr("notificationsCenter"), commissionRef: tr("devCommissionTracker"), addConsultant: tr("addConsultant"), faq: tr("helpFaq") };
+  const labels = { home: "Dashboard", deals: tr("deals"), ranking: tr("ranking"), developersProjects: tr("developersProjects"), rewards: "WIN Points", commissions: tr("commissionsTitle"), tracker: tr("devCommissionTracker"), profile: "Company Profile", dealDetails: "Deal Details", developerDetails: tr("developerDetails"), projectDetails: tr("projectDetails"), how: tr("howItWorks"), approval: tr("approvalEngine"), rewardsSystem: tr("rewardsSystem"), companyDetails: tr("companyDetails"), ownerDetails: tr("ownerDetails"), payout: tr("getMoney"), notifications: tr("notificationsCenter"), commissionRef: tr("devCommissionTracker"), addConsultant: tr("addConsultant"), faq: tr("helpFaq") };
   function renderAppSurface() {
     return (
       <div
@@ -1951,7 +2893,7 @@ export default function RedBookAppPrototype() {
         <div className="md:hidden">{renderAppSurface()}</div>
 
         <div className="redbook-demo-switcher flex gap-2 mt-7 flex-wrap justify-center" style={{ maxWidth: 390 }}>
-          {["home", "deals", "rewards", "commissions", "tracker", "profile"].map((k) => (
+          {["home", "deals", "ranking", "developersProjects", "rewards", "commissions", "tracker", "profile"].map((k) => (
             <button key={k} onClick={() => { setStage("app"); handleTabSelect(k); }} className="px-3.5 py-2 rounded-full"
               style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 12, fontWeight: 500, background: tab === k ? INK : "#fff", color: tab === k ? "#fff" : GREY, border: `1px solid ${tab === k ? INK : LINE}` }}>
               {labels[k]}
